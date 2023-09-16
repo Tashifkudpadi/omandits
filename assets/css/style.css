@@ -63,14 +63,14 @@ p {
   text-decoration: none;
   color: #fff;
   line-height: 65px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 .nav div.main_list ul li .bt {
   background-color: #75cde8;
   padding: 12px;
-  height: 40px;
+  height: 30px;
   border-radius: 8px;
 }
 .nav div.main_list ul li .bt:hover {
@@ -655,18 +655,28 @@ p {
 
 #topics_card .cards_position {
   padding: 40px 10px 10px 10px;
-  background-color: #fff;
-  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
-  margin: 30px 12px;
+  /* background-color: #fff; */
+  /* box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%); */
+  box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
+    rgba(113, 80, 101, 0.2) 15px 15px, rgba(64, 56, 61, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+  /* margin: 30px 12px; */
   border-radius: 8px;
   height: 220px;
   width: 100%;
   text-align: center;
+  color: #fff;
 }
-#topics_card .col-md-2:nth-child(even) {
-  position: relative;
-  top: 50px;
+/* #topics_card .col-md-2 .cards_position:nth-child(even) {
+  
+  border-top: none;
+  border-bottom: 2px solid #fff;
 }
+#topics_card .col-md-2 .cards_position:nth-child(odd) {
+
+  border-top: 2px solid #fff;
+  border-bottom: none;
+} */
 #topics_card .cards_position p {
   font-size: 14px;
   font-weight: 700;
@@ -733,9 +743,19 @@ footer a {
 }
 footer input {
   padding: 8px 12px;
-  border-radius: 8px;
   border: none;
   outline: none;
+}
+footer button {
+  padding: 8px 18px;
+  background: #4e4646;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+footer button:hover {
+  background-color: #fff;
+  color: #111;
 }
 footer input::placeholder {
   font-size: 18px;
