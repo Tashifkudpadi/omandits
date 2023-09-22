@@ -40,6 +40,98 @@
         opacity: 0.7; /* Use a lighter color for the text */
       }
     </style>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("hO0rGL2q2-CdEsIN5");
+      })();
+    </script>
+
+    <script>
+      function sendMail() {
+        var checkbox1 = document.getElementById("my_checkbox1");
+        var checkbox2 = document.getElementById("my_checkbox2");
+        var checkbox3 = document.getElementById("my_checkbox3");
+        var checkbox4 = document.getElementById("my_checkbox4");
+
+        // Get the checkbox state message based on whether it's checked or not
+        var checkboxState1 = checkbox1.checked
+          ? "The checkbox is checked."
+          : "The checkbox is not checked.";
+        var checkboxState2 = checkbox2.checked
+          ? "The checkbox is checked."
+          : "The checkbox is not checked.";
+        var checkboxState3 = checkbox3.checked
+          ? "The checkbox is checked."
+          : "The checkbox is not checked.";
+        var checkboxState4 = checkbox4.checked
+          ? "The checkbox is checked."
+          : "The checkbox is not checked.";
+
+        var params = {
+          registrationCode: document.getElementById("registrationCode").value,
+          title: document.getElementById("title").value,
+          firstname: document.getElementById("firstname").value,
+          lastname: document.getElementById("lastname").value,
+          jobtitle: document.getElementById("jobtitle").value,
+          companyname: document.getElementById("companyname").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("mobilePhone").value,
+          industry: document.getElementById("industry").value,
+          country: document.getElementById("country").value,
+          employees: document.getElementById("employees").value,
+          solutions: document.getElementById("solutions").value,
+          role: document.getElementById("role").value,
+          attend: document.getElementById("attend").value,
+
+          referee_fullname: document.getElementById("referee_fullname").value,
+          referee_companyname: document.getElementById("referee_companyname")
+            .value,
+          referee_jobtitle: document.getElementById("referee_jobtitle").value,
+          referee_emailid: document.getElementById("referee_emailid").value,
+          referee_phoneno: document.getElementById("referee_phoneno").value,
+
+          checkboxState1,
+          checkboxState2,
+          checkboxState3,
+          checkboxState4,
+        };
+        var serviceID = "service_xgm708t";
+        var templateID = "template_ju5hv1k";
+
+        emailjs
+          .send(serviceID, templateID, params)
+          .then((res) => {
+            document.getElementById("registrationCode").value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("firstname").value = "";
+            document.getElementById("lastname").value = "";
+            document.getElementById("jobtitle").value = "";
+            document.getElementById("companyname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("mobilePhone").value = "";
+            document.getElementById("industry").value = "";
+            document.getElementById("country").value = "";
+            document.getElementById("employees").value = "";
+            document.getElementById("solutions").value = "";
+            document.getElementById("role").value = "";
+            document.getElementById("attend").value = "";
+
+            document.getElementById("referee_fullname").value = "";
+            document.getElementById("referee_companyname").value = "";
+            document.getElementById("referee_jobtitle").value = "";
+            document.getElementById("referee_emailid").value = "";
+            document.getElementById("referee_phoneno").value = "";
+            console.log(res);
+            alert("Ur msg sent succesfuly");
+          })
+          .catch((error) => console.log(error));
+      }
+    </script>
   </head>
   <body>
     <nav class="nav">
@@ -82,363 +174,365 @@
 
           <iframe name="iframe" style="display: none"></iframe>
           <form
-            action="./phpmailer/delegate.php"
             target="iframe"
-            method="post"
             id="popupForm"
           >
-            <div class="row">
+          <div class="row" id="popupForm">
+            <div>
+              <input
+                type="text"
+                placeholder="Registration code"
+                class="form-control"
+                name="registrationcode"
+                id="registrationCode"
+              />
+              <p class="pt-3">
+                If you have a registration code, please enter here (Skip this
+                step if you don't have one)
+              </p>
+            </div>
+            <div class="col-md-6">
               <div>
+                <label for="title">Title</label>
                 <input
                   type="text"
-                  placeholder="Registration code"
                   class="form-control"
-                  name="registrationcode"
+                  id="title"
+                  name="title"
+                  required
                 />
-                <p class="pt-3">
-                  If you have a registration code, please enter here (Skip this
-                  step if you don't have one)
-                </p>
               </div>
-              <div class="col-md-6">
-                <div>
-                  <label for="title">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="title"
-                    name="title"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="firstname">First name *</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="firstname"
-                    name="firstname"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="lastname">Last name *</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="lastname"
-                    name="lastname"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="jobtitle">Job Title *</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobtitle"
-                    name="jobtitle"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="companyname">Company name *</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="companyname"
-                    name="companyname"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="email">Email *</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="mobilePhone">Mobile Phone *</label>
-                  <input
-                    type="phone"
-                    class="form-control"
-                    id="mobilePhone"
-                    name="phone"
-                    required
-                  />
-                </div>
+              <div>
+                <label for="firstname">First name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstname"
+                  name="firstname"
+                  required
+                />
               </div>
-              <div class="col-md-6">
-                <div>
-                  <label for="industry">Industry Sector</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="industry"
-                    name="industry"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="country">Country:</label>
-                  <select
-                    id="country"
-                    class="form-control"
-                    name="country"
-                    required
-                  >
-                    <option value="" disabled selected>Select a country</option>
-
-                    <!-- JavaScript will populate this dropdown -->
-                  </select>
-                </div>
-                <div>
-                  <label for="employees">Total No. of Employees</label>
-                  <select
-                    id="employees"
-                    class="form-control"
-                    name="employees"
-                    required
-                  >
-                    <option value="" disabled selected></option>
-                    <option value="0 - 100">0 - 100</option>
-                    <option value="100 - 500">100 - 500</option>
-                    <option value="500 - 1000">500 - 1000</option>
-                    <option value="1000 - 10000">1000 - 10000</option>
-                    <option value="10000 and Above">10000 and Above</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="solutions"
-                    >Are you looking for any of the following solutions? Please
-                    tick on the appropriate boxes below? *</label
-                  >
-                  <select
-                    id="solutions"
-                    class="form-control"
-                    name="solutions"
-                    required
-                  >
-                    <option value="" disabled selected></option>
-                    <option value="PayTech">PayTech</option>
-                    <option value="RegTech">RegTech</option>
-                    <option value="Accounting">Accounting</option>
-                    <option value="Open Banking">Open Banking</option>
-                    <option value="Challenger Bank">Challenger Bank</option>
-                    <option value="Infrastructure">Infrastructure</option>
-                    <option value="BNPL">BNPL</option>
-                    <option value="WealthTech">WealthTech</option>
-                    <option value="Blockchain & Cryptocurrency">
-                      Blockchain & Cryptocurrency
-                    </option>
-                    <option value="InsurTech">InsurTech</option>
-                    <option value="LendTech">LendTech</option>
-                    <option value="Mobile Payments">Mobile Payments</option>
-                    <option value="Tradetech">Tradetech</option>
-                    <option value="RoboAdvising & Stock-Trading">
-                      RoboAdvising & Stock-Trading
-                    </option>
-                    <option value="International Money Transfers">
-                      International Money Transfers
-                    </option>
-                    <option value="Equity Financing">Equity Financing</option>
-                    <option value="BankTech">BankTech</option>
-                    <option value="Peer-to-Peer Lending and Borrowing">
-                      Peer-to-Peer Lending and Borrowing
-                    </option>
-                    <option value="Crowdfunding">Crowdfunding</option>
-                    <option value="Personal Finance Management">
-                      Personal Finance Management
-                    </option>
-                    <option value="Alternative Credit Scoring">
-                      Alternative Credit Scoring
-                    </option>
-                    <option value="Transaction Delivery">
-                      Transaction Delivery
-                    </option>
-                    <option value="Digital Wallets">Digital Wallets</option>
-                    <option value="Digital Banking">Digital Banking</option>
-                    <option value="Quote Aggregators">Quote Aggregators</option>
-                    <option value="Augmented Intelligence Solutions">
-                      Augmented Intelligence Solutions
-                    </option>
-                    <option value="Data Privacy Automation">
-                      Data Privacy Automation
-                    </option>
-                    <option value="Hybrid Cloud & Cloud Computing">
-                      Hybrid Cloud & Cloud Computing
-                    </option>
-                    <option
-                      value="Data visualization / Data Virtualization technologies"
-                    >
-                      Data visualization / Data Virtualization technologies
-                    </option>
-                    <option value="Cloud Migration">Cloud Migration</option>
-                    <option value="Metadata Management">
-                      Metadata Management
-                    </option>
-                    <option value="AI Governance">AI Governance</option>
-                    <option value="Data Governance Tools">
-                      Data Governance Tools
-                    </option>
-                    <option value="Adaptive Artificial Intelligence">
-                      Adaptive Artificial Intelligence
-                    </option>
-                    <option value="BI Solutions">BI Solutions</option>
-                    <option value="NoSql Databases">NoSql Databases</option>
-                    <option value="Data Fabric Software Solutions">
-                      Data Fabric Software Solutions
-                    </option>
-                    <option value="Graph Technology">Graph Technology</option>
-                    <option value="Big Data Security Solutions">
-                      Big Data Security Solutions
-                    </option>
-                    <option value="Open Source data & Machine learning tools">
-                      Open Source data & Machine learning tools
-                    </option>
-                    <option value="Others">Others</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label for="role"
-                    >What is your role/authority while dealing with solution
-                    providers for your organisation? *</label
-                  >
-                  <select name="role" id="role" class="form-control" required>
-                    <option value="" selected disabled></option>
-                    <option value="Final decision maker">
-                      Final decision maker
-                    </option>
-                    <option value="One of the final decision maker">
-                      One of the final decision maker
-                    </option>
-                    <option value="I refer and influence the decision">
-                      I refer and influence the decision
-                    </option>
-                    <option value="I'm not involved at all">
-                      I'm not involved at all
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <label for="attend">I would like to attend *</label>
-                  <select
-                    name="attend"
-                    id="attend"
-                    class="form-control"
-                    required
-                  >
-                    <option value="" selected disabled></option>
-                    <option value="DATE-AI Show, Oman">
-                      DATE-AI Show, Oman
-                    </option>
-                    <option value="DATE-Fintech show, Oman">
-                      DATE-Fintech show, Oman
-                    </option>
-                  </select>
-                </div>
+              <div>
+                <label for="lastname">Last name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastname"
+                  name="lastname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="jobtitle">Job Title *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="jobtitle"
+                  name="jobtitle"
+                  required
+                />
+              </div>
+              <div>
+                <label for="companyname">Company name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyname"
+                  name="companyname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div>
+                <label for="mobilePhone">Mobile Phone *</label>
+                <input
+                  type="phone"
+                  class="form-control"
+                  id="mobilePhone"
+                  name="phone"
+                  required
+                />
               </div>
             </div>
-
-            <div class="row">
-              <h4>
-                WOULD YOU LIKE TO NOMINATE/REFER SOMEONE TO ATTEND THE EVENT?
-              </h4>
-
-              <div class="col-md-6">
-                <div>
-                  <label for="referee_fullname">Full Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_fullname"
-                    name="referee_fullname"
-                  />
-                </div>
-                <div>
-                  <label for="referee_companyname">Company name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_companyname"
-                    name="referee_companyname"
-                  />
-                </div>
-                <div>
-                  <label for="referee_jobtitle">Job title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_jobtitle"
-                    name="referee_jobtitle"
-                  />
-                </div>
+            <div class="col-md-6">
+              <div>
+                <label for="industry">Industry Sector</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="industry"
+                  name="industry"
+                  required
+                />
               </div>
-              <div class="col-md-6">
-                <div>
-                  <label for="referee_emailid">Email Id</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_emailid"
-                    name="referee_emailid"
-                  />
-                </div>
-                <div>
-                  <label for="referee_phoneno">Phone number</label>
-                  <input
-                    type="phone"
-                    class="form-control"
-                    id="referee_phoneno"
-                    name="referee_phoneno"
-                  />
-                </div>
-              </div>
-            </div>
+              <div>
+                <label for="country">Country:</label>
+                <select
+                  id="country"
+                  class="form-control"
+                  name="country"
+                  required
+                >
+                  <option value="" disabled selected>Select a country</option>
 
-            <div class="row">
-              <h4>Confirmation</h4>
-              <div class="col-md-8">
-                <label>
-                  <input type="checkbox" name="my_checkbox1" required /> By
-                  filling up this form, I agree to the above terms and
-                  conditions. I officially and formally mark my acceptance to
-                  participate at the event. *
-                </label>
-                <label>
-                  <input type="checkbox" name="my_checkbox2" /> I approve
-                  organizers to share the contact information and/or other
-                  details filled in this form with its sponsors/partners for
-                  marketing purposes.
-                </label>
-                <label>
-                  <input type="checkbox" name="my_checkbox3" /> (CONSENT) I
-                  provide my consent to organizers to send me latest updates via
-                  email with information related to their events and activities.
-                  purposes.
-                </label>
-                <label>
-                  <input type="checkbox" name="my_checkbox4" required /> I agree
-                  to the general Terms and conditions and Privacy policy of
-                  organizers.
-                  <br />
-                  *
-                  <span class="text-info"
-                    >Terms and Conditions | Privacy Policy</span
+                  <!-- JavaScript will populate this dropdown -->
+                </select>
+              </div>
+              <div>
+                <label for="employees">Total No. of Employees</label>
+                <select
+                  id="employees"
+                  class="form-control"
+                  name="employees"
+                  required
+                >
+                  <option value="" disabled selected></option>
+                  <option value="0 - 100">0 - 100</option>
+                  <option value="100 - 500">100 - 500</option>
+                  <option value="500 - 1000">500 - 1000</option>
+                  <option value="1000 - 10000">1000 - 10000</option>
+                  <option value="10000 and Above">10000 and Above</option>
+                </select>
+              </div>
+              <div>
+                <label for="solutions"
+                  >Are you looking for any of the following solutions? Please
+                  tick on the appropriate boxes below? *</label
+                >
+                <select
+                  id="solutions"
+                  class="form-control"
+                  name="solutions"
+                  required
+                >
+                  <option value="" disabled selected></option>
+                  <option value="PayTech">PayTech</option>
+                  <option value="RegTech">RegTech</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="Open Banking">Open Banking</option>
+                  <option value="Challenger Bank">Challenger Bank</option>
+                  <option value="Infrastructure">Infrastructure</option>
+                  <option value="BNPL">BNPL</option>
+                  <option value="WealthTech">WealthTech</option>
+                  <option value="Blockchain & Cryptocurrency">
+                    Blockchain & Cryptocurrency
+                  </option>
+                  <option value="InsurTech">InsurTech</option>
+                  <option value="LendTech">LendTech</option>
+                  <option value="Mobile Payments">Mobile Payments</option>
+                  <option value="Tradetech">Tradetech</option>
+                  <option value="RoboAdvising & Stock-Trading">
+                    RoboAdvising & Stock-Trading
+                  </option>
+                  <option value="International Money Transfers">
+                    International Money Transfers
+                  </option>
+                  <option value="Equity Financing">Equity Financing</option>
+                  <option value="BankTech">BankTech</option>
+                  <option value="Peer-to-Peer Lending and Borrowing">
+                    Peer-to-Peer Lending and Borrowing
+                  </option>
+                  <option value="Crowdfunding">Crowdfunding</option>
+                  <option value="Personal Finance Management">
+                    Personal Finance Management
+                  </option>
+                  <option value="Alternative Credit Scoring">
+                    Alternative Credit Scoring
+                  </option>
+                  <option value="Transaction Delivery">
+                    Transaction Delivery
+                  </option>
+                  <option value="Digital Wallets">Digital Wallets</option>
+                  <option value="Digital Banking">Digital Banking</option>
+                  <option value="Quote Aggregators">Quote Aggregators</option>
+                  <option value="Augmented Intelligence Solutions">
+                    Augmented Intelligence Solutions
+                  </option>
+                  <option value="Data Privacy Automation">
+                    Data Privacy Automation
+                  </option>
+                  <option value="Hybrid Cloud & Cloud Computing">
+                    Hybrid Cloud & Cloud Computing
+                  </option>
+                  <option
+                    value="Data visualization / Data Virtualization technologies"
                   >
-                </label>
+                    Data visualization / Data Virtualization technologies
+                  </option>
+                  <option value="Cloud Migration">Cloud Migration</option>
+                  <option value="Metadata Management">
+                    Metadata Management
+                  </option>
+                  <option value="AI Governance">AI Governance</option>
+                  <option value="Data Governance Tools">
+                    Data Governance Tools
+                  </option>
+                  <option value="Adaptive Artificial Intelligence">
+                    Adaptive Artificial Intelligence
+                  </option>
+                  <option value="BI Solutions">BI Solutions</option>
+                  <option value="NoSql Databases">NoSql Databases</option>
+                  <option value="Data Fabric Software Solutions">
+                    Data Fabric Software Solutions
+                  </option>
+                  <option value="Graph Technology">Graph Technology</option>
+                  <option value="Big Data Security Solutions">
+                    Big Data Security Solutions
+                  </option>
+                  <option value="Open Source data & Machine learning tools">
+                    Open Source data & Machine learning tools
+                  </option>
+                  <option value="Others">Others</option>
+                </select>
               </div>
-              <div class="col-md-4"></div>
+
+              <div>
+                <label for="role"
+                  >What is your role/authority while dealing with solution
+                  providers for your organisation? *</label
+                >
+                <select name="role" id="role" class="form-control" required>
+                  <option value="" selected disabled></option>
+                  <option value="Final decision maker">
+                    Final decision maker
+                  </option>
+                  <option value="One of the final decision maker">
+                    One of the final decision maker
+                  </option>
+                  <option value="I refer and influence the decision">
+                    I refer and influence the decision
+                  </option>
+                  <option value="I'm not involved at all">
+                    I'm not involved at all
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label for="attend">I would like to attend *</label>
+                <select name="attend" id="attend" class="form-control" required>
+                  <option value="" selected disabled></option>
+                  <option value="DATE-AI Show, Oman">DATE-AI Show, Oman</option>
+                  <option value="DATE-Fintech show, Oman">
+                    DATE-Fintech show, Oman
+                  </option>
+                </select>
+              </div>
             </div>
-            <button type="submit" class="btn btn-info text-light mt-3">
-              Submit
-            </button>
-          </form>
+          </div>
+
+          <div class="row">
+            <h4>
+              WOULD YOU LIKE TO NOMINATE/REFER SOMEONE TO ATTEND THE EVENT?
+            </h4>
+
+            <div class="col-md-6">
+              <div>
+                <label for="referee_fullname">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_fullname"
+                  name="referee_fullname"
+                />
+              </div>
+              <div>
+                <label for="referee_companyname">Company name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_companyname"
+                  name="referee_companyname"
+                />
+              </div>
+              <div>
+                <label for="referee_jobtitle">Job title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_jobtitle"
+                  name="referee_jobtitle"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="referee_emailid">Email Id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_emailid"
+                  name="referee_emailid"
+                />
+              </div>
+              <div>
+                <label for="referee_phoneno">Phone number</label>
+                <input
+                  type="phone"
+                  class="form-control"
+                  id="referee_phoneno"
+                  name="referee_phoneno"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h4>Confirmation</h4>
+            <div class="col-md-8">
+              <label>
+                <input
+                  type="checkbox"
+                  name="my_checkbox1"
+                  id="my_checkbox1"
+                  required
+                />
+                By filling up this form, I agree to the above terms and
+                conditions. I officially and formally mark my acceptance to
+                participate at the event. *
+              </label>
+              <label>
+                <input type="checkbox" name="my_checkbox2" id="my_checkbox2" />
+                I approve organizers to share the contact information and/or
+                other details filled in this form with its sponsors/partners for
+                marketing purposes.
+              </label>
+              <label>
+                <input type="checkbox" name="my_checkbox3" id="my_checkbox3" />
+                (CONSENT) I provide my consent to organizers to send me latest
+                updates via email with information related to their events and
+                activities. purposes.
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="my_checkbox4"
+                  id="my_checkbox4"
+                  required
+                />
+                I agree to the general Terms and conditions and Privacy policy
+                of organizers.
+                <br />
+                *
+                <span class="text-info"
+                  >Terms and Conditions | Privacy Policy</span
+                >
+              </label>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <button class="btn btn-info text-light mt-3" type="submit" onclick="sendMail()">
+            Submit
+          </button>
+          <!-- </form> -->
         </div>
       </div>
     </section>
@@ -1460,7 +1554,6 @@
         </div>
       </div>
     </section>
-
 
     <footer class="text-center footer text-center">
       <div class="container p-4">
