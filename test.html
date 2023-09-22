@@ -35,6 +35,39 @@
     <script src="./assets/js/jquery.js"></script>
     <!-- <link rel="stylesheet" href="./assets/css/aos.css" />
     <script src="./assets/js/aos.js"></script> -->
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("hO0rGL2q2-CdEsIN5");
+      })();
+    </script>
+
+    <script>
+      function sendMail() {
+        var params = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
+        };
+        var serviceID = "service_xgm708t";
+        var templateID = "template_ju5hv1k";
+
+        emailjs
+          .send(serviceID, templateID, params)
+          .then((res) => {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            console.log(res);
+            alert("Ur msg sent succesfuly");
+          })
+          .catch((error) => console.log(error));
+      }
+    </script>
   </head>
   <body>
     <nav class="nav">
@@ -246,6 +279,21 @@
             <h2><span class="count percent" data-count="40"> 0 </span>+</h2>
             <span>INVESTORS</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>form</h4>
+            <input type="text" id="name" placeholder="Name.." />
+            <input type="email" id="email" placeholder="Email" />
+            <textarea id="message" rows="10"></textarea>
+            <button onclick="sendMail()">Submit</button>
+          </div>
+          <div class="col-md-4"></div>
         </div>
       </div>
     </section>
