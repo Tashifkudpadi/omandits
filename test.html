@@ -33,13 +33,8 @@
 
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/jquery.js"></script>
-    <link rel="stylesheet" href="./assets/css/aos.css" />
-    <script src="./assets/js/aos.js"></script>
-    <style>
-      #country option[disabled] {
-        opacity: 0.7; /* Use a lighter color for the text */
-      }
-    </style>
+    <!-- <link rel="stylesheet" href="./assets/css/aos.css" />
+    <script src="./assets/js/aos.js"></script> -->
   </head>
   <body>
     <nav class="nav">
@@ -57,10 +52,10 @@
             <li><a href="#sponsors">Sponsors</a></li>
             <li><a href="#">Partners</a></li>
             <li><a href="#">Agenda</a></li>
-            <li>
-              <a class="bt" id="openPopupBtn">Delegate Enquiry</a>
-            </li>
-            <li><a class="bt">Sponsor Enquiry</a></li>
+            <!-- <li> -->
+            <button id="openPopupBtn">Delegate Enquiry</button>
+            <!-- </li> -->
+            <li><a href="#" target="_blank" class="bt">Sponsor Enquiry</a></li>
           </ul>
         </div>
         <span class="navTrigger">
@@ -78,22 +73,14 @@
       >
         <div class="popup">
           <span class="close" id="closePopupBtn">&times;</span>
-          <h4>REGISTER FOR YOUR COMPLIMENTARY EXPO PASS</h4>
-
-          <iframe name="iframe" style="display: none"></iframe>
-          <form
-            action="./phpmailer/delegate.php"
-            target="iframe"
-            method="post"
-            id="popupForm"
-          >
+          <h2>Popup Form</h2>
+          <form id="popupForm">
             <div class="row">
               <div>
                 <input
                   type="text"
                   placeholder="Registration code"
                   class="form-control"
-                  name="registrationcode"
                 />
                 <p class="pt-3">
                   If you have a registration code, please enter here (Skip this
@@ -167,7 +154,7 @@
                     type="phone"
                     class="form-control"
                     id="mobilePhone"
-                    name="phone"
+                    name="mobilePhone"
                     required
                   />
                 </div>
@@ -184,257 +171,16 @@
                   />
                 </div>
                 <div>
-                  <label for="country">Country:</label>
-                  <select
-                    id="country"
+                  <label for="country">Country</label>
+                  <input
+                    type="text"
                     class="form-control"
+                    id="country"
                     name="country"
                     required
-                  >
-                    <option value="" disabled selected>Select a country</option>
-
-                    <!-- JavaScript will populate this dropdown -->
-                  </select>
-                </div>
-                <div>
-                  <label for="employees">Total No. of Employees</label>
-                  <select
-                    id="employees"
-                    class="form-control"
-                    name="employees"
-                    required
-                  >
-                    <option value="" disabled selected></option>
-                    <option value="0 - 100">0 - 100</option>
-                    <option value="100 - 500">100 - 500</option>
-                    <option value="500 - 1000">500 - 1000</option>
-                    <option value="1000 - 10000">1000 - 10000</option>
-                    <option value="10000 and Above">10000 and Above</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="solutions"
-                    >Are you looking for any of the following solutions? Please
-                    tick on the appropriate boxes below? *</label
-                  >
-                  <select
-                    id="solutions"
-                    class="form-control"
-                    name="solutions"
-                    required
-                  >
-                    <option value="" disabled selected></option>
-                    <option value="PayTech">PayTech</option>
-                    <option value="RegTech">RegTech</option>
-                    <option value="Accounting">Accounting</option>
-                    <option value="Open Banking">Open Banking</option>
-                    <option value="Challenger Bank">Challenger Bank</option>
-                    <option value="Infrastructure">Infrastructure</option>
-                    <option value="BNPL">BNPL</option>
-                    <option value="WealthTech">WealthTech</option>
-                    <option value="Blockchain & Cryptocurrency">
-                      Blockchain & Cryptocurrency
-                    </option>
-                    <option value="InsurTech">InsurTech</option>
-                    <option value="LendTech">LendTech</option>
-                    <option value="Mobile Payments">Mobile Payments</option>
-                    <option value="Tradetech">Tradetech</option>
-                    <option value="RoboAdvising & Stock-Trading">
-                      RoboAdvising & Stock-Trading
-                    </option>
-                    <option value="International Money Transfers">
-                      International Money Transfers
-                    </option>
-                    <option value="Equity Financing">Equity Financing</option>
-                    <option value="BankTech">BankTech</option>
-                    <option value="Peer-to-Peer Lending and Borrowing">
-                      Peer-to-Peer Lending and Borrowing
-                    </option>
-                    <option value="Crowdfunding">Crowdfunding</option>
-                    <option value="Personal Finance Management">
-                      Personal Finance Management
-                    </option>
-                    <option value="Alternative Credit Scoring">
-                      Alternative Credit Scoring
-                    </option>
-                    <option value="Transaction Delivery">
-                      Transaction Delivery
-                    </option>
-                    <option value="Digital Wallets">Digital Wallets</option>
-                    <option value="Digital Banking">Digital Banking</option>
-                    <option value="Quote Aggregators">Quote Aggregators</option>
-                    <option value="Augmented Intelligence Solutions">
-                      Augmented Intelligence Solutions
-                    </option>
-                    <option value="Data Privacy Automation">
-                      Data Privacy Automation
-                    </option>
-                    <option value="Hybrid Cloud & Cloud Computing">
-                      Hybrid Cloud & Cloud Computing
-                    </option>
-                    <option
-                      value="Data visualization / Data Virtualization technologies"
-                    >
-                      Data visualization / Data Virtualization technologies
-                    </option>
-                    <option value="Cloud Migration">Cloud Migration</option>
-                    <option value="Metadata Management">
-                      Metadata Management
-                    </option>
-                    <option value="AI Governance">AI Governance</option>
-                    <option value="Data Governance Tools">
-                      Data Governance Tools
-                    </option>
-                    <option value="Adaptive Artificial Intelligence">
-                      Adaptive Artificial Intelligence
-                    </option>
-                    <option value="BI Solutions">BI Solutions</option>
-                    <option value="NoSql Databases">NoSql Databases</option>
-                    <option value="Data Fabric Software Solutions">
-                      Data Fabric Software Solutions
-                    </option>
-                    <option value="Graph Technology">Graph Technology</option>
-                    <option value="Big Data Security Solutions">
-                      Big Data Security Solutions
-                    </option>
-                    <option value="Open Source data & Machine learning tools">
-                      Open Source data & Machine learning tools
-                    </option>
-                    <option value="Others">Others</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label for="role"
-                    >What is your role/authority while dealing with solution
-                    providers for your organisation? *</label
-                  >
-                  <select name="role" id="role" class="form-control" required>
-                    <option value="" selected disabled></option>
-                    <option value="Final decision maker">
-                      Final decision maker
-                    </option>
-                    <option value="One of the final decision maker">
-                      One of the final decision maker
-                    </option>
-                    <option value="I refer and influence the decision">
-                      I refer and influence the decision
-                    </option>
-                    <option value="I'm not involved at all">
-                      I'm not involved at all
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <label for="attend">I would like to attend *</label>
-                  <select
-                    name="attend"
-                    id="attend"
-                    class="form-control"
-                    required
-                  >
-                    <option value="" selected disabled></option>
-                    <option value="DATE-AI Show, Oman">
-                      DATE-AI Show, Oman
-                    </option>
-                    <option value="DATE-Fintech show, Oman">
-                      DATE-Fintech show, Oman
-                    </option>
-                    <option value="Both events">Both events</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <h4>
-                WOULD YOU LIKE TO NOMINATE/REFER SOMEONE TO ATTEND THE EVENT?
-              </h4>
-
-              <div class="col-md-6">
-                <div>
-                  <label for="referee_fullname">Full Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_fullname"
-                    name="referee_fullname"
-                  />
-                </div>
-                <div>
-                  <label for="referee_companyname">Company name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_companyname"
-                    name="referee_companyname"
-                  />
-                </div>
-                <div>
-                  <label for="referee_jobtitle">Job title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_jobtitle"
-                    name="referee_jobtitle"
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div>
-                  <label for="referee_emailid">Email Id</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="referee_emailid"
-                    name="referee_emailid"
-                  />
-                </div>
-                <div>
-                  <label for="referee_phoneno">Phone number</label>
-                  <input
-                    type="phone"
-                    class="form-control"
-                    id="referee_phoneno"
-                    name="referee_phoneno"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <h4>Confirmation</h4>
-              <div class="col-md-8">
-                <label>
-                  <input type="checkbox" name="my_checkbox1" required /> By
-                  filling up this form, I agree to the above terms and
-                  conditions. I officially and formally mark my acceptance to
-                  participate at the event. *
-                </label>
-                <label>
-                  <input type="checkbox" name="my_checkbox2" /> I approve
-                  organizers to share the contact information and/or other
-                  details filled in this form with its sponsors/partners for
-                  marketing purposes.
-                </label>
-                <label>
-                  <input type="checkbox" name="my_checkbox3" /> (CONSENT) I
-                  provide my consent to organizers to send me latest updates via
-                  email with information related to their events and activities.
-                  purposes.
-                </label>
-                <label>
-                  <input type="checkbox" name="my_checkbox4" required /> I agree
-                  to the general Terms and conditions and Privacy policy of
-                  organizers.
-                  <br />
-                  *
-                  <span class="text-info"
-                    >Terms and Conditions | Privacy Policy</span
-                  >
-                </label>
-              </div>
-              <div class="col-md-4"></div>
             </div>
             <button type="submit" class="btn btn-info text-light mt-3">
               Submit
@@ -456,7 +202,6 @@
         <img
           src="./assets/images/dits.png"
           alt="img"
-          data-aos="zoom-out"
           width="120"
           class="event_logo"
         />
@@ -508,7 +253,7 @@
     <section id="info_section">
       <div class="container pt-5">
         <div class="row text-light">
-          <div class="col-md-6" data-aos="fade-up">
+          <div class="col-md-6">
             <h2 class="pb-3">
               Digital Innovation <br />
               and Transformation Summit
@@ -536,7 +281,7 @@
               relevance and impact on organizations.
             </p>
           </div>
-          <div class="col-md-6 px-5 text-end" data-aos="zoom-in">
+          <div class="col-md-6 px-5 text-end">
             <!-- <video
               src="./assets/videos/Globe_Atom.mp4"
               muted
@@ -557,7 +302,7 @@
     <section id="why_oman">
       <div class="container">
         <div class="row text-light py-5">
-          <div class="col-md-6" data-aos="fade-up">
+          <div class="col-md-6">
             <h2 class="mb-3">Why Oman?</h2>
             <p align="justify">
               Digital Transformation project, part of the National Digital
@@ -593,7 +338,7 @@
             <div class="read_more_contents"></div>
             <!-- <button class="btn" id="readmore_btn">Read More</button> -->
           </div>
-          <div class="col-md-6 px-5 d-none d-md-block" data-aos="zoom-out">
+          <div class="col-md-6 px-5 d-none d-md-block">
             <img
               src="./assets/images/69-696328_oman-flag-map-of-oman-removebg-preview.png"
               alt="img"
@@ -605,13 +350,11 @@
     </section>
 
     <section id="event_sessions">
-      <h2 class="text-center text-light py-5" data-aos="zoom-out">
-        Happenings at the Summit
-      </h2>
+      <h2 class="text-center text-light py-5">Happenings at the Summit</h2>
 
       <div class="container cards_container py-5">
         <!-- 1 -->
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card">
           <img
             src="./assets/images/insightfull session.jpg"
             alt="img"
@@ -632,7 +375,7 @@
           </div>
         </div>
         <!-- 2 -->
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card">
           <img src="./assets/images/technology case study.jpg" alt="img" />
           <div class="intro">
             <h1>Technology Use-cases</h1>
@@ -647,7 +390,7 @@
         </div>
         <!-- 3 -->
 
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card">
           <img src="./assets/images/blog-upload-b2bmx-2.3.png" alt="img" />
           <div class="intro">
             <h1>Tech Exhibitions!</h1>
@@ -660,7 +403,7 @@
           </div>
         </div>
         <!-- 4 -->
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card">
           <img src="./assets/images/meet-1.jpg" alt="img" />
           <div class="intro">
             <h1>Panel Discussions</h1>
@@ -674,7 +417,7 @@
           </div>
         </div>
         <!-- 5 -->
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card">
           <img src="./assets/images/business networking.jpg" alt="img" />
           <div class="intro">
             <h1>Business Networking</h1>
@@ -688,7 +431,7 @@
           </div>
         </div>
         <!-- 6 -->
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card">
           <img src="./assets/images/tech exbhibition.webp" alt="img" />
           <div class="intro">
             <h1>Product Showcase</h1>
@@ -707,39 +450,37 @@
 
     <section id="trending_topics">
       <div class="container py-5">
-        <h2 class="text-center text-light" data-aos="zoom-out">
-          Dynamic conference tracks
-        </h2>
+        <h2 class="text-center text-light">Dynamic conference tracks</h2>
         <div class="trending_topics_cards text-center">
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="200">
+          <div class="trending_card">
             <img src="./assets/images/icons/sustainability.png" alt="img" />
             <h4>Sustainability</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="400">
+          <div class="trending_card">
             <img src="./assets/images/icons/ai.png" alt="img" />
             <h4>AI</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="800">
+          <div class="trending_card">
             <img src="./assets/images/icons/fintech.png" alt="img" />
             <h4>FinTech</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="1000">
+          <div class="trending_card">
             <img src="./assets/images/icons/edutech.png" alt="img" />
             <h4>EduTech</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="1200">
+          <div class="trending_card">
             <img src="./assets/images/icons/healthtech.png" alt="img" />
             <h4>HealthTech</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="1400">
+          <div class="trending_card">
             <img src="./assets/images/icons/cyber_security.png" alt="img" />
             <h4>CyberTech</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="1800">
+          <div class="trending_card">
             <img src="./assets/images/icons/ufo_10177729.png" alt="img" />
             <h4>SpaceTech</h4>
           </div>
-          <div class="trending_card" data-aos="fade-up" data-aos-delay="2000">
+          <div class="trending_card">
             <img src="./assets/images/icons/cloud_technology.png" alt="img" />
             <h4>CloudTech</h4>
           </div>
@@ -756,7 +497,7 @@
         <div class="row py-5">
           <div class="col-md-2">
             <!-- 1 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="200">
+            <div class="cards_position">
               <img
                 src="./assets/images//icons/government-2.png"
                 width="50"
@@ -766,7 +507,7 @@
               <p>Government Digital transformation</p>
             </div>
             <!-- 2 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="400">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/enhacing_value.png"
                 width="50"
@@ -777,7 +518,7 @@
           </div>
           <div class="col-md-2">
             <!-- 3 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="800">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/cyber-security.png"
                 width="50"
@@ -786,11 +527,7 @@
               <p>Developing a Cyber Security Industry</p>
             </div>
             <!-- 4 -->
-            <div
-              class="cards_position"
-              data-aos="fade-up"
-              data-aos-delay="1000"
-            >
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/future.png"
                 width="50"
@@ -801,11 +538,7 @@
           </div>
           <div class="col-md-2">
             <!-- 5 -->
-            <div
-              class="cards_position"
-              data-aos="fade-up"
-              data-aos-delay="1200"
-            >
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/technology.png"
                 width="50"
@@ -814,7 +547,7 @@
               <p>Creating national industries in the digital economy</p>
             </div>
             <!-- 6 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="300">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/support.png"
                 width="50"
@@ -825,7 +558,7 @@
           </div>
           <div class="col-md-2">
             <!-- 7 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="500">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/dollar.png"
                 width="50"
@@ -836,7 +569,7 @@
               </p>
             </div>
             <!-- 8 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="700">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/technology.png"
                 width="50"
@@ -847,7 +580,7 @@
           </div>
           <div class="col-md-2">
             <!-- 9 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="900">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/benefit.png"
                 width="50"
@@ -859,11 +592,7 @@
               </p>
             </div>
             <!-- 10 -->
-            <div
-              class="cards_position"
-              data-aos="fade-up"
-              data-aos-delay="1100"
-            >
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/investment.png"
                 width="50"
@@ -874,7 +603,7 @@
           </div>
           <div class="col-md-2">
             <!-- 11 -->
-            <div class="cards_position" data-aos="fade-up" data-aos-delay="800">
+            <div class="cards_position">
               <img
                 src="./assets/images/icons/cloud-computing.png"
                 width="50"
@@ -883,11 +612,7 @@
               <p>Promoting Data centers and cloud services</p>
             </div>
             <!-- 12 -->
-            <div
-              class="cards_position"
-              data-aos="fade-up"
-              data-aos-delay="1200"
-            >
+            <div class="cards_position">
               <img src="./assets/images/icons/web.png" width="50" alt="img" />
               <p>Developing Digital Content</p>
             </div>
@@ -897,44 +622,38 @@
     </section>
 
     <section class="tech_categories_section pb-4">
-      <h2 class="py-3 text-center" data-aos="zoom-out">
+      <h2 class="py-3 text-center">
         Tech Innovators Exhibit and Sponsor <br />
         from These Categories
       </h2>
       <div
         class="container py-5 d-flex justify-content-between align-items-center flex-wrap"
       >
-        <p data-aos="zoom-out" data-aos-delay="200">Digital Transformation</p>
-        <p data-aos="zoom-out" data-aos-delay="500">Artificial Intelligence</p>
-        <p data-aos="zoom-out" data-aos-delay="700">Cyber Security</p>
-        <p data-aos="zoom-out" data-aos-delay="400">Education Technology</p>
-        <p data-aos="zoom-out" data-aos-delay="500">Smart Cities</p>
-        <p data-aos="zoom-out" data-aos-delay="700">Fintech Solutions</p>
-        <p data-aos="zoom-out" data-aos-delay="300">IOT</p>
-        <p data-aos="zoom-out" data-aos-delay="200">Blockchain</p>
-        <p data-aos="zoom-out" data-aos-delay="100">Big Data & Analytics</p>
-        <p data-aos="zoom-out" data-aos-delay="700">Emerging Technologies</p>
-        <p data-aos="zoom-out" data-aos-delay="900">
-          Cloud Services & Datacenter
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="500">Consumer Technologies</p>
-        <p data-aos="zoom-out" data-aos-delay="600">Ecommerce</p>
-        <p data-aos="zoom-out" data-aos-delay="800">Telecom and 5G</p>
-        <p data-aos="zoom-out" data-aos-delay="500">VR/AR/MR</p>
-        <p data-aos="zoom-out" data-aos-delay="400">3D Printing</p>
-        <p data-aos="zoom-out" data-aos-delay="200">Industry 4.0</p>
-        <p data-aos="zoom-out" data-aos-delay="200">Future Mobility</p>
-        <p data-aos="zoom-out" data-aos-delay="100">Robotic & Drones</p>
-        <p data-aos="zoom-out" data-aos-delay="500">Mobile Applications</p>
-        <p data-aos="zoom-out" data-aos-delay="200">Tech Startups</p>
-        <p data-aos="zoom-out" data-aos-delay="600">Electronics</p>
-        <p data-aos="zoom-out" data-aos-delay="200">Retail Tech</p>
-        <p data-aos="zoom-out" data-aos-delay="400">
-          Digital Marketing & Social Media
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="200">
-          Hardware and Software solutions
-        </p>
+        <p>Digital Transformation</p>
+        <p>Artificial Intelligence</p>
+        <p>Cyber Security</p>
+        <p>Education Technology</p>
+        <p>Smart Cities</p>
+        <p>Fintech Solutions</p>
+        <p>IOT</p>
+        <p>Blockchain</p>
+        <p>Big Data & Analytics</p>
+        <p>Emerging Technologies</p>
+        <p>Cloud Services & Datacenter</p>
+        <p>Consumer Technologies</p>
+        <p>Ecommerce</p>
+        <p>Telecom and 5G</p>
+        <p>VR/AR/MR</p>
+        <p>3D Printing</p>
+        <p>Industry 4.0</p>
+        <p>Future Mobility</p>
+        <p>Robotic & Drones</p>
+        <p>Mobile Applications</p>
+        <p>Tech Startups</p>
+        <p>Electronics</p>
+        <p>Retail Tech</p>
+        <p>Digital Marketing & Social Media</p>
+        <p>Hardware and Software solutions</p>
       </div>
     </section>
 
@@ -969,12 +688,12 @@
     </section>
 
     <section id="client_logos">
-      <h2 class="text-center pt-5" data-aos="zoom-out">
+      <h2 class="text-center pt-5">
         Some of the sponsors and partners <br />
         from the recent past
       </h2>
       <div class="container text-center pb-5">
-        <div class="row py-4" data-aos="fade-up">
+        <div class="row py-4">
           <div class="col-md-3">
             <img
               src="./assets/images/clients/Cisco-logo.png"
@@ -1009,7 +728,7 @@
           </div>
         </div>
         <!-- 2 -->
-        <div class="row py-4" data-aos="fade-up">
+        <div class="row py-4">
           <div
             class="col-md-3 d-flex justify-content-center align-items-center"
           >
@@ -1046,7 +765,7 @@
           </div>
         </div>
         <!-- 3 -->
-        <div class="row py-4" data-aos="fade-up">
+        <div class="row py-4">
           <div class="col-md-3">
             <img
               src="./assets/images/clients/building_cyber_security_logo.jpeg"
@@ -1083,7 +802,7 @@
           </div>
         </div>
         <!-- 4 -->
-        <div class="row py-4" data-aos="fade-up">
+        <div class="row py-4">
           <div
             class="col-md-3 d-flex justify-content-center align-items-center"
           >
@@ -1120,7 +839,7 @@
           </div>
         </div>
         <!-- 5 -->
-        <div class="row py-4" data-aos="fade-up">
+        <div class="row py-4">
           <div
             class="col-md-3 d-flex justify-content-center align-items-center"
           >
@@ -1157,7 +876,7 @@
           </div>
         </div>
         <!-- 6 -->
-        <div class="row py-4" data-aos="fade-up">
+        <div class="row py-4">
           <div class="col-md-3">
             <img
               src="./assets/images/clients/opra-624x320.jpg"
@@ -1192,13 +911,11 @@
     </section>
 
     <section id="themes_in_focus">
-      <h2 class="text-center py-5 text-light" data-aos="zoom-out">
-        Themes in Focus
-      </h2>
+      <h2 class="text-center py-5 text-light">Themes in Focus</h2>
 
       <div class="container text-light">
         <div class="themes_fc_container pb-5">
-          <div class="themes_fc_bg themes_fc_bg-1" data-aos="zoom-out">
+          <div class="themes_fc_bg themes_fc_bg-1">
             <img
               src="./assets/images/Group_26977_2x_f08f22dbd3.jpg"
               alt="img"
@@ -1210,7 +927,7 @@
               are shaping the landscape of digital transformation.
             </p>
           </div>
-          <div class="themes_fc_bg themes_fc_bg-2" data-aos="zoom-out">
+          <div class="themes_fc_bg themes_fc_bg-2">
             <img src="./assets/images/Group_26979_9fb6ff023f.jpg" alt="img" />
             <h4>Green Initiative Vision</h4>
             <p>
@@ -1221,7 +938,7 @@
               carbon-neutral future.
             </p>
           </div>
-          <div class="themes_fc_bg themes_fc_bg-3" data-aos="zoom-out">
+          <div class="themes_fc_bg themes_fc_bg-3">
             <img
               src="./assets/images/Group_27335_2x_343a9b45b3.jpg"
               alt="img"
@@ -1234,7 +951,7 @@
               experiences.
             </p>
           </div>
-          <div class="themes_fc_bg themes_fc_bg-4" data-aos="zoom-out">
+          <div class="themes_fc_bg themes_fc_bg-4">
             <img src="./assets/images/Union_53_2x_5404312c0b.jpg" alt="img" />
             <h4>Fintech Revolution</h4>
             <p>
@@ -1254,7 +971,6 @@
       </h2>
       <div
         class="container py-3 text-light d-flex justify-content-evenly flex-wrap"
-        data-aos="fade-up"
       >
         <div class="attendee_card">
           <img
@@ -1383,56 +1099,32 @@
       <div
         class="container py-5 d-flex justify-content-between align-items-center flex-wrap"
       >
-        <p data-aos="zoom-out" data-aos-delay="200">Chief Executive Officer</p>
-        <p data-aos="zoom-out" data-aos-delay="300">Chief Innovation Officer</p>
-        <p data-aos="zoom-out" data-aos-delay="100">Chief Technology Officer</p>
-        <p data-aos="zoom-out" data-aos-delay="500">
-          Chief Information Security Officer
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="600">Chief Digital Officer</p>
-        <p data-aos="zoom-out" data-aos-delay="700">
-          Chief Sustainability Officer
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="200">Chief Financial Officer</p>
-        <p data-aos="zoom-out" data-aos-delay="400">Head of Digital Banking</p>
-        <p data-aos="zoom-out" data-aos-delay="300">Chief Operating Officer</p>
-        <p data-aos="zoom-out" data-aos-delay="700">Chief Data Scientist</p>
-        <p data-aos="zoom-out" data-aos-delay="800">
-          Chief Cyber Security Officer
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="200">
-          Chief Strategy Transformation Officer
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="300">Chief Data Analyst</p>
-        <p data-aos="zoom-out" data-aos-delay="600">Head of Policy</p>
-        <p data-aos="zoom-out" data-aos-delay="500">
-          Head of Digital Transformation
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="600">
-          Head of Cloud infrastructure
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="400">Managing Director</p>
-        <p data-aos="zoom-out" data-aos-delay="100">Head of Institution</p>
-        <p data-aos="zoom-out" data-aos-delay="700">
-          Head of IT Infrastructure
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="500">Innovation Team Leader</p>
-        <p data-aos="zoom-out" data-aos-delay="400">
-          Head of Data Science and Analytics
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="200">
-          Digital Advisors - Government sector
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="800">
-          Group Head Digital Transformation
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="700">Head of Data Engineering</p>
-        <p data-aos="zoom-out" data-aos-delay="400">
-          Head of Robotic Process Automation
-        </p>
-        <p data-aos="zoom-out" data-aos-delay="300">
-          Procurement heads – Digital
-        </p>
+        <p>Chief Executive Officer</p>
+        <p>Chief Innovation Officer</p>
+        <p>Chief Technology Officer</p>
+        <p>Chief Information Security Officer</p>
+        <p>Chief Digital Officer</p>
+        <p>Chief Sustainability Officer</p>
+        <p>Chief Financial Officer</p>
+        <p>Head of Digital Banking</p>
+        <p>Chief Operating Officer</p>
+        <p>Chief Data Scientist</p>
+        <p>Chief Cyber Security Officer</p>
+        <p>Chief Strategy Transformation Officer</p>
+        <p>Chief Data Analyst</p>
+        <p>Head of Policy</p>
+        <p>Head of Digital Transformation</p>
+        <p>Head of Cloud infrastructure</p>
+        <p>Managing Director</p>
+        <p>Head of Institution</p>
+        <p>Head of IT Infrastructure</p>
+        <p>Innovation Team Leader</p>
+        <p>Head of Data Science and Analytics</p>
+        <p>Digital Advisors - Government sector</p>
+        <p>Group Head Digital Transformation</p>
+        <p>Head of Data Engineering</p>
+        <p>Head of Robotic Process Automation</p>
+        <p>Procurement heads – Digital</p>
       </div>
     </section>
 
@@ -1540,34 +1232,6 @@
       </div>
     </footer>
 
-    <script>
-      // Function to fetch data from the REST Countries API and sort alphabetically
-      function fetchDataAndSort() {
-        fetch("https://restcountries.com/v3.1/all")
-          .then((response) => response.json())
-          .then((data) => {
-            // Sort the data alphabetically by country name
-            data.sort((a, b) => a.name.common.localeCompare(b.name.common));
-
-            var dropdown = document.getElementById("country");
-
-            // Loop through the sorted data and populate the dropdown
-            data.forEach((country) => {
-              var option = document.createElement("option");
-              option.value = country.cca2;
-              option.text = country.name.common;
-              dropdown.appendChild(option);
-            });
-          })
-          .catch((error) => {
-            console.error("Error fetching data: ", error);
-          });
-      }
-
-      // Call the function to fetch and populate the dropdown
-      fetchDataAndSort();
-    </script>
-
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
     <script>
       $(window).scroll(function () {
@@ -1615,13 +1279,5 @@
     <script src="./assets/bootstrap/js/bootstrap.js.map"></script>
     <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="./assets/bootstrap/js/bootstrap.min.js.map"></script>
-
-    <script>
-      AOS.init({
-        duration: 800, // Duration of animation in milliseconds
-        easing: "ease-in-out", // Easing function to control the animation speed
-        once: false, // Whether to trigger animations only once or every time element comes into view
-      });
-    </script>
   </body>
 </html>

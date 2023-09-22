@@ -67,7 +67,8 @@ p {
   font-weight: 800;
   text-transform: uppercase;
 }
-.nav div.main_list ul li .bt {
+.nav div.main_list ul li .bt,
+#video-section .bt {
   background-color: #75cde8;
   padding: 12px;
   height: 30px;
@@ -75,8 +76,18 @@ p {
 }
 .nav div.main_list ul li .bt:hover {
   background-color: transparent;
-  color: #825248;
+  color: #fff;
   border: 1px solid #fff;
+  cursor: pointer;
+}
+#video-section .bt {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+#video-section .bt:hover {
+  background-color: transparent;
+  border: 2px solid #fff;
 }
 .nav div.main_list ul li a:hover {
   color: #979998;
@@ -148,6 +159,58 @@ p {
 .navTrigger.active i:nth-child(3) {
   -webkit-animation: inBtm 0.8s forwards;
   animation: inBtm 0.8s forwards;
+}
+
+/* Styles for the popup container */
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 12%;
+  max-height: 90vh;
+  left: 8%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: auto;
+}
+
+/* .popup-container {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 8%;
+  max-height: 90vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: auto; 
+} */
+/* ... Rest of your CSS ... */
+
+/* Styles for the popup */
+
+/* Close button styles */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
+form label {
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .popup-container {
+    left: 0;
+  }
+  .popup {
+    max-width: 90%;
+  }
 }
 
 @-webkit-keyframes inM {
@@ -361,7 +424,6 @@ p {
 }
 .video-content #timer .timer_container {
   font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .video-content h4 {
@@ -372,7 +434,7 @@ p {
 .video-content #timer .timer_container span {
   padding: 6px 12px;
   background-color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 6px;
   color: #111;
 }
@@ -483,8 +545,9 @@ p {
   box-sizing: border-box;
   position: absolute;
   bottom: 0px;
-  background: #75cde8;
+  background: #825248;
   transition: 0.5s;
+  color: #fff;
 }
 
 .intro h1 {
@@ -577,7 +640,7 @@ p {
   flex: 1;
   padding: 20px;
   box-sizing: border-box;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   border-radius: 12px;
 }
 
@@ -623,6 +686,15 @@ p {
 }
 #themes_in_focus p {
   font-weight: 600;
+}
+#info_section .container,
+#why_oman .container,
+#event_sessions .container,
+#trending_topics .container {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
 }
 #themes_in_focus .themes_fc_bg {
   background-color: transparent;
@@ -770,6 +842,11 @@ footer input::placeholder {
 }
 
 /************************ Media qurey section***************************/
+@media screen and (min-width: 1024px) {
+  .event_logo {
+    display: inline;
+  }
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
@@ -789,6 +866,9 @@ footer input::placeholder {
 }
 
 @media screen and (max-width: 768px) {
+  .event_logo {
+    display: none;
+  }
   .navTrigger {
     display: block;
   }
