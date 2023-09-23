@@ -53,55 +53,86 @@
 
     <script>
       function sendMail() {
-        var checkbox1 = document.getElementById("my_checkbox1");
-        var checkbox2 = document.getElementById("my_checkbox2");
-        var checkbox3 = document.getElementById("my_checkbox3");
-        var checkbox4 = document.getElementById("my_checkbox4");
 
-        // Get the checkbox state message based on whether it's checked or not
-        var checkboxState1 = checkbox1.checked
+        const registrationCode= document.getElementById("registrationCode").value;
+        const title= document.getElementById("title").value;
+        const firstname= document.getElementById("firstname").value;
+        const lastname= document.getElementById("lastname").value;
+        const jobtitle= document.getElementById("jobtitle").value;
+        const companyname= document.getElementById("companyname").value;
+        const email= document.getElementById("email").value;
+        const phone= document.getElementById("mobilePhone").value;
+        const industry= document.getElementById("industry").value;
+        const country= document.getElementById("country").value;
+        const employees= document.getElementById("employees").value;
+        const solutions= document.getElementById("solutions").value;
+        const role= document.getElementById("role").value;
+        const attend= document.getElementById("attend").value;
+
+        const checkbox1 = document.getElementById("my_checkbox1");
+        const checkbox2 = document.getElementById("my_checkbox2");
+        const checkbox3 = document.getElementById("my_checkbox3");
+        const checkbox4 = document.getElementById("my_checkbox4");
+
+     if (
+      !registrationCode ||
+      !title ||
+      !firstname ||
+      !lastname || jobtitle ||companyname ||email ||phone || industry ||country||employees || solutions || role || attend 
+      // ... Add conditions for other required fields here ...
+    ) {
+      alert("Please fill in all required fields.");
+      return; // Exit the function early if any field is empty
+    }
+
+    if(checkbox1.checked || checkbox4.checked){
+      alert('You must select the required checkbox.');
+      return;
+    }
+
+    // Get the checkbox state message based on whether it's checked or not
+        const checkboxState1 = checkbox1.checked
           ? "The checkbox is checked."
           : "The checkbox is not checked.";
-        var checkboxState2 = checkbox2.checked
+        const checkboxState2 = checkbox2.checked
           ? "The checkbox is checked."
           : "The checkbox is not checked.";
-        var checkboxState3 = checkbox3.checked
+        const checkboxState3 = checkbox3.checked
           ? "The checkbox is checked."
           : "The checkbox is not checked.";
-        var checkboxState4 = checkbox4.checked
+        const checkboxState4 = checkbox4.checked
           ? "The checkbox is checked."
           : "The checkbox is not checked.";
 
-        var params = {
-          registrationCode: document.getElementById("registrationCode").value,
-          title: document.getElementById("title").value,
-          firstname: document.getElementById("firstname").value,
-          lastname: document.getElementById("lastname").value,
-          jobtitle: document.getElementById("jobtitle").value,
-          companyname: document.getElementById("companyname").value,
-          email: document.getElementById("email").value,
-          phone: document.getElementById("mobilePhone").value,
-          industry: document.getElementById("industry").value,
-          country: document.getElementById("country").value,
-          employees: document.getElementById("employees").value,
-          solutions: document.getElementById("solutions").value,
-          role: document.getElementById("role").value,
-          attend: document.getElementById("attend").value,
+        const params = {
+          registrationCode,
+          title,
+          firstname,
+          lastname,
+          jobtitle,
+          companyname,
+          email,
+          phone,
+          industry,
+          country,
+          employees,
+          solutions,
+          role,
+          attend,
 
-          referee_fullname: document.getElementById("referee_fullname").value,
-          referee_companyname: document.getElementById("referee_companyname")
-            .value,
-          referee_jobtitle: document.getElementById("referee_jobtitle").value,
-          referee_emailid: document.getElementById("referee_emailid").value,
-          referee_phoneno: document.getElementById("referee_phoneno").value,
+          referee_fullname,
+          referee_companyname,
+          referee_jobtitle,
+          referee_emaili,
+          referee_phoneno,
 
           checkboxState1,
           checkboxState2,
           checkboxState3,
           checkboxState4,
         };
-        var serviceID = "service_xgm708t";
-        var templateID = "template_ju5hv1k";
+        const serviceID = "service_xgm708t";
+        const templateID = "template_ju5hv1k";
 
         emailjs
           .send(serviceID, templateID, params)
@@ -129,7 +160,7 @@
             console.log(res);
             alert("Your message has sent succesfully");
           })
-          .catch((error) => console.log(error));
+          .catch((error) => alert(error));
       }
     </script>
   </head>
