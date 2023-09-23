@@ -67,7 +67,6 @@
         const employees= document.getElementById("employees").value;
         const solutions= document.getElementById("solutions").value;
         const role= document.getElementById("role").value;
-        const attend= document.getElementById("attend").value;
 
         const checkbox1 = document.getElementById("my_checkbox1");
         const checkbox2 = document.getElementById("my_checkbox2");
@@ -78,7 +77,7 @@
       !registrationCode ||
       !title ||
       !firstname ||
-      !lastname || jobtitle ||companyname ||email ||phone || industry ||country||employees || solutions || role || attend 
+      !lastname || jobtitle ||companyname ||email ||phone || industry ||country||employees || solutions || role 
       // ... Add conditions for other required fields here ...
     ) {
       alert("Please fill in all required fields.");
@@ -118,7 +117,6 @@
           employees,
           solutions,
           role,
-          attend,
 
           referee_fullname,
           referee_companyname,
@@ -150,7 +148,6 @@
             document.getElementById("employees").value = "";
             document.getElementById("solutions").value = "";
             document.getElementById("role").value = "";
-            document.getElementById("attend").value = "";
 
             document.getElementById("referee_fullname").value = "";
             document.getElementById("referee_companyname").value = "";
@@ -447,16 +444,6 @@
                   </option>
                 </select>
               </div>
-              <div>
-                <label for="attend">I would like to attend *</label>
-                <select name="attend" id="attend" class="form-control" required>
-                  <option value="" selected disabled></option>
-                  <option value="DATE-AI Show, Oman">DATE-AI Show, Oman</option>
-                  <option value="DATE-Fintech show, Oman">
-                    DATE-Fintech show, Oman
-                  </option>
-                </select>
-              </div>
             </div>
           </div>
 
@@ -628,7 +615,7 @@
 
     <section id="info_section">
       <div class="container pt-5">
-        <div class="row text-light">
+        <div class="row">
           <div class="col-md-6" data-aos="fade-up">
             <h2 class="pb-3">
               Digital Innovation <br />
@@ -677,7 +664,7 @@
 
     <section id="why_oman">
       <div class="container">
-        <div class="row text-light py-5">
+        <div class="row py-5">
           <div class="col-md-6" data-aos="fade-up">
             <h2 class="mb-3">Why Oman?</h2>
             <p align="justify">
@@ -726,7 +713,7 @@
     </section>
 
     <section id="event_sessions">
-      <h2 class="text-center text-light py-5" data-aos="zoom-out">
+      <h2 class="text-center py-5" data-aos="zoom-out">
         Happenings at the Summit
       </h2>
 
@@ -828,7 +815,7 @@
 
     <section id="trending_topics">
       <div class="container py-5">
-        <h2 class="text-center text-light" data-aos="zoom-out">
+        <h2 class="text-center" data-aos="zoom-out">
           Dynamic conference tracks
         </h2>
         <div class="trending_topics_cards text-center">
@@ -869,7 +856,7 @@
     </section>
 
     <section id="topics_card">
-      <h2 class="text-center text-light">
+      <h2 class="text-center">
         The topic of discussions revolves around <br />
         the vision for the digital economy
       </h2>
@@ -1313,33 +1300,27 @@
     </section>
 
     <section id="themes_in_focus">
-      <h2 class="text-center py-5 text-light" data-aos="zoom-out">
+      <h2 class="text-center py-5" data-aos="zoom-out">
         Themes in Focus
       </h2>
 
-      <div class="container text-light">
+      <div class="container">
         <div class="themes_fc_container pb-5">
           <div class="themes_fc_bg themes_fc_bg-1" data-aos="zoom-out">
             <img
               src="./assets/images/Group_26977_2x_f08f22dbd3.jpg"
               alt="img"
             />
-            <h4>Future Tech Frontiers</h4>
+            <h4>Pioneering the Technological Horizons of Tomorrow</h4>
             <p>
-              Delve into the cutting-edge developments in AI & Robotics, Data,
-              Cloud, network & storage, IoT, 5G, and automotive technology that
-              are shaping the landscape of digital transformation.
+              Explore the forefront of innovation in AI & Robotics, Data, Cloud, networking & storage, IoT, 5G, and automotive technology, all of which are molding the contours of the digital transformation landscape.
             </p>
           </div>
           <div class="themes_fc_bg themes_fc_bg-2" data-aos="zoom-out">
             <img src="./assets/images/Group_26979_9fb6ff023f.jpg" alt="img" />
             <h4>Green Initiative Vision</h4>
             <p>
-              Explore the latest innovations in alternative energy, recycling
-              technology, green cloud solutions and building an environmentally
-              friendly work-space and society, other sustainable future tech
-              driving us towards a more environmentally conscious and
-              carbon-neutral future.
+             Discover the cutting-edge advancements in sustainable technology, encompassing alternative energy sources, recycling innovations, eco-friendly cloud solutions, and the creation of environmentally conscious workplaces and societies. These sustainable future technologies are propelling us toward a greener, carbon-neutral future.
             </p>
           </div>
           <div class="themes_fc_bg themes_fc_bg-3" data-aos="zoom-out">
@@ -1347,21 +1328,16 @@
               src="./assets/images/Group_27335_2x_343a9b45b3.jpg"
               alt="img"
             />
-            <h4>Beyond Experience</h4>
+            <h4>Transcending the Boundaries of Experience</h4>
             <p>
-              Step into a world of immersive technology with the Metaverse, AR,
-              VR, MR, Smart Wearables, Web 3.0, and Gaming, offering
-              unparalleled human-machine interaction and redefining our digital
-              experiences.
+              Enter a realm of immersive technology through the Metaverse, AR, VR, MR, Smart Wearables, Web 3.0, and Gaming, ushering in a new era of human-machine interaction that revolutionizes our digital encounters.
             </p>
           </div>
           <div class="themes_fc_bg themes_fc_bg-4" data-aos="zoom-out">
             <img src="./assets/images/Union_53_2x_5404312c0b.jpg" alt="img" />
             <h4>Fintech Revolution</h4>
             <p>
-              Unlock the potential of digital finance and payments through SaaS
-              platforms, embedded finance, blockchain, digital currency, and
-              contactless technology, revolutionizing the financial industry.
+              Unleash the capabilities of digital finance and payment systems via SaaS platforms, embedded finance, blockchain, digital currency, and contactless technology, ushering in a transformative wave in the financial sector.
             </p>
           </div>
         </div>
@@ -1369,12 +1345,12 @@
     </section>
 
     <section id="who_should_attend">
-      <h2 class="text-center text-light py-4">
+      <h2 class="text-center py-4">
         Diverse Attendees Representing Various <br />
         Industries and Job Titles
       </h2>
       <div
-        class="container py-3 text-light d-flex justify-content-evenly flex-wrap"
+        class="container py-3 d-flex justify-content-evenly flex-wrap"
         data-aos="fade-up"
       >
         <div class="attendee_card">

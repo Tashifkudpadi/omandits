@@ -483,7 +483,6 @@ form label {
 .tech_categories_section h2 {
   text-transform: capitalize;
 }
-.tech_categories_section h2,
 #themes_in_focus h2 #event_sessions h2 {
   color: #fff;
   font-weight: 700;
@@ -505,17 +504,6 @@ form label {
   opacity: 0.9;
 }
 
-#event_sessions,
-#topics_card,
-#who_should_attend {
-  background-image: url("../images/bg-1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  /* background-color: #a399b2;
-  background-image: linear-gradient(147deg, #824fcf 0%, #ccbee1 74%); */
-}
 .cards_container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
@@ -614,14 +602,6 @@ form label {
   transition: transform 330ms ease-in-out;
 }
 
-.tech_categories_section {
-  background-image: url("../images/bg-1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  text-align: center;
-}
 .tech_categories_section .container p {
   background-color: #8a6161;
   border-radius: 12px;
@@ -662,13 +642,7 @@ form label {
 .themes_fc_bg-3 {
   margin-right: 20px;
 }
-#themes_in_focus {
-  background-image: url("../images/bg-1.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+
 #themes_in_focus .themes_fc_bg img {
   width: 80px;
   height: 80px;
@@ -709,15 +683,6 @@ form label {
     rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
-#trending_topics,
-#info_section,
-#why_oman {
-  background-image: url("../images/bg-1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
 #client_logos .row .energy {
   width: 150px;
 }
@@ -740,7 +705,6 @@ form label {
   height: 220px;
   width: 100%;
   text-align: center;
-  color: #fff;
 }
 /* #topics_card .col-md-2 .cards_position:nth-child(even) {
   
