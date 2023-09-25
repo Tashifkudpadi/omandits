@@ -165,9 +165,9 @@ p {
 .popup-container {
   display: none;
   position: fixed;
-  top: 12%;
-  max-height: 90vh;
-  left: 8%;
+  top: 0;
+  max-height: 100vh;
+  /* left: 8%; */
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
@@ -195,8 +195,15 @@ p {
   position: absolute;
   top: 10px;
   right: 40px;
-  font-size: 24px;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  background-color: #3ab7dd;
   cursor: pointer;
+  border-radius: 50%;
 }
 form label {
   font-size: 0.8rem;
@@ -464,11 +471,18 @@ form label {
 #trending_topics h2,
 #event_heading h2,
 #topics_card h2,
-#client_logos h2 {
+#client_logos h2,
+.tech_categories_section h2,
+#sponsors h2 {
   color: black;
   font-size: 2rem;
   font-weight: 700;
   text-transform: capitalize;
+  background: -webkit-linear-gradient(#8e8d8d, #3ab7dd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 #info_section h2,
 #why_oman h2,
@@ -478,6 +492,11 @@ form label {
   font-weight: 700;
   font-size: 2rem;
   text-transform: capitalize;
+  background: -webkit-linear-gradient(#8e8d8d, #3ab7dd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 #themes_in_focus h2,
 .tech_categories_section h2 {
@@ -488,12 +507,12 @@ form label {
   font-weight: 700;
 }
 
-#why_oman #readmore_btn,
+#why_oman .bt,
 #sponsor_btn {
   background-color: #46454a;
   color: #fff;
 }
-#why_oman #readmore_btn:hover,
+#why_oman .bt:hover,
 #sponsor_btn:hover {
   color: #825248;
   background-color: transparent;
@@ -502,6 +521,7 @@ form label {
 #info_section p,
 #why_oman p {
   opacity: 0.9;
+  font-weight: 700;
 }
 
 .cards_container {
@@ -678,9 +698,17 @@ form label {
   padding: 40px 20px;
   /* border: 1px solid white; */
 
+  /* box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
+    rgba(113, 80, 101, 0.2) 15px 15px, rgba(64, 56, 61, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px; */
   box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
     rgba(113, 80, 101, 0.2) 15px 15px, rgba(64, 56, 61, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+    rgba(240, 46, 170, 0.05) 25px 25px, rgb(97, 67, 67) -5px -5px,
+    rgba(123, 68, 103, 0.3) -10px -10px, rgba(113, 80, 101, 0.2) -15px -15px,
+    rgba(64, 56, 61, 0.1) -20px -20px, rgba(240, 46, 170, 0.05) -25px -25px;
+  /* box-shadow: 5px 5px rgb(97, 67, 67), -5px -5px rgba(123, 68, 103, 0.3),
+    5px -5px rgba(113, 80, 101, 0.2), -5px 5px rgba(64, 56, 61, 0.1),
+    0px 0px rgba(240, 46, 170, 0.05); */
 }
 
 #client_logos .row .energy {
