@@ -72,6 +72,7 @@ p {
   background-color: #75cde8;
   padding: 12px;
   height: 30px;
+  cursor: pointer;
   border-radius: 8px;
 }
 .nav div.main_list ul li .bt:hover {
@@ -162,7 +163,8 @@ p {
 }
 
 /* Styles for the popup container */
-.popup-container {
+.delegate-container,
+.sponsor-container {
   display: none;
   position: fixed;
   top: 0;
@@ -175,7 +177,7 @@ p {
   overflow: auto;
 }
 
-/* .popup-container {
+/* .delegate-container {
   display: none;
   position: fixed;
   top: 10%;
@@ -191,7 +193,8 @@ p {
 /* Styles for the popup */
 
 /* Close button styles */
-.close {
+.delegateClose,
+.sponsorClose {
   position: absolute;
   top: 10px;
   right: 40px;
@@ -212,7 +215,7 @@ form label {
 
 /* Responsive styling */
 @media (max-width: 600px) {
-  .popup-container {
+  .delegate-container {
     left: 0;
   }
   .popup {
@@ -507,16 +510,14 @@ form label {
   font-weight: 700;
 }
 
-#why_oman .bt,
-#sponsor_btn {
-  background-color: #46454a;
+#why_oman .bt {
+  background-color: #75cde8;
   color: #fff;
 }
-#why_oman .bt:hover,
-#sponsor_btn:hover {
+#why_oman .bt:hover {
   color: #825248;
   background-color: transparent;
-  border: 2px solid #46454a;
+  border: 2px solid #75cde8;
 }
 #info_section p,
 #why_oman p {
@@ -553,7 +554,7 @@ form label {
   box-sizing: border-box;
   position: absolute;
   bottom: 0px;
-  background: #825248;
+  background: #75cde8;
   transition: 0.5s;
   color: #fff;
 }
@@ -623,7 +624,7 @@ form label {
 }
 
 .tech_categories_section .container p {
-  background-color: #8a6161;
+  background-color: #75cde8;
   border-radius: 12px;
   margin: 6px;
   padding: 12px 20px;

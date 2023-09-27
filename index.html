@@ -50,116 +50,6 @@
         emailjs.init("hO0rGL2q2-CdEsIN5");
       })();
     </script>
-
-    <script>
-      function sendMail() {
-
-        const registrationCode= document.getElementById("registrationCode").value;
-        const title= document.getElementById("title").value;
-        const firstname= document.getElementById("firstname").value;
-        const lastname= document.getElementById("lastname").value;
-        const jobtitle= document.getElementById("jobtitle").value;
-        const companyname= document.getElementById("companyname").value;
-        const email= document.getElementById("email").value;
-        const phone= document.getElementById("mobilePhone").value;
-        const industry= document.getElementById("industry").value;
-        const country= document.getElementById("country").value;
-        const employees= document.getElementById("employees").value;
-        const solutions= document.getElementById("solutions").value;
-        const role= document.getElementById("role").value;
-
-        const checkbox1 = document.getElementById("my_checkbox1");
-        const checkbox2 = document.getElementById("my_checkbox2");
-        const checkbox3 = document.getElementById("my_checkbox3");
-        const checkbox4 = document.getElementById("my_checkbox4");
-
-     if (
-      !registrationCode ||
-      !title ||
-      !firstname ||
-      !lastname || jobtitle ||companyname ||email ||phone || industry ||country||employees || solutions || role 
-      // ... Add conditions for other required fields here ...
-    ) {
-      alert("Please fill in all required fields.");
-      return; // Exit the function early if any field is empty
-    }
-
-    if(checkbox1.checked || checkbox4.checked){
-      alert('You must select the required checkbox.');
-      return;
-    }
-
-    // Get the checkbox state message based on whether it's checked or not
-        const checkboxState1 = checkbox1.checked
-          ? "The checkbox is checked."
-          : "The checkbox is not checked.";
-        const checkboxState2 = checkbox2.checked
-          ? "The checkbox is checked."
-          : "The checkbox is not checked.";
-        const checkboxState3 = checkbox3.checked
-          ? "The checkbox is checked."
-          : "The checkbox is not checked.";
-        const checkboxState4 = checkbox4.checked
-          ? "The checkbox is checked."
-          : "The checkbox is not checked.";
-
-        const params = {
-          registrationCode,
-          title,
-          firstname,
-          lastname,
-          jobtitle,
-          companyname,
-          email,
-          phone,
-          industry,
-          country,
-          employees,
-          solutions,
-          role,
-
-          referee_fullname,
-          referee_companyname,
-          referee_jobtitle,
-          referee_emaili,
-          referee_phoneno,
-
-          checkboxState1,
-          checkboxState2,
-          checkboxState3,
-          checkboxState4,
-        };
-        const serviceID = "service_xgm708t";
-        const templateID = "template_ju5hv1k";
-
-        emailjs
-          .send(serviceID, templateID, params)
-          .then((res) => {
-            document.getElementById("registrationCode").value = "";
-            document.getElementById("title").value = "";
-            document.getElementById("firstname").value = "";
-            document.getElementById("lastname").value = "";
-            document.getElementById("jobtitle").value = "";
-            document.getElementById("companyname").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("mobilePhone").value = "";
-            document.getElementById("industry").value = "";
-            document.getElementById("country").value = "";
-            document.getElementById("employees").value = "";
-            document.getElementById("solutions").value = "";
-            document.getElementById("role").value = "";
-
-            document.getElementById("referee_fullname").value = "";
-            document.getElementById("referee_companyname").value = "";
-            document.getElementById("referee_jobtitle").value = "";
-            document.getElementById("referee_emailid").value = "";
-            document.getElementById("referee_phoneno").value = "";
-            console.log(res);
-            alert("Your message has sent succesfully");
-          })
-          .catch((error) => alert(error));
-      }
-    </script>
   </head>
   <body>
     <nav class="nav">
@@ -178,9 +68,9 @@
             <li><a href="#">Partners</a></li>
             <li><a href="#">Agenda</a></li>
             <li>
-              <a class="bt" id="openPopupBtn">Delegate Enquiry</a>
+              <a class="bt openDelegateBtn">Delegate Enquiry</a>
             </li>
-            <li><a class="bt">Sponsor Enquiry</a></li>
+            <li><a class="bt openSponsorBtn">Sponsor Enquiry</a></li>
           </ul>
         </div>
         <span class="navTrigger">
@@ -193,19 +83,18 @@
 
     <section>
       <div
-        class="container-fluid bg-light popup-container p-4 rounded"
-        id="popupContainer"
+        class="container-fluid bg-light delegate-container p-4 rounded"
+        id="delegateFormContainer"
       >
         <div class="popup">
-          <span class="close" id="closePopupBtn">&times;</span>
-          <h4>REGISTER FOR YOUR COMPLIMENTARY EXPO PASS</h4>
+          <span class="delegateClose" id="closeDelegateBtn">&times;</span>
+          <h4>Delegate registration form</h4>
 
-          <iframe name="iframe" style="display: none"></iframe>
+          <!-- <iframe name="iframe" style="display: none"></iframe>
           <form
             target="iframe"
-            id="popupForm"
-          >
-          <div class="row" id="popupForm">
+          > -->
+          <div class="row">
             <div>
               <input
                 type="text"
@@ -547,10 +436,105 @@
             </div>
             <div class="col-md-4"></div>
           </div>
-          <button class="btn btn-info text-light mt-3" type="submit" onclick="sendMail()">
+          <button
+            class="btn btn-info text-light mt-3"
+            type="submit"
+            onclick="sendMail()"
+          >
             Submit
           </button>
           <!-- </form> -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="container-fluid bg-light sponsor-container p-4 rounded"
+        id="sponsorFormContainer"
+      >
+        <div class="popup">
+          <span class="sponsorClose" id="closeSponsorBtn">&times;</span>
+          <h4>Sponsor Enquiry form</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <label for="sp_fullname">Full name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sp_fullname"
+                  name="sp_fullname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="sp_company">Company *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sp_company"
+                  name="sp_company"
+                  required
+                />
+              </div>
+              <div>
+                <label for="sp_email">Email *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sp_email"
+                  name="sp_email"
+                  required
+                />
+              </div>
+              <div>
+                <label for="sp_city">City *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sp_city"
+                  name="sp_city"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="sp_jbTitle">Job Title *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sp_jbTitle"
+                  name="sp_jbTitle"
+                  required
+                />
+              </div>
+              <div>
+                <label for="sp_mobile">Mobile *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sp_mobile"
+                  name="sp_mobile"
+                  required
+                />
+              </div>
+              <div>
+                <label for="country">Country:</label>
+                <select
+                  id="country"
+                  class="form-control"
+                  name="country"
+                  required
+                >
+                  <option value="" disabled selected>Select a country</option>
+
+                  <!-- JavaScript will populate this dropdown -->
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -694,8 +678,8 @@
               (USD 3.2 billion) in 2019.
             </p>
             <div class="d-flex align-items-center py-4">
-              <a class="bt btn" id="openPopupBtn">Delegate Enquiry</a>
-             <a class="bt btn mx-3">Sponsor Enquiry</a>
+              <a class="bt btn openDelegateBtn">Delegate Enquiry</a>
+              <a class="bt btn mx-3 openSponsorBtn">Sponsor Enquiry</a>
             </div>
             <div class="read_more_contents"></div>
             <!-- <button class="btn" id="readmore_btn">Read More</button> -->
@@ -1299,9 +1283,7 @@
     </section>
 
     <section id="themes_in_focus">
-      <h2 class="text-center py-5" data-aos="zoom-out">
-        Themes in Focus
-      </h2>
+      <h2 class="text-center py-5" data-aos="zoom-out">Themes in Focus</h2>
 
       <div class="container">
         <div class="themes_fc_container pb-5">
@@ -1312,14 +1294,22 @@
             />
             <h4>Pioneering the Technological Horizons of Tomorrow</h4>
             <p>
-              Explore the forefront of innovation in AI & Robotics, Data, Cloud, networking & storage, IoT, 5G, and automotive technology, all of which are molding the contours of the digital transformation landscape.
+              Explore the forefront of innovation in AI & Robotics, Data, Cloud,
+              networking & storage, IoT, 5G, and automotive technology, all of
+              which are molding the contours of the digital transformation
+              landscape.
             </p>
           </div>
           <div class="themes_fc_bg themes_fc_bg-2" data-aos="zoom-out">
             <img src="./assets/images/Group_26979_9fb6ff023f.jpg" alt="img" />
             <h4>Green Initiative Vision</h4>
             <p>
-             Discover the cutting-edge advancements in sustainable technology, encompassing alternative energy sources, recycling innovations, eco-friendly cloud solutions, and the creation of environmentally conscious workplaces and societies. These sustainable future technologies are propelling us toward a greener, carbon-neutral future.
+              Discover the cutting-edge advancements in sustainable technology,
+              encompassing alternative energy sources, recycling innovations,
+              eco-friendly cloud solutions, and the creation of environmentally
+              conscious workplaces and societies. These sustainable future
+              technologies are propelling us toward a greener, carbon-neutral
+              future.
             </p>
           </div>
           <div class="themes_fc_bg themes_fc_bg-3" data-aos="zoom-out">
@@ -1329,14 +1319,20 @@
             />
             <h4>Transcending the Boundaries of Experience</h4>
             <p>
-              Enter a realm of immersive technology through the Metaverse, AR, VR, MR, Smart Wearables, Web 3.0, and Gaming, ushering in a new era of human-machine interaction that revolutionizes our digital encounters.
+              Enter a realm of immersive technology through the Metaverse, AR,
+              VR, MR, Smart Wearables, Web 3.0, and Gaming, ushering in a new
+              era of human-machine interaction that revolutionizes our digital
+              encounters.
             </p>
           </div>
           <div class="themes_fc_bg themes_fc_bg-4" data-aos="zoom-out">
             <img src="./assets/images/Union_53_2x_5404312c0b.jpg" alt="img" />
             <h4>Fintech Revolution</h4>
             <p>
-              Unleash the capabilities of digital finance and payment systems via SaaS platforms, embedded finance, blockchain, digital currency, and contactless technology, ushering in a transformative wave in the financial sector.
+              Unleash the capabilities of digital finance and payment systems
+              via SaaS platforms, embedded finance, blockchain, digital
+              currency, and contactless technology, ushering in a transformative
+              wave in the financial sector.
             </p>
           </div>
         </div>
@@ -1555,8 +1551,8 @@
           empowering, inspiring, and enriching the global tech community
         </p>
         <div>
-          <a href="#" target="_blank" class="bt">DELEGATE ENQUIRY</a>
-          <a href="#" target="_blank" class="bt">SPONSOR ENQUIRY</a>
+          <a class="bt openDelegateBtn">DELEGATE ENQUIRY</a>
+          <a class="bt openSponsorBtn">SPONSOR ENQUIRY</a>
         </div>
       </div>
     </section>
