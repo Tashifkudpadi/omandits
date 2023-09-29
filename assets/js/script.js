@@ -98,6 +98,12 @@ function sendMail() {
   const solutions = document.getElementById("solutions").value;
   const role = document.getElementById("role").value;
 
+  const referee_fullname = document.getElementById("referee_fullname")
+  const referee_companyname = document.getElementById("referee_companyname")
+  const referee_jobtitle = document.getElementById("referee_jobtitle")
+  const referee_emailid = document.getElementById("referee_emailid")
+  const referee_phoneno = document.getElementById("referee_phoneno")
+
   const checkbox1 = document.getElementById("my_checkbox1");
   const checkbox2 = document.getElementById("my_checkbox2");
   const checkbox3 = document.getElementById("my_checkbox3");
@@ -114,7 +120,7 @@ function sendMail() {
     return; // Exit the function early if any field is empty
   }
 
-  if (checkbox1.checked || checkbox4.checked) {
+  if (!checkbox1.checked || !checkbox4.checked) {
     alert('You must select the required checkbox.');
     return;
   }
@@ -151,7 +157,7 @@ function sendMail() {
     referee_fullname,
     referee_companyname,
     referee_jobtitle,
-    referee_emaili,
+    referee_emailid,
     referee_phoneno,
 
     checkboxState1,
