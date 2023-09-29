@@ -65,7 +65,7 @@
     <section>
       <div class="container bg-light py-5 rounded">
         <div>
-          <h4>Delegate registration form</h4>
+          <h4 class="text-info">Delegate registration form</h4>
 
           <!-- <iframe name="iframe" style="display: none"></iframe>
           <form
@@ -313,8 +313,8 @@
             </div>
           </div>
 
-          <div class="row">
-            <h4>
+          <div class="row py-3">
+            <h4 class="text-info">
               WOULD YOU LIKE TO NOMINATE/REFER SOMEONE TO ATTEND THE EVENT?
             </h4>
 
@@ -370,7 +370,7 @@
           </div>
 
           <div class="row">
-            <h4>Confirmation</h4>
+            <h4 class="text-info">Confirmation</h4>
             <div class="col-md-8">
               <label>
                 <input
@@ -509,7 +509,6 @@
             data.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
             var dropdown = document.getElementById("country");
-            var dropdown2 = document.getElementById("country2");
 
             // Loop through the sorted data and populate both dropdowns
             data.forEach((country) => {
@@ -517,11 +516,6 @@
               option.value = country.cca2;
               option.text = country.name.common;
               dropdown.appendChild(option);
-
-              var option2 = document.createElement("option");
-              option2.value = country.cca2;
-              option2.text = country.name.common;
-              dropdown2.appendChild(option2);
             });
           })
           .catch((error) => {

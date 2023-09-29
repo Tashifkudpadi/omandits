@@ -98,11 +98,11 @@ function sendMail() {
   const solutions = document.getElementById("solutions").value;
   const role = document.getElementById("role").value;
 
-  const referee_fullname = document.getElementById("referee_fullname")
-  const referee_companyname = document.getElementById("referee_companyname")
-  const referee_jobtitle = document.getElementById("referee_jobtitle")
-  const referee_emailid = document.getElementById("referee_emailid")
-  const referee_phoneno = document.getElementById("referee_phoneno")
+  const referee_fullname = document.getElementById("referee_fullname").value
+  const referee_companyname = document.getElementById("referee_companyname").value
+  const referee_jobtitle = document.getElementById("referee_jobtitle").value
+  const referee_emailid = document.getElementById("referee_emailid").value
+  const referee_phoneno = document.getElementById("referee_phoneno").value
 
   const checkbox1 = document.getElementById("my_checkbox1");
   const checkbox2 = document.getElementById("my_checkbox2");
