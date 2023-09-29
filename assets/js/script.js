@@ -42,45 +42,45 @@ setInterval(updateTimer, 1000);
 updateTimer();
 
 // form logic
-const openDelegateBtns = document.querySelectorAll(".openDelegateBtn");
-const delegateFormContainer = document.getElementById("delegateFormContainer");
-const closeDelegateBtn = document.getElementById("closeDelegateBtn");
+// const openDelegateBtns = document.querySelectorAll(".openDelegateBtn");
+// const delegateFormContainer = document.getElementById("delegateFormContainer");
+// const closeDelegateBtn = document.getElementById("closeDelegateBtn");
 
-openDelegateBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    delegateFormContainer.style.display = "block";
-  });
-});
+// openDelegateBtns.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     delegateFormContainer.style.display = "block";
+//   });
+// });
 
-closeDelegateBtn.addEventListener("click", () => {
-  delegateFormContainer.style.display = "none";
-});
+// closeDelegateBtn.addEventListener("click", () => {
+//   delegateFormContainer.style.display = "none";
+// });
 
-window.addEventListener("click", (event) => {
-  if (event.target === delegateFormContainer) {
-    delegateFormContainer.style.display = "none";
-  }
-});
+// window.addEventListener("click", (event) => {
+//   if (event.target === delegateFormContainer) {
+//     delegateFormContainer.style.display = "none";
+//   }
+// });
 
-const openSponsorBtns = document.querySelectorAll(".openSponsorBtn");
-const sponsorFormContainer = document.getElementById("sponsorFormContainer");
-const closeSponsorBtn = document.getElementById("closeSponsorBtn");
+// const openSponsorBtns = document.querySelectorAll(".openSponsorBtn");
+// const sponsorFormContainer = document.getElementById("sponsorFormContainer");
+// const closeSponsorBtn = document.getElementById("closeSponsorBtn");
 
-openSponsorBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    sponsorFormContainer.style.display = "block";
-  });
-});
+// openSponsorBtns.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     sponsorFormContainer.style.display = "block";
+//   });
+// });
 
-closeSponsorBtn.addEventListener("click", () => {
-  sponsorFormContainer.style.display = "none";
-});
+// closeSponsorBtn.addEventListener("click", () => {
+//   sponsorFormContainer.style.display = "none";
+// });
 
-window.addEventListener("click", (event) => {
-  if (event.target === sponsorFormContainer) {
-    sponsorFormContainer.style.display = "none";
-  }
-});
+// window.addEventListener("click", (event) => {
+//   if (event.target === sponsorFormContainer) {
+//     sponsorFormContainer.style.display = "none";
+//   }
+// });
 
 function sendMail() {
 

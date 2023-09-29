@@ -163,65 +163,9 @@ p {
   animation: inBtm 0.8s forwards;
 }
 
-/* Styles for the popup container */
-.delegate-container,
-.sponsor-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  max-height: 100vh;
-  /* left: 8%; */
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  overflow: auto;
-}
-
-/* .delegate-container {
-  display: none;
-  position: fixed;
-  top: 10%;
-  left: 8%;
-  max-height: 90vh;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  overflow: auto; 
-} */
-/* ... Rest of your CSS ... */
-
-/* Styles for the popup */
-
-/* Close button styles */
-.delegateClose,
-.sponsorClose {
-  position: absolute;
-  top: 10px;
-  right: 40px;
-  font-size: 28px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-  background-color: #3ab7dd;
-  cursor: pointer;
-  border-radius: 50%;
-}
 form label {
   font-size: 0.8rem;
   margin-top: 12px;
-}
-
-/* Responsive styling */
-@media (max-width: 600px) {
-  .delegate-container {
-    left: 0;
-  }
-  .popup {
-    max-width: 90%;
-  }
 }
 
 @-webkit-keyframes inM {
@@ -592,7 +536,26 @@ form label {
   font-weight: 700;
 }
 #sponsors .sponsor_subheading {
-  background-color: #75cde8;
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    #dfdee9,
+    #bebfd3,
+    #9ca1be,
+    #7984aa,
+    #7984aa,
+    #7984aa,
+    #7984aa,
+    #9ca1be,
+    #bebfd3,
+    #dfdee9,
+    #ffffff
+  );
+}
+#sponsors .sponsor_subheading h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 #trending_topics .trending_topics_cards {
   /* display: flex;
@@ -703,17 +666,15 @@ form label {
   padding: 40px 20px;
   /* border: 1px solid white; */
 
+  box-shadow: rgb(169, 202, 229) 5px 5px, rgba(98, 136, 162, 0.3) 10px 10px,
+    rgba(149, 203, 225, 0.2) 15px 15px, rgba(110, 175, 215, 0.1) 20px 20px,
+    rgba(82, 150, 239, 0.05) 25px 25px;
   /* box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
-    rgba(113, 80, 101, 0.2) 15px 15px, rgba(64, 56, 61, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px; */
-  box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
     rgba(113, 80, 101, 0.2) 15px 15px, rgba(64, 56, 61, 0.1) 20px 20px,
     rgba(240, 46, 170, 0.05) 25px 25px, rgb(97, 67, 67) -5px -5px,
     rgba(123, 68, 103, 0.3) -10px -10px, rgba(113, 80, 101, 0.2) -15px -15px,
-    rgba(64, 56, 61, 0.1) -20px -20px, rgba(240, 46, 170, 0.05) -25px -25px;
-  /* box-shadow: 5px 5px rgb(97, 67, 67), -5px -5px rgba(123, 68, 103, 0.3),
-    5px -5px rgba(113, 80, 101, 0.2), -5px 5px rgba(64, 56, 61, 0.1),
-    0px 0px rgba(240, 46, 170, 0.05); */
+    rgba(64, 56, 61, 0.1) -20px -20px, rgba(240, 46, 170, 0.05) -25px -25px; */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 #client_logos .row .energy {
@@ -730,9 +691,12 @@ form label {
   padding: 40px 10px 10px 10px;
   /* background-color: #fff; */
   /* box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%); */
-  box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
+  /* box-shadow: rgb(97, 67, 67) 5px 5px, rgba(123, 68, 103, 0.3) 10px 10px,
     rgba(113, 80, 101, 0.2) 15px 15px, rgba(64, 56, 61, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+    rgba(240, 46, 170, 0.05) 25px 25px; */
+  box-shadow: rgb(169, 202, 229) 5px 5px, rgba(98, 136, 162, 0.3) 10px 10px,
+    rgba(149, 203, 225, 0.2) 15px 15px, rgba(110, 175, 215, 0.1) 20px 20px,
+    rgba(82, 150, 239, 0.05) 25px 25px;
   /* margin: 30px 12px; */
   border-radius: 8px;
   height: 220px;
@@ -766,6 +730,7 @@ form label {
   height: 180px;
   border: 1px solid #8a6161;
   border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 12px;
 }
 #who_should_attend .attendee_card img {
