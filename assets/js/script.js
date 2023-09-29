@@ -41,6 +41,7 @@ setInterval(updateTimer, 1000);
 // Initial call to update the timer
 updateTimer();
 
+// form logic
 const openDelegateBtns = document.querySelectorAll(".openDelegateBtn");
 const delegateFormContainer = document.getElementById("delegateFormContainer");
 const closeDelegateBtn = document.getElementById("closeDelegateBtn");
@@ -183,6 +184,141 @@ function sendMail() {
       document.getElementById("referee_jobtitle").value = "";
       document.getElementById("referee_emailid").value = "";
       document.getElementById("referee_phoneno").value = "";
+      console.log(res);
+      alert("Your message has sent succesfully");
+    })
+    .catch((error) => alert(error));
+}
+
+function sendSpMail() {
+
+  const sp_fullname = document.getElementById("sp_fullname").value;
+  const sp_company = document.getElementById("sp_company").value;
+  const sp_email = document.getElementById("sp_email").value;
+  const sp_city = document.getElementById("sp_city").value;
+  const sp_jbTitle = document.getElementById("sp_jbTitle").value;
+  const sp_mobile = document.getElementById("sp_mobile").value;
+  const country2 = document.getElementById("country2").value;
+  const sp_industry_field = document.getElementById("sp_industry_field").value;
+
+
+  if (
+    sp_fullname === "" ||
+    sp_company === "" ||
+    sp_email === "" ||
+    sp_city === "" ||
+    sp_jbTitle === "" ||
+    sp_mobile === "" ||
+    country2 === "" ||
+    sp_industry_field === "" ||
+    !isCheckedAtLeastOneCheckbox() || !isCheckIamIntCheckbox() || !isCheckShowMeetCheckbox()
+  ) {
+    alert("Please fill in the required fields and select at least one checkbox below.");
+    return; // Exit the function early if any field is empty
+  }
+  ////////////////////////////////////////////////
+  function isCheckedAtLeastOneCheckbox() {
+    var checkboxes = document.querySelectorAll('input[name="lineOfBusiness"]');
+    var isChecked = false;
+
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        isChecked = true;
+      }
+    });
+
+    return isChecked;
+  }
+
+  var checkboxes = document.querySelectorAll(
+    'input[name="lineOfBusiness"]'
+  );
+  var checkedCheckboxes = [];
+
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      checkedCheckboxes.push(checkbox.value);
+    }
+  });
+
+  //////////////////////////////////////////////////
+  function isCheckIamIntCheckbox() {
+    var intcheckboxes = document.querySelectorAll('input[name="iamInterestedIn"]');
+    var isIntChecked = false;
+
+    intcheckboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        isIntChecked = true;
+      }
+    });
+
+    return isIntChecked;
+  }
+  var int_checkboxes = document.querySelectorAll(
+    'input[name="iamInterestedIn"]'
+  );
+  var int_checkedCheckboxes = [];
+
+  int_checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      int_checkedCheckboxes.push(checkbox.value);
+    }
+  });
+
+  //////////////////////////////////////////
+  function isCheckShowMeetCheckbox() {
+    var showMeetcheckboxes = document.querySelectorAll('input[name="showMeet"]');
+    var showMeetChecked = false;
+
+    showMeetcheckboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        showMeetChecked = true;
+      }
+    });
+
+    return showMeetChecked;
+  }
+  var showMeet_checkboxes = document.querySelectorAll(
+    'input[name="showMeet"]'
+  );
+  var showMeetcheckedCheckboxes = [];
+
+  showMeet_checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      showMeetcheckedCheckboxes.push(checkbox.value);
+    }
+  });
+
+  const sp_concent = document.getElementById('sp_concent');
+  const checkbox_sp_concent = sp_concent.checked
+    ? "The checkbox is checked."
+    : "The checkbox is not checked.";
+
+  const params = {
+    sp_fullname,
+    sp_company,
+    sp_email,
+    sp_city,
+    sp_jbTitle,
+    sp_mobile,
+    sp_industry_field,
+    checkedCheckboxes,
+    int_checkedCheckboxes, showMeetcheckedCheckboxes, checkbox_sp_concent
+  };
+
+  const serviceID = "service_xgm708t";
+  const templateID = "template_mpg968b";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("sp_fullname").value = "";
+      document.getElementById("sp_company").value = "";
+      document.getElementById("sp_email").value = "";
+      document.getElementById("sp_city").value = "";
+      document.getElementById("sp_jbTitle").value = "";
+      document.getElementById("sp_mobile").value = "";
+      document.getElementById("sp_industry_field").value = "";
       console.log(res);
       alert("Your message has sent succesfully");
     })

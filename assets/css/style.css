@@ -68,7 +68,8 @@ p {
   text-transform: uppercase;
 }
 .nav div.main_list ul li .bt,
-#video-section .bt {
+#video-section .bt,
+#mobile_content .bt {
   background-color: #75cde8;
   padding: 12px;
   height: 30px;
@@ -589,6 +590,9 @@ form label {
 }
 #sponsors h2 {
   font-weight: 700;
+}
+#sponsors .sponsor_subheading {
+  background-color: #75cde8;
 }
 #trending_topics .trending_topics_cards {
   /* display: flex;
