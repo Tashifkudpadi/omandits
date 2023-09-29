@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Innovation & Transformation Summit</title>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css.map" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/dits.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap/css/bootstrap.min.css.map"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style_scss.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <script src="./assets/js/aos.js"></script>
+    <style>
+      #country option[disabled] {
+        opacity: 0.7; /* Use a lighter color for the text */
+      }
+    </style>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("hO0rGL2q2-CdEsIN5");
+      })();
+    </script>
+  </head>
+  <body>
+    <nav class="navbar bg-dark">
+      <div class="container">
+        <div class="logo">
+          <a href="#"
+            ><img src="./assets/images/dits.png" width="60" alt="img "
+          /></a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container bg-light py-5 rounded">
+        <div>
+          <h4>Delegate registration form</h4>
+
+          <!-- <iframe name="iframe" style="display: none"></iframe>
+          <form
+            target="iframe"
+          > -->
+          <div class="row">
+            <div>
+              <input
+                type="text"
+                placeholder="Registration code"
+                class="form-control"
+                name="registrationcode"
+                id="registrationCode"
+              />
+              <p class="pt-3">
+                If you have a registration code, please enter here (Skip this
+                step if you don't have one)
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  required
+                />
+              </div>
+              <div>
+                <label for="firstname">First name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstname"
+                  name="firstname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="lastname">Last name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastname"
+                  name="lastname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="jobtitle">Job Title *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="jobtitle"
+                  name="jobtitle"
+                  required
+                />
+              </div>
+              <div>
+                <label for="companyname">Company name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyname"
+                  name="companyname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div>
+                <label for="mobilePhone">Mobile Phone *</label>
+                <input
+                  type="phone"
+                  class="form-control"
+                  id="mobilePhone"
+                  name="phone"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="industry">Industry Sector</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="industry"
+                  name="industry"
+                  required
+                />
+              </div>
+              <div>
+                <label for="country">Country:</label>
+                <select
+                  id="country"
+                  class="form-control"
+                  name="country"
+                  required
+                >
+                  <option value="" disabled selected>Select a country</option>
+
+                  <!-- JavaScript will populate this dropdown -->
+                </select>
+              </div>
+              <div>
+                <label for="employees">Total No. of Employees</label>
+                <select
+                  id="employees"
+                  class="form-control"
+                  name="employees"
+                  required
+                >
+                  <option value="" disabled selected></option>
+                  <option value="0 - 100">0 - 100</option>
+                  <option value="100 - 500">100 - 500</option>
+                  <option value="500 - 1000">500 - 1000</option>
+                  <option value="1000 - 10000">1000 - 10000</option>
+                  <option value="10000 and Above">10000 and Above</option>
+                </select>
+              </div>
+              <div>
+                <label for="solutions"
+                  >Are you looking for any of the following solutions? Please
+                  tick on the appropriate boxes below? *</label
+                >
+                <select
+                  id="solutions"
+                  class="form-control"
+                  name="solutions"
+                  required
+                >
+                  <option value="" disabled selected></option>
+                  <option value="PayTech">PayTech</option>
+                  <option value="RegTech">RegTech</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="Open Banking">Open Banking</option>
+                  <option value="Challenger Bank">Challenger Bank</option>
+                  <option value="Infrastructure">Infrastructure</option>
+                  <option value="BNPL">BNPL</option>
+                  <option value="WealthTech">WealthTech</option>
+                  <option value="Blockchain & Cryptocurrency">
+                    Blockchain & Cryptocurrency
+                  </option>
+                  <option value="InsurTech">InsurTech</option>
+                  <option value="LendTech">LendTech</option>
+                  <option value="Mobile Payments">Mobile Payments</option>
+                  <option value="Tradetech">Tradetech</option>
+                  <option value="RoboAdvising & Stock-Trading">
+                    RoboAdvising & Stock-Trading
+                  </option>
+                  <option value="International Money Transfers">
+                    International Money Transfers
+                  </option>
+                  <option value="Equity Financing">Equity Financing</option>
+                  <option value="BankTech">BankTech</option>
+                  <option value="Peer-to-Peer Lending and Borrowing">
+                    Peer-to-Peer Lending and Borrowing
+                  </option>
+                  <option value="Crowdfunding">Crowdfunding</option>
+                  <option value="Personal Finance Management">
+                    Personal Finance Management
+                  </option>
+                  <option value="Alternative Credit Scoring">
+                    Alternative Credit Scoring
+                  </option>
+                  <option value="Transaction Delivery">
+                    Transaction Delivery
+                  </option>
+                  <option value="Digital Wallets">Digital Wallets</option>
+                  <option value="Digital Banking">Digital Banking</option>
+                  <option value="Quote Aggregators">Quote Aggregators</option>
+                  <option value="Augmented Intelligence Solutions">
+                    Augmented Intelligence Solutions
+                  </option>
+                  <option value="Data Privacy Automation">
+                    Data Privacy Automation
+                  </option>
+                  <option value="Hybrid Cloud & Cloud Computing">
+                    Hybrid Cloud & Cloud Computing
+                  </option>
+                  <option
+                    value="Data visualization / Data Virtualization technologies"
+                  >
+                    Data visualization / Data Virtualization technologies
+                  </option>
+                  <option value="Cloud Migration">Cloud Migration</option>
+                  <option value="Metadata Management">
+                    Metadata Management
+                  </option>
+                  <option value="AI Governance">AI Governance</option>
+                  <option value="Data Governance Tools">
+                    Data Governance Tools
+                  </option>
+                  <option value="Adaptive Artificial Intelligence">
+                    Adaptive Artificial Intelligence
+                  </option>
+                  <option value="BI Solutions">BI Solutions</option>
+                  <option value="NoSql Databases">NoSql Databases</option>
+                  <option value="Data Fabric Software Solutions">
+                    Data Fabric Software Solutions
+                  </option>
+                  <option value="Graph Technology">Graph Technology</option>
+                  <option value="Big Data Security Solutions">
+                    Big Data Security Solutions
+                  </option>
+                  <option value="Open Source data & Machine learning tools">
+                    Open Source data & Machine learning tools
+                  </option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="role"
+                  >What is your role/authority while dealing with solution
+                  providers for your organisation? *</label
+                >
+                <select name="role" id="role" class="form-control" required>
+                  <option value="" selected disabled></option>
+                  <option value="Final decision maker">
+                    Final decision maker
+                  </option>
+                  <option value="One of the final decision maker">
+                    One of the final decision maker
+                  </option>
+                  <option value="I refer and influence the decision">
+                    I refer and influence the decision
+                  </option>
+                  <option value="I'm not involved at all">
+                    I'm not involved at all
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h4>
+              WOULD YOU LIKE TO NOMINATE/REFER SOMEONE TO ATTEND THE EVENT?
+            </h4>
+
+            <div class="col-md-6">
+              <div>
+                <label for="referee_fullname">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_fullname"
+                  name="referee_fullname"
+                />
+              </div>
+              <div>
+                <label for="referee_companyname">Company name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_companyname"
+                  name="referee_companyname"
+                />
+              </div>
+              <div>
+                <label for="referee_jobtitle">Job title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_jobtitle"
+                  name="referee_jobtitle"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="referee_emailid">Email Id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referee_emailid"
+                  name="referee_emailid"
+                />
+              </div>
+              <div>
+                <label for="referee_phoneno">Phone number</label>
+                <input
+                  type="phone"
+                  class="form-control"
+                  id="referee_phoneno"
+                  name="referee_phoneno"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h4>Confirmation</h4>
+            <div class="col-md-8">
+              <label>
+                <input
+                  type="checkbox"
+                  name="my_checkbox1"
+                  id="my_checkbox1"
+                  required
+                />
+                By filling up this form, I agree to the above terms and
+                conditions. I officially and formally mark my acceptance to
+                participate at the event. *
+              </label>
+              <label>
+                <input type="checkbox" name="my_checkbox2" id="my_checkbox2" />
+                I approve organizers to share the contact information and/or
+                other details filled in this form with its sponsors/partners for
+                marketing purposes.
+              </label>
+              <label>
+                <input type="checkbox" name="my_checkbox3" id="my_checkbox3" />
+                (CONSENT) I provide my consent to organizers to send me latest
+                updates via email with information related to their events and
+                activities. purposes.
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="my_checkbox4"
+                  id="my_checkbox4"
+                  required
+                />
+                I agree to the general Terms and conditions and Privacy policy
+                of organizers.
+                <br />
+                *
+                <span class="text-info"
+                  >Terms and Conditions | Privacy Policy</span
+                >
+              </label>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <button
+            class="btn btn-info text-light mt-3"
+            type="submit"
+            onclick="sendMail()"
+          >
+            Submit
+          </button>
+          <!-- </form> -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center footer text-center">
+      <div class="container p-4">
+        <div class="row text-md-start pt-4">
+          <!--Logo Start-->
+          <div class="col-md-3">
+            <img
+              src="./assets/images/dits.png"
+              alt="img"
+              width="100"
+              class="mb-3"
+            />
+            <p align="justify">
+              Digital Innovation and Transformation Summit is the platform where
+              cutting-edge technology and strategic insights converge to reshape
+              industries. Explore the future of digital innovation, network with
+              thought leaders, and drive your organization's transformation
+              journey forward.
+            </p>
+          </div>
+          <!--Logo end-->
+
+          <!--Solutions Start-->
+          <div class="col-md-3 px-4 pt-4">
+            <h5>Event Location</h5>
+            <div class="d-flex">
+              <i class="fa-solid fa-location-dot"></i>
+              <p class="mx-2">Muscat Sultanate of Oman</p>
+            </div>
+
+            <h5>Follow Us on</h5>
+            <div class="d-flex">
+              <a href="#"><i class="fa-brands fa-instagram mx-2"></i></a>
+              <a href="#"> <i class="fa-brands fa-square-facebook mx-2"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin mx-2"></i></a>
+            </div>
+          </div>
+          <!--Solutions end-->
+
+          <!--Quick links Start-->
+          <div class="col-md-2 pt-4">
+            <h5 class="pb-3">Other Pages</h5>
+            <div class="d-flex justify-content-between flex-column">
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i><a href="#">Home</a>
+              </div>
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i
+                ><a href="#">Happenings</a>
+              </div>
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i
+                ><a href="#">Speakers</a>
+              </div>
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i
+                ><a href="#">Sponsors</a>
+              </div>
+            </div>
+          </div>
+          <!--QUick links end-->
+
+          <!--Other Start-->
+          <div class="col-md-4 pt-4">
+            <h5 class="pb-3">Subscribe Our Newsletter</h5>
+            <input type="text" placeholder="Email" />
+            <button>Subscribe</button>
+          </div>
+          <!--Other end-->
+        </div>
+        <p class="copy-right pt-5">
+          Copyright 2023 DitsOman. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function fetchDataAndSort() {
+        fetch("https://restcountries.com/v3.1/all")
+          .then((response) => response.json())
+          .then((data) => {
+            // Sort the data alphabetically by country name
+            data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+
+            var dropdown = document.getElementById("country");
+            var dropdown2 = document.getElementById("country2");
+
+            // Loop through the sorted data and populate both dropdowns
+            data.forEach((country) => {
+              var option = document.createElement("option");
+              option.value = country.cca2;
+              option.text = country.name.common;
+              dropdown.appendChild(option);
+
+              var option2 = document.createElement("option");
+              option2.value = country.cca2;
+              option2.text = country.name.common;
+              dropdown2.appendChild(option2);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching data: ", error);
+          });
+      }
+
+      // Call the function to fetch and populate both dropdowns
+      fetchDataAndSort();
+    </script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+          $(".nav").addClass("affix");
+          // console.log("OK");
+        } else {
+          $(".nav").removeClass("affix");
+        }
+      });
+
+      var counted = 0;
+      $(window).scroll(function () {
+        var oTop = $("#counter").offset().top - window.innerHeight;
+        if (counted == 0 && $(window).scrollTop() > oTop) {
+          $(".count").each(function () {
+            var $this = $(this),
+              countTo = $this.attr("data-count");
+            $({
+              countNum: $this.text(),
+            }).animate(
+              {
+                countNum: countTo,
+              },
+
+              {
+                duration: 2000,
+                easing: "swing",
+                step: function () {
+                  $this.text(Math.floor(this.countNum));
+                },
+                complete: function () {
+                  $this.text(this.countNum);
+                  //alert('finished');
+                },
+              }
+            );
+          });
+          counted = 1;
+        }
+      });
+    </script>
+
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.js.map"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js.map"></script>
+  </body>
+</html>
