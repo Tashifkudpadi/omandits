@@ -107,10 +107,10 @@ function sendMail() {
     !registrationCode ||
     !title ||
     !firstname ||
-    !lastname || jobtitle || companyname || email || phone || industry || country || employees || solutions || role
+    !lastname || !jobtitle || !companyname || !email || !phone || !industry || !country || !employees || !solutions || !role
     // ... Add conditions for other required fields here ...
   ) {
-    alert("Please fill in all required fields.");
+    alert("Please fill in the required fields.");
     return; // Exit the function early if any field is empty
   }
 
