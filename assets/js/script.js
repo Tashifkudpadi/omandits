@@ -207,6 +207,8 @@ function sendSpMail() {
   const country2 = document.getElementById("country2").value;
   const sp_industry_field = document.getElementById("sp_industry_field").value;
 
+  const whereYouHearAbout_us = document.getElementById("where_did_you_hear_about_us").value;
+
 
   if (
     sp_fullname === "" ||
@@ -217,6 +219,7 @@ function sendSpMail() {
     sp_mobile === "" ||
     country2 === "" ||
     sp_industry_field === "" ||
+    whereYouHearAbout_us === "" ||
     !isCheckedAtLeastOneCheckbox() || !isCheckIamIntCheckbox() || !isCheckShowMeetCheckbox()
   ) {
     alert("Please fill in the required fields and select at least one checkbox below.");
@@ -308,6 +311,7 @@ function sendSpMail() {
     sp_jbTitle,
     sp_mobile,
     sp_industry_field,
+    whereYouHearAbout_us,
     checkedCheckboxes,
     int_checkedCheckboxes, showMeetcheckedCheckboxes, checkbox_sp_concent
   };
