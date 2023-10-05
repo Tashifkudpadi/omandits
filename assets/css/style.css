@@ -356,7 +356,7 @@ form label {
   font-weight: 800;
 }
 .video-content img {
-  width: 180px;
+  /* width: 180px; */
   padding-bottom: 23px;
 }
 
