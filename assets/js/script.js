@@ -41,6 +41,8 @@ setInterval(updateTimer, 1000);
 // Initial call to update the timer
 updateTimer();
 
+
+
 // form logic
 // const openDelegateBtns = document.querySelectorAll(".openDelegateBtn");
 // const delegateFormContainer = document.getElementById("delegateFormContainer");

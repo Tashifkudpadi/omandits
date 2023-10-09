@@ -356,7 +356,7 @@ form label {
   font-weight: 800;
 }
 .video-content img {
-  /* width: 180px; */
+  width: 180px;
   padding-bottom: 23px;
 }
 
@@ -420,6 +420,7 @@ form label {
 #event_heading h2,
 #topics_card h2,
 #client_logos h2,
+#swiper-1 h2,
 .tech_categories_section h2,
 #sponsors h2 {
   color: black;
@@ -433,7 +434,15 @@ form label {
   text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 #info_section h2,
-#why_oman h2,
+#why_oman h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: -webkit-linear-gradient(#8e8d8d, #3ab7dd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 #themes_in_focus h2,
 #event_sessions h2,
 #who_should_attend h2 {
@@ -686,6 +695,18 @@ form label {
 #client_logos img {
   width: 200px;
 }
+#client_logos .col-md-3,
+#client_logos .col-md-6,
+#client_logos .col-md-4 {
+  border: 1px solid grey;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
 #topics_card .cards_position {
   padding: 40px 10px 10px 10px;
@@ -884,7 +905,6 @@ footer input::placeholder {
   .video-content img {
     width: 260px;
   }
-
   .video-content h2 {
     font-size: 30px;
   }

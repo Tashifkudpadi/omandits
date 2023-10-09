@@ -30,6 +30,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/jquery.js"></script>
@@ -38,6 +43,26 @@
     <style>
       #country option[disabled] {
         opacity: 0.7; /* Use a lighter color for the text */
+      }
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     </style>
 
@@ -97,7 +122,6 @@
           src="./assets/images/dits.png"
           alt="img"
           data-aos="zoom-out"
-          width="200"
           class="event_logo"
         />
         <h1 class="pb-2">DIGITAL INNOVATION AND TRANSFORMATION SUMMIT</h1>
@@ -148,11 +172,15 @@
     <section id="info_section">
       <div class="container pt-5">
         <div class="row">
+          <h2 class="pb-3">About the Summit</h2>
+          <div class="col-md-6" data-aos="zoom-in" style="padding-right: 50px">
+            <img
+              src="./assets/images/photo-1540575467063-178a50c2df87.avif"
+              alt="img"
+              class="img-fluid rounded"
+            />
+          </div>
           <div class="col-md-6" data-aos="fade-up">
-            <h2 class="pb-3">
-              Digital Innovation <br />
-              and Transformation Summit
-            </h2>
             <p align="justify">
               The Digital Innovation and Transformation Summit is a
               business-focused event driven by thought leadership, which delves
@@ -176,20 +204,6 @@
               relevance and impact on organizations.
             </p>
           </div>
-          <div class="col-md-6 px-5 text-end" data-aos="zoom-in">
-            <!-- <video
-              src="./assets/videos/Globe_Atom.mp4"
-              muted
-              autoplay
-              loop
-              class="img-fluid"
-            ></video> -->
-            <img
-              src="./assets/images/SMi-Events-Page-3-14.jpg"
-              alt="img"
-              class="img-fluid rounded"
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -197,6 +211,13 @@
     <section id="why_oman">
       <div class="container">
         <div class="row py-5">
+          <div class="col-md-6 px-5 d-none d-md-block" data-aos="zoom-out">
+            <img
+              src="./assets/images/69-696328_oman-flag-map-of-oman-removebg-preview.png"
+              alt="img"
+              class="img-fluid rounded"
+            />
+          </div>
           <div class="col-md-6" data-aos="fade-up">
             <h2 class="mb-3">Why Oman?</h2>
             <p align="justify">
@@ -236,13 +257,6 @@
               >
             </div>
             <!-- <button class="btn" id="readmore_btn">Read More</button> -->
-          </div>
-          <div class="col-md-6 px-5 d-none d-md-block" data-aos="zoom-out">
-            <img
-              src="./assets/images/69-696328_oman-flag-map-of-oman-removebg-preview.png"
-              alt="img"
-              class="img-fluid rounded"
-            />
           </div>
         </div>
       </div>
@@ -376,15 +390,15 @@
             <h4>HealthTech</h4>
           </div>
           <div class="trending_card" data-aos="fade-up" data-aos-delay="1400">
-            <img src="./assets/images/icons/cyber_security.png" alt="img" />
+            <img src="./assets/images/icons/cyber-security.png" alt="img" />
             <h4>CyberTech</h4>
           </div>
           <div class="trending_card" data-aos="fade-up" data-aos-delay="1800">
-            <img src="./assets/images/icons/ufo_10177729.png" alt="img" />
+            <img src="./assets/images/icons/satellite.png" alt="img" />
             <h4>SpaceTech</h4>
           </div>
           <div class="trending_card" data-aos="fade-up" data-aos-delay="2000">
-            <img src="./assets/images/icons/cloud_technology.png" alt="img" />
+            <img src="./assets/images/icons/cloud-connect.png" alt="img" />
             <h4>CloudTech</h4>
           </div>
         </div>
@@ -593,6 +607,7 @@
             src="./assets/images/clients/MFTA Multi Main Logo.png"
             alt="img"
             width="320"
+            data-aos="fade"
           />
         </div>
         <div class="py-3">
@@ -603,6 +618,7 @@
             src="./assets/images/clients/dit-logo-ar-f-removebg.png"
             alt="img"
             width="320"
+            data-aos="fade"
           />
         </div>
         <div class="py-4">
@@ -613,6 +629,7 @@
             src="./assets/images/clients/shape_robotics.png"
             width="320"
             alt="img"
+            data-aos="fade"
           />
         </div>
         <div class="py-4">
@@ -623,12 +640,13 @@
             src="./assets/images/clients/everybody counts final logo.png"
             alt="img"
             width="320"
+            data-aos="fade"
           />
         </div>
       </div>
     </section>
 
-    <section id="client_logos">
+    <!-- <section id="client_logos">
       <h2 class="text-center pt-5" data-aos="zoom-out">
         Some of the sponsors and partners <br />
         from the recent past
@@ -668,7 +686,6 @@
             />
           </div>
         </div>
-        <!-- 2 -->
         <div class="row py-4" data-aos="fade-up">
           <div class="col-md-3">
             <img
@@ -703,7 +720,6 @@
             />
           </div>
         </div>
-        <!-- 3 -->
         <div class="row py-4" data-aos="fade-up">
           <div
             class="col-md-3 d-flex justify-content-center align-items-center"
@@ -740,7 +756,6 @@
             />
           </div>
         </div>
-        <!-- 4 -->
         <div class="row py-4" data-aos="fade-up">
           <div
             class="col-md-3 d-flex justify-content-center align-items-center"
@@ -777,10 +792,9 @@
             />
           </div>
         </div>
-        <!-- 5 -->
         <div class="row py-4" data-aos="fade-up">
           <div
-            class="col-md-3 d-flex justify-content-center align-items-center"
+            class="col-md-4 d-flex justify-content-center align-items-center"
           >
             <img
               src="./assets/images/clients/Maxbyte.png"
@@ -788,40 +802,203 @@
               class="img-fluid"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img
               src="./assets/images/clients/percepto.jpeg"
               alt="img"
               class="img-fluid"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img
               src="./assets/images/clients/opra-624x320.jpg"
               alt="img"
               class="img-fluid"
             />
           </div>
-          <div class="col-md-3">
+        </div>
+        <div class="row py-4" data-aos="fade-up">
+          <div class="col-md-6">
             <img
               src="./assets/images/clients/palo_alto_networks_logo_2015 (1).jpg"
               alt="img"
               class="img-fluid"
             />
           </div>
-        </div>
-        <!-- 6 -->
-        <div class="row py-4" data-aos="fade-up">
-          <div class="col-md-3">
+          <div class="col-md-6">
             <img
               src="./assets/images/clients/electroelectronic-logovarixx.jpg"
               alt="img"
               class="img-fluid"
             />
           </div>
-          <div
-            class="col-md-3 d-flex justify-content-center align-items-start"
-          ></div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="swiper-1">
+      <h2 class="text-center pt-5" data-aos="zoom-out">
+        Some of the sponsors and partners <br />
+        from the recent past
+      </h2>
+      <div class="swiper mySwiper py-5">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/Cisco-logo.png"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./assets/images/clients/744px-SKF-Logo.svg.png "
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/2808139_original.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/iObeya_Logo.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/electroelectronic-logovarixx.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/1683730656892.jpeg"
+              alt="img"
+              style="width: 80px"
+            />
+          </div>
+
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/3DS_Corp_Logotype_Blue_RGB.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/aqua-report-920x533.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/building_cyber_security_logo.jpeg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/control-techniques-logo.png"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="swiper-2">
+      <div class="swiper mySwiper-2 py-5">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/filters_no_upscale().webp"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./assets/images/clients/GE-Digital-Blue_GED-Logo-Blue.png"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/GRC Logo.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/inside-telecom-logo-white.webp"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/logo_onrobot_rgb.webp"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/Logo_Zyggot_01.png"
+              alt="img"
+              style="width: 80px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/Maxbyte.png"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/opra-624x320.jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/palo_alto_networks_logo_2015 (1).jpg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/percepto.jpeg"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
+          <div class="swiper-slide img_container">
+            <img
+              src="./assets/images/clients/Renewables-in-Africa-logo-272x90-1.png"
+              alt="img"
+              style="width: 140px"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -1211,32 +1388,32 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
     <script>
-      // Function to fetch data from the REST Countries API and sort alphabetically
-      // function fetchDataAndSort() {
-      //   fetch("https://restcountries.com/v3.1/all")
-      //     .then((response) => response.json())
-      //     .then((data) => {
-      //       // Sort the data alphabetically by country name
-      //       data.sort((a, b) => a.name.common.localeCompare(b.name.common));
-
-      //       var dropdown = document.getElementById("country");
-
-      //       // Loop through the sorted data and populate the dropdown
-      //       data.forEach((country) => {
-      //         var option = document.createElement("option");
-      //         option.value = country.cca2;
-      //         option.text = country.name.common;
-      //         dropdown.appendChild(option);
-      //       });
-      //     })
-      //     .catch((error) => {
-      //       console.error("Error fetching data: ", error);
-      //     });
-      // }
-
-      // // Call the function to fetch and populate the dropdown
-      // fetchDataAndSort();
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 7,
+        spaceBetween: 30,
+        freeMode: true,
+        autoplay: {
+          delay: 3000,
+        },
+      });
+      var swiper = new Swiper(".mySwiper-2", {
+        slidesPerView: 7,
+        spaceBetween: 30,
+        freeMode: true,
+        autoplay: {
+          delay: 4000,
+        },
+      });
+    </script>
+    <script>
       function fetchDataAndSort() {
         fetch("https://restcountries.com/v3.1/all")
           .then((response) => response.json())
