@@ -422,12 +422,20 @@ form label {
 #client_logos h2,
 #swiper-1 h2,
 .tech_categories_section h2,
-#sponsors h2,
-#speakers h2 {
+#sponsors h2 {
   color: black;
   font-size: 2rem;
   font-weight: 700;
-  text-transform: capitalize;
+  background: -webkit-linear-gradient(#8e8d8d, #3ab7dd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#speakers h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
   background: -webkit-linear-gradient(#8e8d8d, #3ab7dd);
   -webkit-background-clip: text;
   background-clip: text;
@@ -449,17 +457,13 @@ form label {
 #who_should_attend h2 {
   font-weight: 700;
   font-size: 2rem;
-  text-transform: capitalize;
   background: -webkit-linear-gradient(#8e8d8d, #3ab7dd);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
-#themes_in_focus h2,
-.tech_categories_section h2 {
-  text-transform: capitalize;
-}
+
 #themes_in_focus h2 #event_sessions h2 {
   color: #fff;
   font-weight: 700;
@@ -488,31 +492,25 @@ form label {
   place-content: center;
 }
 #speakers .speakers_container .speaker_content {
-  box-shadow: rgb(169, 202, 229) 5px 5px, rgba(98, 136, 162, 0.3) 10px 10px,
-    rgba(149, 203, 225, 0.2) 15px 15px, rgba(110, 175, 215, 0.1) 20px 20px,
-    rgba(82, 150, 239, 0.05) 25px 25px;
   padding: 12px;
-  height: 450px;
+  height: 520px;
   width: 300px;
   text-align: center;
   border-radius: 12px;
-  /* background-color: #48dbfb;
-  background-image: linear-gradient(315deg, #48dbfb 0%, #d3d3d3 74%); */
 }
 #speakers .speakers_container .img_container {
-  background-color: #8d5185;
-  background-image: linear-gradient(315deg, #ffffff 0%, #a1bafe 74%);
   border-radius: 8px;
   padding: 12px 0;
   margin-bottom: 20px;
 }
 #speakers .speakers_container .img_container img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  border: 6px solid #ddd;
+  padding: 6px;
+  border: 6px dotted #3ab7dd;
 }
 
 .cards_container {
