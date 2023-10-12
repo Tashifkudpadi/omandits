@@ -500,17 +500,19 @@ form label {
   background-image: linear-gradient(315deg, #48dbfb 0%, #d3d3d3 74%); */
 }
 #speakers .speakers_container .img_container {
+  background-color: #8d5185;
+  background-image: linear-gradient(315deg, #ffffff 0%, #a1bafe 74%);
+  border-radius: 8px;
   padding: 12px 0;
+  margin-bottom: 20px;
 }
 #speakers .speakers_container .img_container img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  box-shadow: rgb(170, 171, 193) 0px 0px 0px 3px,
-    rgb(126, 144, 172) 0px 0px 0px 6px, rgb(222, 218, 197) 0px 0px 0px 9px,
-    rgb(218, 209, 202) 0px 0px 0px 12px, rgb(242, 237, 237) 0px 0px 0px 15px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border: 6px solid #ddd;
 }
 
 .cards_container {
