@@ -991,4 +991,7 @@ footer input::placeholder {
     position: relative;
     top: 0px;
   }
+  .video-content #timer .timer_container span {
+    font-size: 0.8rem;
+  }
 }
