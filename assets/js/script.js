@@ -206,7 +206,7 @@ function sendSpMail() {
   const sp_city = document.getElementById("sp_city").value;
   const sp_jbTitle = document.getElementById("sp_jbTitle").value;
   const sp_mobile = document.getElementById("sp_mobile").value;
-  const country2 = document.getElementById("country2").value;
+  const sp_country = document.getElementById("sp_country").value;
   const sp_industry_field = document.getElementById("sp_industry_field").value;
 
   const whereYouHearAbout_us = document.getElementById("where_did_you_hear_about_us").value;
@@ -219,7 +219,7 @@ function sendSpMail() {
     sp_city === "" ||
     sp_jbTitle === "" ||
     sp_mobile === "" ||
-    country2 === "" ||
+    sp_country === "" ||
     sp_industry_field === "" ||
     whereYouHearAbout_us === "" ||
     !isCheckedAtLeastOneCheckbox() || !isCheckIamIntCheckbox() || !isCheckShowMeetCheckbox()
@@ -312,6 +312,7 @@ function sendSpMail() {
     sp_city,
     sp_jbTitle,
     sp_mobile,
+    sp_country,
     sp_industry_field,
     whereYouHearAbout_us,
     checkedCheckboxes,
@@ -330,6 +331,7 @@ function sendSpMail() {
       document.getElementById("sp_city").value = "";
       document.getElementById("sp_jbTitle").value = "";
       document.getElementById("sp_mobile").value = "";
+      document.getElementById("sp_country").value = "";
       document.getElementById("sp_industry_field").value = "";
       console.log(res);
       alert("Your message has sent succesfully");
