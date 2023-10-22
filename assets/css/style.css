@@ -493,24 +493,38 @@ form label {
 }
 #speakers .speakers_container .speaker_content {
   padding: 12px;
-  height: 520px;
+  height: 560px;
   width: 300px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 8px;
+}
+#speakers .speakers_container .speaker_content h5 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 700;
+}
+#speakers .speakers_container .speaker_content p {
+  font-weight: 600;
 }
 #speakers .speakers_container .img_container {
-  border-radius: 8px;
-  padding: 12px 0;
+  border-radius: 6px;
+  /* padding: 12px 0; */
   margin-bottom: 20px;
+  background-image: url("../images/sp-bg4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 300px;
 }
 #speakers .speakers_container .img_container img {
-  height: 280px;
-  width: 280px;
-  border-radius: 50%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+  /* border-radius: 50%; */
+  height: 300px;
+  width: 300px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
-  border: 6px solid #3ab7dd;
+  border: 6px solid #3ab7dd; */
 }
 
 .cards_container {
