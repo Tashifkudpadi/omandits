@@ -421,8 +421,7 @@ form label {
 #topics_card h2,
 #client_logos h2,
 #swiper-1 h2,
-.tech_categories_section h2,
-#sponsors h2 {
+.tech_categories_section h2 {
   color: black;
   font-size: 2rem;
   font-weight: 700;
@@ -589,9 +588,7 @@ form label {
   visibility: visible;
   padding: 10px;
 }
-#sponsors h2 {
-  font-weight: 700;
-}
+
 #sponsors .sponsor_subheading {
   background-image: linear-gradient(
     to right,
