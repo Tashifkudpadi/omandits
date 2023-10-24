@@ -6,7 +6,7 @@ $(".navTrigger").click(function () {
 });
 
 // Target date
-const targetDate = new Date("2024-03-06T00:00:00");
+const targetDate = new Date("2024-02-28T00:00:00");
 
 function updateTimer() {
   const currentDate = new Date();
