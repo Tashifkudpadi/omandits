@@ -611,6 +611,9 @@ form label {
   font-weight: 600;
   font-size: 1.4rem;
 }
+#sponsors .obc_img {
+  width: 400px;
+}
 #trending_topics .trending_topics_cards {
   /* display: flex;
   justify-content: space-between;
@@ -1004,5 +1007,8 @@ footer input::placeholder {
   }
   .video-content #timer .timer_container span {
     font-size: 0.8rem;
+  }
+  #sponsors .obc_img {
+    width: 280px;
   }
 }
