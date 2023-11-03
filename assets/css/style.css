@@ -501,6 +501,7 @@ form label {
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 700;
+  color: cadetblue;
 }
 #speakers .speakers_container .speaker_content p {
   font-weight: 600;
