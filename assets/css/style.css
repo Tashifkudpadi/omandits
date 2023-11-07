@@ -977,7 +977,7 @@ footer input::placeholder {
   }
   #trending_topics .trending_topics_cards {
     grid-template-columns: repeat(1, 1fr);
-    place-items: center;
+    place-content: center;
   }
   #trending_topics .trending_card {
     margin: 10px;
