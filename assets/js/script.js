@@ -338,3 +338,14 @@ function sendSpMail() {
     })
     .catch((error) => alert(error));
 }
+
+// go to top
+document
+  .getElementById("back-to-top")
+  .addEventListener("click", function () {
+    // Scroll to the top of the page when the button is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional smooth scrolling animation
+    });
+  });
