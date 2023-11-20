@@ -507,8 +507,7 @@ form label {
   font-weight: 600;
 }
 #speakers .speakers_container .img_container {
-  border-radius: 6px;
-  /* padding: 12px 0; */
+  border-radius: 25px;
   margin-bottom: 20px;
   background-image: url("../images/sp-bg4.jpg");
   background-position: center;
@@ -516,7 +515,9 @@ form label {
   background-size: cover;
   height: 340px;
   width: 300px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
+
 #speakers .speakers_container .img_container img {
   /* border-radius: 50%; */
   height: 340px;
