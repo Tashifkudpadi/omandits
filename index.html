@@ -112,6 +112,17 @@
         height: 100%;
         object-fit: cover;
       }
+      /* @media (max-width: 767px) {
+        .d-flex.justify-content-center.flex-column.align-items-baseline {
+          margin-left: 38%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .d-flex.justify-content-center.flex-column.align-items-baseline {
+          margin-left:0;
+        }
+      } */
     </style>
 
     <script
@@ -141,21 +152,20 @@
             <li class="navItems"><a href="#sponsors">Sponsors</a></li>
             <li class="navItems"><a href="#media_partners">Partners</a></li>
             <li class="navItems"><a href="#topics_card">Agenda</a></li>
-            <li class="">
-              
-              <a href="./delegateEnquiry.html" class="bt openDelegateBtn"
+            <li class="" >
+              <a style="margin-right: 1.5rem;" href="./delegateEnquiry.html" class="bt openDelegateBtn"
                 >Delegate Enquiry</a
               >
             </li>
             <li class="">
-              <a href="./sponsorshipEnquiry.html" class="bt openSponsorBtn"
+              <a style="margin-right: 1.5rem;" href="./sponsorshipEnquiry.html" class="bt openSponsorBtn"
                 >Sponsor Enquiry</a
               >
             </li>
           </ul>
         </div>
-        <div style="width: 100px ; height: 100px; position: absolute;top: 0;right: 0;">
-          <span class="navTrigger">
+        <div class="d-block d-md-none" style="width: 100px ; height: 100px; position: absolute;top: 0;right: 0;">
+          <span class="navTrigger" onclick="{openClose()}">
             <i></i>
             <i></i>
             <i></i>
@@ -164,6 +174,28 @@
        
       </div>
     </nav>
+
+    <div class="hiddenNav" id="hiddenNav">
+      <div class="hiddenNavHolder">
+
+        <!-- <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+            <li class="navItems"><a href="#info_section">Home</a></li>
+            <li class="navItems"><a href="#event_sessions">Happenings</a></li>
+            <li class="navItems"><a href="#speakers">Speakers</a></li>
+            <li class="navItems"><a href="#sponsors">Sponsors</a></li>
+            <li class="navItems"><a href="#media_partners">Partners</a></li>
+            <li class="navItems"><a href="#topics_card">Agenda</a></li>
+            <li class="">
+              <a href="./delegateEnquiry.html" class="bt openDelegateBtn">Delegate Enquiry</a>
+            </li>
+            <li class="">
+              <a href="./sponsorshipEnquiry.html" class="bt openSponsorBtn">Sponsor Enquiry</a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
 
     <section class="video-container">
       <video autoplay loop muted>
@@ -931,7 +963,7 @@
             <h3>Media partners</h3>
           </div>
           <div class="row">
-            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="200">
               <a href="https://optimisus.com/ " target="_blank">
                 <img
                   src="./assets/images/clients/Optisimus LOGOS New.png"
@@ -941,7 +973,7 @@
               /></a>
             </div>
             <div
-              class="col-md-3 d-flex justify-content-center align-items-center"
+              class="col-3 d-flex justify-content-center align-items-center"
               data-aos="zoom-out"
               data-aos-delay="400"
             >
@@ -953,7 +985,7 @@
                 />
               </a>
             </div>
-            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="100">
               <a href="https://theblockopedia.com" target="_blank">
                 <img
                   src="./assets/images/clients/TBP LOGO_FINAL.png"
@@ -964,7 +996,7 @@
               </a>
             </div>
             <div
-              class="col-md-3 d-flex justify-content-center align-items-center"
+              class="col-3 d-flex justify-content-center align-items-center"
               data-aos="zoom-in"
               data-aos-delay="300"
             >
@@ -979,7 +1011,7 @@
           </div>
           <div class="row">
             <div
-              class="col-md-3 d-flex justify-content-center align-items-center"
+              class="col-3 d-flex justify-content-center align-items-center"
               data-aos="zoom-in"
               data-aos-delay="400"
             >
@@ -991,7 +1023,7 @@
             </div>
 
             <div
-              class="col-md-3 d-flex justify-content-center align-items-center"
+              class="col-3 d-flex justify-content-center align-items-center"
               data-aos="zoom-out"
               data-aos-delay="200"
             >
@@ -1005,7 +1037,7 @@
             </div>
 
             <div
-              class="col-md-3 d-flex align-items-center"
+              class="col-3 d-flex align-items-center"
               data-aos="zoom-in"
               data-aos-delay="100"
             >
@@ -1017,7 +1049,7 @@
                 />
               </a>
             </div>
-            <div class="col-md-3" data-aos="zoom-out" data-aos-delay="200">
+            <div class="col-3" data-aos="zoom-out" data-aos-delay="200">
               <a
                 href="https://www.linkedin.com/company/icteventsmanila/about/"
                 target="_blank"
@@ -1032,7 +1064,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-3 pt-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="col-3 pt-3" data-aos="zoom-in" data-aos-delay="300">
               <a href="https://defidraft.com/" target="_blank">
                 <img
                   src="./assets/images/clients/DefiDraft.jpg"
@@ -1042,7 +1074,7 @@
                 />
               </a>
             </div>
-            <div class="col-md-3" data-aos="zoom-out" data-aos-delay="200">
+            <div class="col-3" data-aos="zoom-out" data-aos-delay="200">
               <a href="http://www.privatebanking.com/" target="_blank">
                 <img
                   src="./assets/images/clients/PRIVATEBANKING.COM-LOGO_CW.jpg"
@@ -1052,7 +1084,7 @@
                 />
               </a>
             </div>
-            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="100">
               <a href="https://startupreporter.in/" target="_blank">
                 <img
                   src="./assets/images/clients/By Smarklabs Media PVT LTD.png"
@@ -1062,7 +1094,7 @@
                 />
               </a>
             </div>
-            <div class="col-md-3 pt-3" data-aos="zoom-out" data-aos-delay="400">
+            <div class="col-3 pt-3" data-aos="zoom-out" data-aos-delay="400">
               <a href="https://www.dxtalks.com/" target="_blank">
                 <img
                   src="./assets/images/clients/DX TALKS - HIGH Resolution Logo  Vector_page-0001.jpg"
@@ -1072,7 +1104,7 @@
                 />
               </a>
             </div>
-            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="300">
               <a href="https://mid-east.info/" target="_blank">
                 <img
                   src="./assets/images/clients/mei logo.jpg"
@@ -1083,7 +1115,7 @@
               </a>
             </div>
 
-            <div class="col-md-3" data-aos="zoom-out" data-aos-delay="200">
+            <div class="col-3" data-aos="zoom-out" data-aos-delay="200">
               <a href="https://theglobalhues.com/" target="_blank">
                 <img
                   src="./assets/images/clients/TGH Logo.png"
@@ -1094,7 +1126,7 @@
               </a>
             </div>
             <div
-              class="col-md-3 d-flex justify-content-center align-items-center"
+              class="col-3 d-flex justify-content-center align-items-center"
               data-aos="zoom-in"
               data-aos-delay="100"
             >
@@ -1826,24 +1858,42 @@
           <!--Quick links Start-->
           <div class="col-md-2 pt-4">
             <h5 class="pb-3">Other Pages</h5>
-            <div class="d-flex justify-content-between flex-column">
-              <div class="py-2">
-                <i class="fa-solid fa-angle-right mx-2"></i
-                ><a href="#info_section">Home</a>
+            <div style="width: 100%; justify-content: center; align-items: center; flex-direction: column; display: flex;">
+              <div style="margin:5px; width: 150px; display: flex; justify-content: start; align-items: start;">
+                <span>
+                  <i class="fa-solid fa-angle-right mx-2"></i><a href="#info_section">Home </a>
+                </span>
               </div>
-              <div class="py-2">
-                <i class="fa-solid fa-angle-right mx-2"></i
-                ><a href="#event_sessions">Happenings</a>
+              <div style="margin:5px; width: 150px; display: flex; justify-content: start; align-items: start;">
+                <span>
+                  <i class="fa-solid fa-angle-right mx-2"></i><a href="#event_sessions">Happenings</a>
+                </span>
               </div>
-              <div class="py-2">
-                <i class="fa-solid fa-angle-right mx-2"></i
-                ><a href="#speakers">Speakers</a>
+              <div style="margin:5px; width: 150px; display: flex; justify-content: start; align-items: start;">
+                <span>
+                  <i class="fa-solid fa-angle-right mx-2"></i><a href="#speakers">Speakers</a>
+                </span>
               </div>
-              <div class="py-2">
-                <i class="fa-solid fa-angle-right mx-2"></i
-                ><a href="#sponsors">Sponsors</a>
+              <div style="margin:5px; width: 150px; display: flex; justify-content: start; align-items: start;">
+                <span>
+                  <i class="fa-solid fa-angle-right mx-2"></i><a href="#sponsors">Sponsors</a>
+                </span>
               </div>
             </div>
+            <!-- <div class="d-flex justify-content-center flex-column d-none d-md-block">
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i><a href="#info_section">Home </a>
+              </div>
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i><a href="#event_sessions">Happenings</a>
+              </div>
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i><a href="#speakers">Speakers</a>
+              </div>
+              <div class="py-2">
+                <i class="fa-solid fa-angle-right mx-2"></i><a href="#sponsors">Sponsors</a>
+              </div>
+            </div> -->
           </div>
           <!--QUick links end-->
 
@@ -2015,6 +2065,19 @@
         }
       });
     </script>
+
+    <!-- <script>
+      function openClose(){
+        const navHolder = document.getElementById('hiddenNav');
+        const computedStyle = window.getComputedStyle(navHolder);
+        if(computedStyle.display === "flex"){
+          navHolder.style.display === "none"
+        }else{
+          navHolder.style.display === "flex"
+        }
+          console.log("clickeddd", computedStyle.display);
+      }
+    </script> -->
 
     <script src="./assets/bootstrap/js/bootstrap.js"></script>
     <script src="./assets/bootstrap/js/bootstrap.js.map"></script>
