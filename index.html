@@ -127,37 +127,41 @@
   </head>
   <body>
     <nav class="nav">
-      <div class="container">
+      <div class="container" style="display: flex;justify-content: space-between;">
         <div class="logo">
           <a href="https://omandits.com"
             ><img src="./assets/images/dits.png" width="60" alt="img"
           /></a>
         </div>
-        <div id="mainListDiv" class="main_list">
+        <div id="mainListDiv" class="main_list" style="border-radius: 20px;">
           <ul class="navlinks">
-            <li><a href="#info_section">Home</a></li>
-            <li><a href="#event_sessions">Happenings</a></li>
-            <li><a href="#speakers">Speakers</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
-            <li><a href="#media_partners">Partners</a></li>
-            <li><a href="#topics_card">Agenda</a></li>
-            <li>
+            <li class="navItems"><a href="#info_section">Home</a></li>
+            <li class="navItems"><a href="#event_sessions">Happenings</a></li>
+            <li class="navItems"><a href="#speakers">Speakers</a></li>
+            <li class="navItems"><a href="#sponsors">Sponsors</a></li>
+            <li class="navItems"><a href="#media_partners">Partners</a></li>
+            <li class="navItems"><a href="#topics_card">Agenda</a></li>
+            <li class="">
+              
               <a href="./delegateEnquiry.html" class="bt openDelegateBtn"
                 >Delegate Enquiry</a
               >
             </li>
-            <li>
+            <li class="">
               <a href="./sponsorshipEnquiry.html" class="bt openSponsorBtn"
                 >Sponsor Enquiry</a
               >
             </li>
           </ul>
         </div>
-        <span class="navTrigger">
-          <i></i>
-          <i></i>
-          <i></i>
-        </span>
+        <div style="width: 100px ; height: 100px; position: absolute;top: 0;right: 0;">
+          <span class="navTrigger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+        </div>
+       
       </div>
     </nav>
 
@@ -246,11 +250,12 @@
               relevance and impact on organizations.
             </p>
           </div>
-          <div class="col-md-6" data-aos="zoom-in" style="padding-right: 50px">
+          <div class="col-md-6" data-aos="zoom-in">
             <img
               src="./assets/images/photo-1540575467063-178a50c2df87.avif"
               alt="img"
               class="img-fluid rounded"
+              style="width: 100%;height: 100%; object-fit: cover;"
             />
           </div>
         </div>
@@ -308,24 +313,26 @@
               src="./assets/images/map.png"
               alt="img"
               class="img-fluid rounded"
+              style="object-fit: cover;"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="event_sessions">
+    <section id="event_sessions" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
       <h2 class="text-center py-5" data-aos="zoom-out">
         Happenings at the Summit
       </h2>
 
       <div class="container cards_container py-5">
         <!-- 1 -->
-        <div class="cc_card" data-aos="fade-up">
+        <div class="cc_card" data-aos="fade-up" style="width:100%;">
           <img
             src="./assets/images/insightfull session.jpg"
             alt="img"
             class="img-fluid"
+            style="object-fit: cover;"
           />
           <div class="intro">
             <h1>Insightful Sessions</h1>
@@ -342,8 +349,8 @@
           </div>
         </div>
         <!-- 2 -->
-        <div class="cc_card" data-aos="fade-up">
-          <img src="./assets/images/technology case study.jpg" alt="img" />
+        <div class="cc_card" data-aos="fade-up" style="width:100%;">
+          <img src="./assets/images/technology case study.jpg" style="object-fit: cover;" alt="img" />
           <div class="intro">
             <h1>Technology Use-cases</h1>
             <p>
@@ -357,8 +364,8 @@
         </div>
         <!-- 3 -->
 
-        <div class="cc_card" data-aos="fade-up">
-          <img src="./assets/images/blog-upload-b2bmx-2.3.png" alt="img" />
+        <div class="cc_card" data-aos="fade-up" style="width:100%;">
+          <img src="./assets/images/blog-upload-b2bmx-2.3.png" style="object-fit: cover;" alt="img" />
           <div class="intro">
             <h1>Tech Exhibitions!</h1>
             <p>
@@ -370,8 +377,8 @@
           </div>
         </div>
         <!-- 4 -->
-        <div class="cc_card" data-aos="fade-up">
-          <img src="./assets/images/meet-1.jpg" alt="img" />
+        <div class="cc_card" data-aos="fade-up" style="width:100%;">
+          <img src="./assets/images/meet-1.jpg" style="object-fit: cover;" alt="img" />
           <div class="intro">
             <h1>Panel Discussions</h1>
             <p>
@@ -384,8 +391,8 @@
           </div>
         </div>
         <!-- 5 -->
-        <div class="cc_card" data-aos="fade-up">
-          <img src="./assets/images/business networking.jpg" alt="img" />
+        <div class="cc_card" data-aos="fade-up" style="width:100%;">
+          <img src="./assets/images/business networking.jpg" style="object-fit: cover;" alt="img" />
           <div class="intro">
             <h1>Business Networking</h1>
             <p>
@@ -398,8 +405,8 @@
           </div>
         </div>
         <!-- 6 -->
-        <div class="cc_card" data-aos="fade-up">
-          <img src="./assets/images/robot.jpg" alt="img" />
+        <div class="cc_card" data-aos="fade-up" style="width:100%;">
+          <img src="./assets/images/robot.jpg" style="object-fit: cover;" alt="img" />
           <div class="intro">
             <h1>Product Showcase</h1>
             <p>
@@ -606,12 +613,12 @@
       </div>
     </section>
 
-    <section id="speakers" class="pb-5">
+    <section id="speakers" class="pb-5" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
       <h2 class="text-center py-5">Esteemed Speakers</h2>
       <div class="container speakers_container">
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="200">
-          <div class="img_container">
-            <img src="./assets/images/speakers/salim.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/salim.png" style="object-fit: cover;" alt="img" />
           </div>
           <h5>Dr. Salim Humaid Al-Shuaili</h5>
           <p>
@@ -624,8 +631,8 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="400">
-          <div class="img_container">
-            <img src="./assets/images/speakers/kawthar.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/kawthar.png" style="object-fit: contain;" alt="img" />
           </div>
           <h5>Kawthar Ali Al Hinai</h5>
           <p>
@@ -640,8 +647,8 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="600">
-          <div class="img_container">
-            <img src="./assets/images/speakers/Ebrahim.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/Ebrahim.png" style="object-fit: contain;" alt="img" />
           </div>
           <h5>Dr. Ebrahim Al Alkeem Al Zaabi</h5>
           <p>
@@ -653,10 +660,11 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="800">
-          <div class="img_container">
+          <div class="img_container" style="overflow: hidden;">
             <img
               src="./assets/images/speakers/Ali-Hassan-Moosa.png"
               alt="img"
+              style="object-fit: contain; margin-top:20px;"
             />
           </div>
           <h5>Ali Hassan Moosa</h5>
@@ -669,10 +677,11 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="200">
-          <div class="img_container">
+          <div class="img_container" style="overflow: hidden;">
             <img
               src="./assets/images/speakers/nameer-removebg-preview.png"
               alt="img"
+              style="object-fit: contain;margin-top:10px;"
             />
           </div>
           <h5>Nameer Khan</h5>
@@ -684,10 +693,11 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="400">
-          <div class="img_container">
+          <div class="img_container" style="overflow: hidden;">
             <img
               src="./assets/images/speakers/Dr-Fethi-Filali-removebg-preview.png"
               alt="img"
+              style="object-fit: contain;margin-top:21px;"
             />
           </div>
           <h5>Dr. Fethi Filali</h5>
@@ -699,8 +709,8 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="600">
-          <div class="img_container">
-            <img src="./assets/images/speakers/Sanjeev_Madavi.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/Sanjeev_Madavi.png" style="object-fit: contain;" alt="img" />
           </div>
           <h5>Sanjeev Madavi</h5>
           <p>
@@ -711,8 +721,8 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="800">
-          <div class="img_container">
-            <img src="./assets/images/speakers/mahaalhabsi.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/mahaalhabsi.png" style="object-fit: contain;" alt="img" />
           </div>
           <h5>Maha Alhabsi</h5>
           <p>
@@ -725,7 +735,7 @@
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="200">
           <div class="img_container pt-4" style="overflow: hidden">
-            <img src="./assets/images/speakers/waad-alsalmani.png" alt="img" />
+            <img src="./assets/images/speakers/waad-alsalmani.png" style="object-fit: contain;" alt="img" />
           </div>
           <h5>Waad Al Salmani</h5>
           <p>
@@ -737,8 +747,8 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="400">
-          <div class="img_container">
-            <img src="./assets/images/speakers/aliabdullah.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/aliabdullah.png" style="object-fit: cover;" alt="img" />
           </div>
           <h5>Ali Abdulla Alsadadi</h5>
           <p>
@@ -750,8 +760,8 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="600">
-          <div class="img_container">
-            <img src="./assets/images/speakers/wisal.png" alt="img" />
+          <div class="img_container" style="overflow: hidden;">
+            <img src="./assets/images/speakers/wisal.png" alt="img" style="object-fit: contain; margin-top:28px;"/>
           </div>
           <h5>Dr. Wisal Abbas Jaffar Al Balushi</h5>
           <p>
@@ -763,7 +773,7 @@
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="800">
           <div class="img_container pt-4" style="overflow: hidden">
-            <img src="./assets/images/speakers/hanan.png" alt="img" />
+            <img src="./assets/images/speakers/hanan.png" alt="img" style="object-fit: contain;" />
           </div>
           <h5>Hanan Hamad Al Salmi</h5>
           <p>
@@ -775,10 +785,11 @@
         </div>
 
         <div class="speaker_content" data-aos="fade-up" data-aos-delay="800">
-          <div class="img_container pt-4" style="overflow: hidden">
+          <div class="img_container pt-4" style="overflow: hidden;">
             <img
               src="./assets/images/speakers/Nabila_s_Pic_2__003_-removebg-preview (1).png"
               alt="img"
+              style="object-fit: contain;"
             />
           </div>
           <h5>Nabila Al Macki</h5>
