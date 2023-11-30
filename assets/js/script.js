@@ -111,7 +111,6 @@ function sendMail() {
   const checkbox4 = document.getElementById("my_checkbox4");
 
   if (
-    !registrationCode ||
     !title ||
     !firstname ||
     !lastname || !jobtitle || !companyname || !email || !phone || !industry || !country || !employees || !solutions || !role
