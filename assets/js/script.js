@@ -110,29 +110,6 @@ function sendMail() {
   const checkbox3 = document.getElementById("my_checkbox3");
   const checkbox4 = document.getElementById("my_checkbox4");
 
-  console.log(registrationCode,
-title,
-firstname,
-lastname,
-jobtitle,
-companyname,
-email,
-phone,
-industry,
-country,
-employees,
-solutions,
-role,
-referee_fullname,
-referee_companyname,
-referee_jobtitle,
-referee_emailid,
-referee_phoneno,
-checkbox1,
-checkbox2,
-checkbox3,
-checkbox4)
-
   if (
     !title ||
     !firstname ||
