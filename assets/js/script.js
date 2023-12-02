@@ -92,7 +92,7 @@ function sendMail() {
   const jobtitle = document.getElementById("jobtitle").value;
   const companyname = document.getElementById("companyname").value;
   const email = document.getElementById("email").value;
-  const phone = document.getElementById("mobilePhone").value;
+  const phone = document.getElementById("phone").value;
   const industry = document.getElementById("industry").value;
   const country = document.getElementById("country").value;
   const employees = document.getElementById("employees").value;
@@ -116,7 +116,33 @@ function sendMail() {
     !lastname || !jobtitle || !companyname || !email || !phone || !industry || !country || !employees || !solutions || !role
     // ... Add conditions for other required fields here ...
   ) {
-    alert("Please fill in the required fields.");
+
+    if(title === ''){
+      alert("Please fill the required field title");
+    }else if( firstname === ''){
+      alert("Please fill the required field first name");
+    }else if( lastname === ''){
+      alert("Please fill the required field last name");
+    }else if( jobtitle === '' ){
+      alert("Please fill the required field job title");
+    }else if( companyname === '' ){
+      alert("Please fill the required field company name");
+    }else if( email === '' ){
+      alert("Please fill the required field email");
+    }else if( phone === '' ){
+      alert("Please fill the required field mobile number");
+    }else if(industry === ''){
+      alert("Please fill the required field industry");
+    }else if(country === null){
+      alert("Please fill the required field country");
+    }else if(employees === ''){
+      alert("Please fill the required field empoyees");
+    }else if(solutions === ''){
+      alert("Please fill the required field solution");
+    }else if(role === ''){
+      alert("Please fill the required field role");
+    }
+
     return; // Exit the function early if any field is empty
   }
 
@@ -169,31 +195,34 @@ function sendMail() {
   const templateID = "template_ju5hv1k";
 
   emailjs
-    .send(serviceID, templateID, params)
+    .send(serviceID, templateID, params, "hO0rGL2q2-CdEsIN5")
     .then((res) => {
-      document.getElementById("registrationCode").value = "";
-      document.getElementById("title").value = "";
-      document.getElementById("firstname").value = "";
-      document.getElementById("lastname").value = "";
-      document.getElementById("jobtitle").value = "";
-      document.getElementById("companyname").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("mobilePhone").value = "";
-      document.getElementById("industry").value = "";
-      document.getElementById("country").value = "";
-      document.getElementById("employees").value = "";
-      document.getElementById("solutions").value = "";
-      document.getElementById("role").value = "";
+      // document.getElementById("registrationCode").value = "";
+      // document.getElementById("title").value = "";
+      // document.getElementById("firstname").value = "";
+      // document.getElementById("lastname").value = "";
+      // document.getElementById("jobtitle").value = "";
+      // document.getElementById("companyname").value = "";
+      // document.getElementById("email").value = "";
+      // document.getElementById("mobilePhone").value = "";
+      // document.getElementById("industry").value = "";
+      // document.getElementById("country").value = "";
+      // document.getElementById("employees").value = "";
+      // document.getElementById("solutions").value = "";
+      // document.getElementById("role").value = "";
 
-      document.getElementById("referee_fullname").value = "";
-      document.getElementById("referee_companyname").value = "";
-      document.getElementById("referee_jobtitle").value = "";
-      document.getElementById("referee_emailid").value = "";
-      document.getElementById("referee_phoneno").value = "";
-      console.log(res);
+      // document.getElementById("referee_fullname").value = "";
+      // document.getElementById("referee_companyname").value = "";
+      // document.getElementById("referee_jobtitle").value = "";
+      // document.getElementById("referee_emailid").value = "";
+      // document.getElementById("referee_phoneno").value = "";
       alert("Your message has sent succesfully");
+      window.location.href = 'https://omandits.com/'
     })
-    .catch((error) => alert(error));
+    .catch((error) => {
+      console.log(error)
+      alert(error)
+    });
 }
 
 function sendSpMail() {
@@ -347,3 +376,5 @@ document
       behavior: "smooth", // Optional smooth scrolling animation
     });
   });
+
+  
