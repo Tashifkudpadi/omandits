@@ -644,7 +644,7 @@ form label {
   justify-content: space-between;
   align-items: center; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   gap: 4px;
   padding: 40px 80px;
