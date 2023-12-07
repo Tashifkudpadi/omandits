@@ -1150,9 +1150,9 @@ footer #back-to-top button:hover svg {
  .card {
    min-width: 300px;
    min-height: 250px;
-   background: #02b875;
+   background: linear-gradient(#4181ee, #3ab7dd);
    padding: 30px;
-   border-radius: 3px;
+   border-radius: 17px;
    box-sizing: border-box;
    color: #FFF;
    margin: 20px;
@@ -1160,11 +1160,11 @@ footer #back-to-top button:hover svg {
  }
 
  .card:nth-child(2) {
-   background: #4181ee;
+   background: linear-gradient(#4181ee, #3ab7dd);
  }
 
  .card:last-child {
-   background: #673ab7;
+   background: linear-gradient(#4181ee, #3ab7dd);
  }
 
  .card-title {
