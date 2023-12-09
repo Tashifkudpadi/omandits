@@ -515,10 +515,12 @@ form label {
 }
 #speakers .speakers_container .speaker_content {
   padding: 12px;
-  height: 600px;
-  width: 300px;
+  height: 750px;
+  width: 325px;
   text-align: center;
   border-radius: 8px;
+  background-color: #e6e6e6;
+  position: relative;
 }
 #speakers .speakers_container .speaker_content h5 {
   text-transform: uppercase;
@@ -532,7 +534,9 @@ form label {
 #speakers .speakers_container .img_container {
   border-radius: 25px;
   margin-bottom: 20px;
-  background-image: url("../images/sp-bg4.jpg");
+  /* background-image: url("../images/sp-bg4.jpg");
+   */
+   background-color: rgb(82, 82, 82);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
