@@ -528,9 +528,9 @@ form label {
   font-weight: 700;
   color: cadetblue;
 }
-#speakers .speakers_container .speaker_content p {
+/* #speakers .speakers_container .speaker_content p {
   font-weight: 600;
-}
+} */
 #speakers .speakers_container .img_container {
   border-radius: 25px;
   margin-bottom: 20px;
@@ -663,7 +663,7 @@ form label {
   background: #fff;
 }
 #trending_topics .trending_topics_cards h4 {
-  font-weight: 700;
+  /* font-weight: 700; */
   font-size: 24px;
   color: #553165;
 }
@@ -732,9 +732,9 @@ form label {
   -webkit-background-clip: text;
   background-clip: text; */
 }
-#themes_in_focus p {
+/* #themes_in_focus p {
   font-weight: 600;
-}
+} */
 #info_section .container,
 #why_oman .container,
 #event_sessions .container,
@@ -1174,7 +1174,7 @@ footer #back-to-top button:hover svg {
  .card-title {
    margin-top: 0;
    font-size: 16px;
-   font-weight: 600;
+   /* font-weight: 600; */
    letter-spacing: 1.2px;
  }
 
