@@ -52,19 +52,44 @@
     </script>
   </head>
   <body>
-    <nav class="navbar bg-dark">
-      <div class="container">
+    <nav class="nav" style="background-color: #111;">
+      <div class="container" style="display: flex;justify-content: space-between;">
         <div class="logo">
-          <a href="./"
-            ><img src="./assets/images/dits.png" width="60" alt="img "
-          /></a>
+          <a href="https://omandits.com"><img src="./assets/images/dits.png" width="60" alt="img" /></a>
         </div>
+    
+    
+        <div id="mainListDiv" class="main_list" style="border-radius: 20px;">
+          <ul class="navlinks">
+            <li class="navItems"><a href="#info_section">Home</a></li>
+            <li class="navItems"><a href="#event_sessions">Happenings</a></li>
+            <li class="navItems"><a href="#speakers">Speakers</a></li>
+            <li class="navItems"><a href="#sponsors">Sponsors</a></li>
+            <li class="navItems"><a href="#media_partners">Partners</a></li>
+            <li class="navItems"><a href="#topics_card">Agenda</a></li>
+            <li class="">
+              <a style="margin-right: 1.5rem;" href="./delegateEnquiry.html" class="bt openDelegateBtn">Delegate Enquiry</a>
+            </li>
+            <li class="">
+              <a style="margin-right: 1.5rem;" href="./sponsorshipEnquiry.html" class="bt openSponsorBtn">Sponsor
+                Enquiry</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-block d-md-none" style="width: 100px ; height: 100px; position: absolute;top: 0;right: 0;">
+          <span class="navTrigger" onclick="{openClose()}">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+        </div>
+    
       </div>
     </nav>
 
     <section>
       <div class="container p-4 rounded">
-        <div class="popup">
+        <div style="margin-top: 7rem;" class="popup">
           <h4 class="text-info">SPONSOR ENQUIRY FORM</h4>
           <div class="row">
             <div class="col-md-6">

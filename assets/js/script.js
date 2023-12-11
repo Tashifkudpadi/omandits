@@ -377,4 +377,9 @@ document
     });
   });
 
+
+function speakersSubmit(){
+  const speakerFirstName = document.getElementById('fname').value;
+  const speakerSecondName = document.getElementById('lname').value;
   
+}
