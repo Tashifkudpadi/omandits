@@ -33,7 +33,7 @@
   </script>
   <script type="text/javascript">
     (function () {
-      emailjs.init("ViLhbqgObDP3lAZc8");
+      emailjs.init("JDbtSvz50vawMbCH8");
     })();
   </script>
 </head>
@@ -504,7 +504,7 @@
           </label>
         </div>
 
-        <button class="btn btn-info text-light" onclick="saveImage()">
+        <button class="btn btn-info text-light" id="submitButton">
           Submit
         </button>
       </div>
@@ -696,11 +696,18 @@
       }
     });
   </script>
-  <script  type="module">
-    import saveImageHleper from ''
+
+  <script type="module">
+    import { getImageUrl, saveImage } from './assets/js/firebase.js';
+
+    document.getElementById('submitButton').addEventListener('click', async function(){
+      const url = await saveImage();
+      console.log(url);
+      speakersSubmit(url[0], url[1]);
+      // getImageUrl('https://firebasestorage.googleapis.com/v0/b/omandits-2695b.appspot.com/o/1%20(1).png?alt=media&token=951af32f-d5df-4f6b-b255-61748a9adb3d');
+    })
   </script>
-
-
+  
   <script src="./assets/bootstrap/js/bootstrap.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.js.map"></script>
   <script src="./assets/bootstrap/js/bootstrap.min.js"></script>

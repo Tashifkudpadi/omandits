@@ -383,7 +383,7 @@ document
   });
 
 
-function speakersSubmit(event){
+function speakersSubmit(profileUrl, passportUrl){
   // event.preventDefault();
   const speakerFirstName = document.getElementById('fname').value;
   const speakerSecondName = document.getElementById('lname').value;
@@ -396,12 +396,6 @@ function speakersSubmit(event){
   const country = document.getElementById('sp_country').value
   const industry = document.getElementById('sp_industry_field').value
 
-  const image = document.getElementById('image');
-  const passport = document.getElementById('passport');
-
-  const selectedImage = image.files[0];
-  const selectedPassport = passport.files[0];
-
   const personalBio = document.getElementById('pBio').value;
   const linkedPro = document.getElementById('linkedIn').value;
 
@@ -410,11 +404,6 @@ function speakersSubmit(event){
   const assistantEmail = document.getElementById('Aemail').value;
   const assistantDirectLine = document.getElementById('ADline').value;
   const assistantMobile = document.getElementById('Amobile').value;
-
-  console.log(speakerFirstName, speakerSecondName, companyName, email, city, directLine, jodTitle, mobile, country, 
-    industry, selectedPassport, selectedImage, personalBio, linkedPro, assistantFirstName, assistantLastName, assistantEmail,
-    assistantDirectLine, assistantMobile
-  );
 
   let params = {};
 
@@ -438,10 +427,6 @@ function speakersSubmit(event){
     alert("Country is required.");
   } else if (!industry) {
     alert("Industry is required.");
-  } else if (!selectedPassport) {
-    alert("Passport is required.");
-  } else if (!selectedImage) {
-    alert("Image is required.");
   } else if (!personalBio) {
     alert("Personal Bio is required.");
   } else if (!linkedPro) {
@@ -458,7 +443,6 @@ function speakersSubmit(event){
     alert("Assistant Mobile is required.");
   } else {
     params = {
-      to_name : "Amal",
       name : speakerFirstName +" "+ speakerSecondName,
       companyName,
       email,
@@ -467,8 +451,8 @@ function speakersSubmit(event){
       mobile,
       country,
       industry,
-      selectedImage,
-      selectedPassport,
+      profileUrl,
+      passportUrl,
       personalBio,
       linkedPro,
       assistantName : assistantFirstName+" "+assistantLastName,
@@ -477,14 +461,17 @@ function speakersSubmit(event){
       assistantMobile
     }
 
-    const serviceID = "service_hwhg91s";
-    const templateID = "template_i2j0v2w";
+    const serviceID = "service_0vz79hd";
+    const templateID = "template_auy92ks";
     
     emailjs
-    .sendForm(serviceID, templateID, params)
+    .send(serviceID, templateID, params)
     .then((res) => {
       console.log(res);
-      alert("Speaker completed");
+      alert(`Thank you for your recent inquiry. We greatly appreciate your interest and the time you've taken to reach out to us.
+      Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted. Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
+      Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at <a href=""> mohammad.afsal@genfinityglobal.com.</a> We're here to assist and address any concerns you may have.
+      Thank you once again for considering our event. We look forward to the possibility of collaborating with you.`);
     })
     .catch((error) => alert("Something went wrong"+error));
   }
