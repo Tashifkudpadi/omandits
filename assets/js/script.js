@@ -83,7 +83,7 @@ updateTimer();
 //   }
 // });
 
-function sendMail() {
+function sendMail(countryCode) {
 
   const registrationCode = document.getElementById("registrationCode").value;
   const title = document.getElementById("title").value;
@@ -109,6 +109,7 @@ function sendMail() {
   const checkbox2 = document.getElementById("my_checkbox2");
   const checkbox3 = document.getElementById("my_checkbox3");
   const checkbox4 = document.getElementById("my_checkbox4");
+
 
   if (
     !title ||
@@ -179,6 +180,7 @@ function sendMail() {
     employees,
     solutions,
     role,
+    countryCode,
 
     referee_fullname,
     referee_companyname,
@@ -216,7 +218,10 @@ function sendMail() {
       // document.getElementById("referee_jobtitle").value = "";
       // document.getElementById("referee_emailid").value = "";
       // document.getElementById("referee_phoneno").value = "";
-      alert("Your message has sent succesfully");
+      alert(`Thank you for your recent inquiry.We greatly appreciate your interest and the time you've taken to reach out to us.
+      Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted.Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
+      Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at mohammad.afsal@genfinityglobal.com. We're here to assist and address any concerns you may have.
+      Thank you once again for considering our event.We look forward to the possibility of collaborating with you.`);
       window.location.href = 'https://omandits.com/'
     })
     .catch((error) => {
@@ -377,4 +382,111 @@ document
     });
   });
 
-  
+
+function speakersSubmit(event){
+  // event.preventDefault();
+  const speakerFirstName = document.getElementById('fname').value;
+  const speakerSecondName = document.getElementById('lname').value;
+  const companyName = document.getElementById('company').value;
+  const email = document.getElementById('email').value;
+  const city = document.getElementById('city').value;
+  const directLine = document.getElementById('Dline').value;
+  const jodTitle = document.getElementById('job_title').value;
+  const mobile = document.getElementById('mobile').value
+  const country = document.getElementById('sp_country').value
+  const industry = document.getElementById('sp_industry_field').value
+
+  const image = document.getElementById('image');
+  const passport = document.getElementById('passport');
+
+  const selectedImage = image.files[0];
+  const selectedPassport = passport.files[0];
+
+  const personalBio = document.getElementById('pBio').value;
+  const linkedPro = document.getElementById('linkedIn').value;
+
+  const assistantFirstName = document.getElementById('Afname').value;
+  const assistantLastName = document.getElementById('Alname').value;
+  const assistantEmail = document.getElementById('Aemail').value;
+  const assistantDirectLine = document.getElementById('ADline').value;
+  const assistantMobile = document.getElementById('Amobile').value;
+
+  console.log(speakerFirstName, speakerSecondName, companyName, email, city, directLine, jodTitle, mobile, country, 
+    industry, selectedPassport, selectedImage, personalBio, linkedPro, assistantFirstName, assistantLastName, assistantEmail,
+    assistantDirectLine, assistantMobile
+  );
+
+  let params = {};
+
+  if (!speakerFirstName) {
+    alert("Speaker First Name is required.");
+  } else if (!speakerSecondName) {
+    alert("Speaker Last Name is required.");
+  } else if (!companyName) {
+    alert("Company Name is required.");
+  } else if (!email) {
+    alert("Email is required.");
+  } else if (!city) {
+    alert("City is required.");
+  } else if (!directLine) {
+    alert("Direct Line is required.");
+  } else if (!jodTitle) {
+    alert("Job Title is required.");
+  } else if (!mobile) {
+    alert("Mobile is required.");
+  } else if (!country) {
+    alert("Country is required.");
+  } else if (!industry) {
+    alert("Industry is required.");
+  } else if (!selectedPassport) {
+    alert("Passport is required.");
+  } else if (!selectedImage) {
+    alert("Image is required.");
+  } else if (!personalBio) {
+    alert("Personal Bio is required.");
+  } else if (!linkedPro) {
+    alert("LinkedIn Profile is required.");
+  } else if (!assistantFirstName) {
+    alert("Assistant First Name is required.");
+  } else if (!assistantLastName) {
+    alert("Assistant Last Name is required.");
+  } else if (!assistantEmail) {
+    alert("Assistant Email is required.");
+  } else if (!assistantDirectLine) {
+    alert("Assistant Direct Line is required.");
+  } else if (!assistantMobile) {
+    alert("Assistant Mobile is required.");
+  } else {
+    params = {
+      to_name : "Amal",
+      name : speakerFirstName +" "+ speakerSecondName,
+      companyName,
+      email,
+      city,
+      directLine,
+      mobile,
+      country,
+      industry,
+      selectedImage,
+      selectedPassport,
+      personalBio,
+      linkedPro,
+      assistantName : assistantFirstName+" "+assistantLastName,
+      assistantEmail,
+      assistantDirectLine,
+      assistantMobile
+    }
+
+    const serviceID = "service_hwhg91s";
+    const templateID = "template_i2j0v2w";
+    
+    emailjs
+    .sendForm(serviceID, templateID, params)
+    .then((res) => {
+      console.log(res);
+      alert("Speaker completed");
+    })
+    .catch((error) => alert("Something went wrong"+error));
+  }
+
+}
