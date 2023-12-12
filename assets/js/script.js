@@ -470,7 +470,7 @@ function speakersSubmit(profileUrl, passportUrl){
       console.log(res);
       alert(`Thank you for your recent inquiry. We greatly appreciate your interest and the time you've taken to reach out to us.
       Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted. Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
-      Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at <a href=""> mohammad.afsal@genfinityglobal.com.</a> We're here to assist and address any concerns you may have.
+      Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at mohammad.afsal@genfinityglobal.com. We're here to assist and address any concerns you may have.
       Thank you once again for considering our event. We look forward to the possibility of collaborating with you.`);
       window.location.href = 'https://omandits.com/'
     })
