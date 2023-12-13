@@ -230,19 +230,19 @@ function sendMail(countryCode) {
     });
 }
 
-function sendSpMail() {
+function sendSpMail(countryCode) {
 
   const sp_fullname = document.getElementById("sp_fullname").value;
   const sp_company = document.getElementById("sp_company").value;
   const sp_email = document.getElementById("sp_email").value;
   const sp_city = document.getElementById("sp_city").value;
   const sp_jbTitle = document.getElementById("sp_jbTitle").value;
-  const sp_mobile = document.getElementById("sp_mobile").value;
+  const sp_mobile = document.getElementById("phone").value;
   const sp_country = document.getElementById("sp_country").value;
   const sp_industry_field = document.getElementById("sp_industry_field").value;
 
   const whereYouHearAbout_us = document.getElementById("where_did_you_hear_about_us").value;
-
+  console.log(sp_mobile);
 
   if (
     sp_fullname === "" ||
@@ -345,28 +345,24 @@ function sendSpMail() {
     sp_jbTitle,
     sp_mobile,
     sp_country,
+    countryCode,
     sp_industry_field,
     whereYouHearAbout_us,
     checkedCheckboxes,
     int_checkedCheckboxes, showMeetcheckedCheckboxes, checkbox_sp_concent
   };
-
+  console.log(countryCode, 'from script');
   const serviceID = "service_xgm708t";
   const templateID = "template_mpg968b";
 
   emailjs
     .send(serviceID, templateID, params)
     .then((res) => {
-      document.getElementById("sp_fullname").value = "";
-      document.getElementById("sp_company").value = "";
-      document.getElementById("sp_email").value = "";
-      document.getElementById("sp_city").value = "";
-      document.getElementById("sp_jbTitle").value = "";
-      document.getElementById("sp_mobile").value = "";
-      document.getElementById("sp_country").value = "";
-      document.getElementById("sp_industry_field").value = "";
-      console.log(res);
-      alert("Your message has sent succesfully");
+      alert(`Thank you for your recent inquiry.We greatly appreciate your interest and the time you've taken to reach out to us.
+      Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted.Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
+      Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at mohammad.afsal@genfinityglobal.com. We're here to assist and address any concerns you may have.
+      Thank you once again for considering our event.We look forward to the possibility of collaborating with you.`);
+      window.location.href = 'https://omandits.com/'
     })
     .catch((error) => alert(error));
 }

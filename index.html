@@ -614,10 +614,44 @@
       </div>
     </section>
 
-    <div style="width: 100%; height: 10vh; display: flex; justify-content: center; align-items: center;">
-      <a href="./speakersForm.html" type="button" class="btn btn-primary">SPEAKERS ENQUIRY</a>
-      
-    </div>
+    <section>
+      <div class="container-fluid">
+        <div class="row" >
+          <div class="col-12">
+            <div id="panel">
+              <div class="container">
+                <div class="d-flex flex-wrap pt-4">
+            
+                  <div class="flex-column bd-highlight align-self-center pl-2 pr-2">
+                    <img src="./assets/images/speakersLogo/adsSpeaker.png" class="img-fluid animated slideInUp delay-1s">
+                  </div>
+            
+                  <div class="flex-column flex-grow-1 align-self-center p-2">
+                    <h3 class="animated slideInLeft delay-2s"
+                      style="font-weight:600; color:#684701; text-shadow: 1px 1px 2px rgba(255,237,0,1);">Eager to join us as <br> a speaker or panel member <br> at DITS OMAN 2024? Apply now!
+                    </h3>
+                    <!-- <h4 class="animated fadeIn delay-3s" style="color:#684700;">with our All New <span
+                        class="badge badge-pill badge-custom">"Really Estate"</span> Technology:</h4> -->
+                  </div>
+            
+                  <div class="flex-column bd-highlight align-self-center p-2">
+                    <a href="./speakersForm.html" class="btn btn-lg btn btn-dark animated fadeIn delay-4s">APPLY TO SPEAK</a>
+                  </div>
+            
+                </div>
+            
+                <!-- <button id="close" type="button" class="close" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button> -->
+            
+              </div>
+            
+            </div>
+            <!-- <div id="open">Open</div> -->
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="speakers" class="pb-5" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
       <h2 class="text-center py-5">Esteemed Speakers</h2>
@@ -1084,9 +1118,9 @@
         </div>
         <div class="py-3">
           <div class="mb-4 sponsor_subheading">
-            <h3>Platinum Sponsor</h3>
+            <h3>Platinum Sponsors</h3>
           </div>
-          <a href="https://decodingit.com/" target="_blank">
+          <a href="https://www.bi42.ai/" target="_blank">
             <img
               src="./assets/images/clients/dit-logo-ar-f-removebg.png"
               alt="img"
@@ -1113,6 +1147,14 @@
           <a href="https://everybodycounts.org.uk" target="_blank">
             <img
               src="./assets/images/clients/everybody counts final logo.png"
+              alt="img"
+              width="320"
+              data-aos="fade"
+            />
+          </a>
+          <a href="https://everybodycounts.org.uk" target="_blank">
+            <img
+              src="./assets/images/clients/logoP1.png"
               alt="img"
               width="320"
               data-aos="fade"
@@ -2350,11 +2392,42 @@
 
     <script>
       AOS.init({
-        duration: 800, // Duration of animation in milliseconds
-        easing: "ease-in-out", // Easing function to control the animation speed
-        once: false, // Whether to trigger animations only once or every time element comes into view
+        duration: 800, 
+        easing: "ease-in-out", 
+        once: false, 
         disable: "mobile",
       });
+    </script>
+
+
+
+    <script>
+      $(document).ready(function () {
+          $("div#panel").hide();
+
+          var autoTimer = null;
+
+          autoTimer = setTimeout(function () {
+            $("div#panel").slideDown("slow");
+            /* autoTimer = setTimeout(function(){
+                $("div#panel").slideUp("slow");
+            }, 5000); */
+          }, 2000);
+
+          $("#open").click(function () {
+            $("div#panel").slideDown("slow");
+            if (autoTimer) clearTimeout(autoTimer);
+            autoTimer = null;
+          });
+
+          $("#close").click(function () {
+            $("div#panel").slideUp("slow");
+            if (autoTimer) clearTimeout(autoTimer);
+            autoTimer = null;
+          });
+        });
+      
+
     </script>
   </body>
 </html>
