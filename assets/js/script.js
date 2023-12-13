@@ -242,7 +242,6 @@ function sendSpMail(countryCode) {
   const sp_industry_field = document.getElementById("sp_industry_field").value;
 
   const whereYouHearAbout_us = document.getElementById("where_did_you_hear_about_us").value;
-  console.log(sp_mobile);
 
   if (
     sp_fullname === "" ||
@@ -351,7 +350,7 @@ function sendSpMail(countryCode) {
     checkedCheckboxes,
     int_checkedCheckboxes, showMeetcheckedCheckboxes, checkbox_sp_concent
   };
-  console.log(countryCode, 'from script');
+
   const serviceID = "service_xgm708t";
   const templateID = "template_mpg968b";
 
@@ -379,7 +378,7 @@ document
   });
 
 
-function speakersSubmit(profileUrl, passportUrl){
+async function speakersSubmit(saveImage){
   // event.preventDefault();
   const speakerFirstName = document.getElementById('fname').value;
   const speakerSecondName = document.getElementById('lname').value;
@@ -400,6 +399,10 @@ function speakersSubmit(profileUrl, passportUrl){
   const assistantEmail = document.getElementById('Aemail').value;
   const assistantDirectLine = document.getElementById('ADline').value;
   const assistantMobile = document.getElementById('Amobile').value;
+
+  const checkboxOne = document.getElementById('sp_concent');
+  const checkboxTwo = document.getElementById('sp_concent');
+  const checkboxThree = document.getElementById('sp_concent');
 
   let params = {};
 
@@ -438,6 +441,14 @@ function speakersSubmit(profileUrl, passportUrl){
   } else if (!assistantMobile) {
     alert("Assistant Mobile is required.");
   } else {
+
+    if (!checkboxOne.checked || !checkboxTwo.checked || !checkboxThree.checked){
+      alert("You have fill the check box");
+      return
+    }
+
+    const url = await saveImage();
+
     params = {
       name : speakerFirstName +" "+ speakerSecondName,
       companyName,
@@ -447,8 +458,8 @@ function speakersSubmit(profileUrl, passportUrl){
       mobile,
       country,
       industry,
-      profileUrl,
-      passportUrl,
+      profileUrl : url[0],
+      passportUrl : url[1],
       personalBio,
       linkedPro,
       assistantName : assistantFirstName+" "+assistantLastName,

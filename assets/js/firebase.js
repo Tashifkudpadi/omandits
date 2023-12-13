@@ -34,7 +34,7 @@ export async function saveImage() {
   const selectedImage = image.files[0];
 
   if (!image || !selectedImage) {
-    alert('Please Upload your passport');
+    alert('Please Upload your profile image');
     return
   }
 
