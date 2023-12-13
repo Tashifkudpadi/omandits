@@ -694,14 +694,14 @@
   </script>
 
   <script type="module">
-    import { getImageUrl, saveImage } from './assets/js/firebase.js';
+    import { saveImage } from './assets/js/firebase.js';
 
     document.getElementById('submitButton').addEventListener('click', async function(){
-      const url = await saveImage();
-      speakersSubmit(url[0], url[1]);
+      speakersSubmit(saveImage);
     })
   </script>
-  
+
+  <script src="./assets/js/script.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.js.map"></script>
   <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
