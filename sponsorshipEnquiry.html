@@ -31,6 +31,10 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- country code  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/jquery.js"></script>
     <link rel="stylesheet" href="./assets/css/aos.css" />
@@ -61,12 +65,12 @@
     
         <div id="mainListDiv" class="main_list" style="border-radius: 20px;">
           <ul class="navlinks">
-            <li class="navItems"><a href="#info_section">Home</a></li>
-            <li class="navItems"><a href="#event_sessions">Happenings</a></li>
-            <li class="navItems"><a href="#speakers">Speakers</a></li>
-            <li class="navItems"><a href="#sponsors">Sponsors</a></li>
-            <li class="navItems"><a href="#media_partners">Partners</a></li>
-            <li class="navItems"><a href="#topics_card">Agenda</a></li>
+            <li class="navItems"><a href="https://omandits.com/#info_section">Home</a></li>
+            <li class="navItems"><a href="#https://omandits.com/event_sessions">Happenings</a></li>
+            <li class="navItems"><a href="https://omandits.com/#speakers">Speakers</a></li>
+            <li class="navItems"><a href="https://omandits.com/#sponsors">Sponsors</a></li>
+            <li class="navItems"><a href="https://omandits.com/#media_partners">Partners</a></li>
+            <li class="navItems"><a href="https://omandits.com/#topics_card">Agenda</a></li>
             <li class="">
               <a style="margin-right: 1.5rem;" href="./delegateEnquiry.html" class="bt openDelegateBtn">Delegate Enquiry</a>
             </li>
@@ -106,6 +110,7 @@
               <div>
                 <label for="sp_company">Company *</label>
                 <input
+                  style="height: 50px;"
                   type="text"
                   class="form-control"
                   id="sp_company"
@@ -147,16 +152,20 @@
               </div>
               <div>
                 <label for="sp_mobile">Mobile *</label>
-                <input
+                <div class="form-control" style="width: 100%;">
+                  <input id="phone" style="border: none;" class="form-control" type="tel" name="phone" placeholder=" " />
+                </div>
+
+                <!-- <input
                   type="text"
                   class="form-control"
                   id="sp_mobile"
                   name="sp_mobile"
                   required
-                />
+                /> -->
               </div>
               <div>
-                <label for="country">Country:</label>
+                <label for="country">Country *</label>
                 <select
                   id="sp_country"
                   class="form-control"
@@ -695,7 +704,7 @@
             </label>
           </div>
 
-          <button class="btn btn-info text-light" onclick="sendSpMail()">
+          <button class="btn btn-info text-light" onclick="getCountryCode()">
             Submit
           </button>
         </div>
@@ -789,6 +798,24 @@
         </p>
       </div>
     </footer>
+
+    <!-- getting the country code  -->
+    <script>
+
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        // initialCountry: " ", // Set initialCountry as an empty string to prevent default selection
+        // separateDialCode: true, // Ensure the dial code is separate from the number
+      });
+
+      function getCountryCode() {
+        const countryCode = phoneInput.getSelectedCountryData().iso2;
+        console.log(countryCode, 'from html');
+        // sendSpMail(countryCode);
+      }
+
+    </script>
 
     <script>
       // function fetchDataAndSort() {
