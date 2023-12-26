@@ -112,7 +112,6 @@
         height: 100%;
         object-fit: cover;
       }
-      
     </style>
 
     <script
@@ -138,12 +137,12 @@
         
         <div id="mainListDiv" class="main_list" style="border-radius: 20px;">
           <ul class="navlinks">
-            <li class="navItems mx-2 p-0 p-0"><a href="#info_section">Home</a></li>
-            <li class="navItems mx-2 p-0"><a href="#event_sessions">Happenings</a></li>
-            <li class="navItems mx-2 p-0"><a href="#speakers">Speakers</a></li>
-            <li class="navItems mx-2 p-0"><a href="#sponsors">Sponsors</a></li>
-            <li class="navItems mx-2 p-0"><a href="#media_partners">Partners</a></li>
-            <li class="navItems mx-2 p-0"><a href="#topics_card">Agenda</a></li>
+            <li class="navItems mx-2 p-0 p-0"><a onclick="{linkHandler()}" href="#info_section">Home</a></li>
+            <li class="navItems mx-2 p-0"><a onclick="{linkHandler()}" href="#event_sessions">Happenings</a></li>
+            <li class="navItems mx-2 p-0"><a onclick="{linkHandler()}" href="#speakers">Speakers</a></li>
+            <li class="navItems mx-2 p-0"><a onclick="{linkHandler()}" href="#sponsors">Sponsors</a></li>
+            <li class="navItems mx-2 p-0"><a onclick="{linkHandler()}" href="#media_partners">Partners</a></li>
+            <li class="navItems mx-2 p-0"><a onclick="{linkHandler()}" href="#topics_card">Agenda</a></li>
             <li class="mx-1 p-0">
               <a href="./delegateEnquiry.html" class="bt openDelegateBtn">Delegate Enquiry</a>
             </li>
@@ -159,7 +158,7 @@
           </ul>
         </div>
         <div class="d-block d-md-none" style="width: 100px ; height: 100px; position: absolute;top: 0;right: 0;">
-          <span class="navTrigger" onclick="{openClose()}">
+          <span id="navTrigger" class="navTrigger" onclick="{openClose()}">
             <i></i>
             <i></i>
             <i></i>
@@ -2385,6 +2384,21 @@
 
       // Call the function to fetch and populate both dropdowns
       fetchDataAndSort();
+    </script>
+
+    <script>
+      function linkHandler(){
+        const divOne  = document.getElementById('mainListDiv');
+        const divTwo = document.getElementById('navTrigger');
+        // var body = document.body;
+        // var bodyWidth = body.clientWidth;
+
+        // if(bodyWidth < 650){
+
+        // }
+        divOne.className = "main_list";
+        divTwo.className = "navTrigger"
+      }
     </script>
 
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
