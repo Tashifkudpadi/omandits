@@ -84,7 +84,6 @@ updateTimer();
 // });
 
 function sendMail(countryCode) {
-
   const registrationCode = document.getElementById("registrationCode").value;
   const title = document.getElementById("title").value;
   const firstname = document.getElementById("firstname").value;
@@ -98,6 +97,8 @@ function sendMail(countryCode) {
   const employees = document.getElementById("employees").value;
   const solutions = document.getElementById("solutions").value;
   const role = document.getElementById("role").value;
+  const budget = document.getElementById('budget').value;
+  const timing = document.getElementById('timing').value;
 
   const referee_fullname = document.getElementById("referee_fullname").value
   const referee_companyname = document.getElementById("referee_companyname").value
@@ -110,41 +111,63 @@ function sendMail(countryCode) {
   const checkbox3 = document.getElementById("my_checkbox3");
   const checkbox4 = document.getElementById("my_checkbox4");
 
+  const delegatesCheckbox = document.getElementById('delegate_radio');
+  const sponsorsCheckbox = document.getElementById('sponsor_radio');
+  const speakersCheckbox = document.getElementById('speaker_radio');
+  let typeOfUser;
 
   if (
     !title ||
     !firstname ||
     !lastname || !jobtitle || !companyname || !email || !phone || !industry || !country || !employees || !solutions || !role
+    || !budget || !timing
     // ... Add conditions for other required fields here ...
   ) {
 
-    if(title === ''){
+    if (title === '') {
       alert("Please fill the required field title");
-    }else if( firstname === ''){
+    } else if (firstname === '') {
       alert("Please fill the required field first name");
-    }else if( lastname === ''){
+    } else if (lastname === '') {
       alert("Please fill the required field last name");
-    }else if( jobtitle === '' ){
+    } else if (jobtitle === '') {
       alert("Please fill the required field job title");
-    }else if( companyname === '' ){
+    } else if (companyname === '') {
       alert("Please fill the required field company name");
-    }else if( email === '' ){
+    } else if (email === '') {
       alert("Please fill the required field email");
-    }else if( phone === '' ){
+    } else if (phone === '') {
       alert("Please fill the required field mobile number");
-    }else if(industry === ''){
+    } else if (industry === '') {
       alert("Please fill the required field industry");
-    }else if(country === null){
+    } else if (country === null) {
       alert("Please fill the required field country");
-    }else if(employees === ''){
+    } else if (employees === '') {
       alert("Please fill the required field empoyees");
-    }else if(solutions === ''){
+    } else if (solutions === '') {
       alert("Please fill the required field solution");
-    }else if(role === ''){
+    } else if (role === '') {
       alert("Please fill the required field role");
+    } else if (budget === '') {
+      alert("Please fill the required field budget");
+    } else if (timing === '') {
+      alert("Please fill the required field timing");
     }
 
     return; // Exit the function early if any field is empty
+  }
+
+  if (delegatesCheckbox.checked || sponsorsCheckbox.checked || speakersCheckbox.checked) {
+    if (delegatesCheckbox.checked) {
+      typeOfUser = delegatesCheckbox.value;
+    } else if (sponsorsCheckbox.checked) {
+      typeOfUser = sponsorsCheckbox.value;
+    } else if (speakersCheckbox.checked) {
+      typeOfUser = speakersCheckbox.value;
+    }
+    console.log(typeOfUser);
+  } else {
+    alert("Please let us know what you looking for Delegate, Sponsor or Speaker");
   }
 
   if (!checkbox1.checked || !checkbox4.checked) {
@@ -166,6 +189,37 @@ function sendMail(countryCode) {
     ? "The checkbox is checked."
     : "The checkbox is not checked.";
 
+  //function handling the data sending to api
+  // (function sendDataToApi() {
+  //   const apiUrl = 'http://localhost:3000/api/delegate';
+
+  //   fetch(apiUrl, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       // Add any other headers if needed
+  //     },
+  //     body: JSON.stringify({
+  //       name: firstname + " " + lastname,
+  //       email: email,
+  //       jobTitle: jobtitle,
+  //       companyName: companyname,
+  //       phone: phone,
+  //       industry: industry,
+  //       numOfEmployees: employees,
+  //       lookingFor: solutions,
+  //       role: role,
+  //       country: country,
+  //       type: typeOfUser,
+  //       budget,
+  //       timing
+  //     })
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => data.complete = "ok")
+  //     .catch(error => console.error('Error:', error));
+  // })();
+
   const params = {
     registrationCode,
     title,
@@ -181,6 +235,9 @@ function sendMail(countryCode) {
     solutions,
     role,
     countryCode,
+    typeOfUser,
+    budget,
+    timing, 
 
     referee_fullname,
     referee_companyname,
@@ -378,7 +435,7 @@ document
   });
 
 
-async function speakersSubmit(saveImage){
+async function speakersSubmit(saveImage) {
   // event.preventDefault();
   const speakerFirstName = document.getElementById('fname').value;
   const speakerSecondName = document.getElementById('lname').value;
@@ -442,7 +499,7 @@ async function speakersSubmit(saveImage){
     alert("Assistant Mobile is required.");
   } else {
 
-    if (!checkboxOne.checked || !checkboxTwo.checked || !checkboxThree.checked){
+    if (!checkboxOne.checked || !checkboxTwo.checked || !checkboxThree.checked) {
       alert("You have fill the check box");
       return
     }
@@ -450,7 +507,7 @@ async function speakersSubmit(saveImage){
     const url = await saveImage();
 
     params = {
-      name : speakerFirstName +" "+ speakerSecondName,
+      name: speakerFirstName + " " + speakerSecondName,
       companyName,
       email,
       city,
@@ -458,11 +515,11 @@ async function speakersSubmit(saveImage){
       mobile,
       country,
       industry,
-      profileUrl : url[0],
-      passportUrl : url[1],
+      profileUrl: url[0],
+      passportUrl: url[1],
       personalBio,
       linkedPro,
-      assistantName : assistantFirstName+" "+assistantLastName,
+      assistantName: assistantFirstName + " " + assistantLastName,
       assistantEmail,
       assistantDirectLine,
       assistantMobile
@@ -470,17 +527,17 @@ async function speakersSubmit(saveImage){
 
     const serviceID = "service_0vz79hd";
     const templateID = "template_auy92ks";
-    
+
     emailjs
-    .send(serviceID, templateID, params)
-    .then((res) => {
-      alert(`Thank you for your recent inquiry. We greatly appreciate your interest and the time you've taken to reach out to us.
+      .send(serviceID, templateID, params)
+      .then((res) => {
+        alert(`Thank you for your recent inquiry. We greatly appreciate your interest and the time you've taken to reach out to us.
       Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted. Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
       Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at mohammad.afsal@genfinityglobal.com. We're here to assist and address any concerns you may have.
       Thank you once again for considering our event. We look forward to the possibility of collaborating with you.`);
-      window.location.href = 'https://omandits.com/'
-    })
-    .catch((error) => alert("Something went wrong"+error));
+        window.location.href = 'https://omandits.com/'
+      })
+      .catch((error) => alert("Something went wrong" + error));
   }
 
 }

@@ -515,7 +515,7 @@ form label {
 }
 #speakers .speakers_container .speaker_content {
   padding: 12px;
-  height: 750px;
+  height: 450px;
   width: 325px;
   text-align: center;
   border-radius: 8px;
@@ -1252,4 +1252,50 @@ footer #back-to-top button:hover svg {
   right: 0;
   font-size: 2.4rem;
   font-weight: 500;
+}
+
+
+
+
+/* extras  */
+
+.test{
+  overflow: hidden;
+}
+
+.test-div{
+  /* background-color: #939393; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5rem;
+  height: 100%;
+  width: 100%;
+}
+
+.test-div-two{
+  background-color: #d7d7d7;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: .5rem;
+}
+
+.test .test-div {
+  opacity: 0;
+  transform: translateY(400px);
+  transition: opacity 0.5s, transform 1s;
+}
+
+.test:hover .test-div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.setting__label{
+  margin-left: 1rem;
+}
+
+.setting{
+  padding: 1rem;
 }
