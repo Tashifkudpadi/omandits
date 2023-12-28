@@ -191,7 +191,7 @@ function sendMail(countryCode) {
 
   //function handling the data sending to api
   (function sendDataToApi() {
-    const apiUrl = 'https://next-js-omandits-admin.vercel.app/api/delegate';
+    const apiUrl = 'https://omanditsadmin.vercel.app/api/delegate';
 
     fetch(apiUrl, {
       method: 'POST',
