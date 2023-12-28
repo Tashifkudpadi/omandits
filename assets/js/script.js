@@ -190,35 +190,35 @@ function sendMail(countryCode) {
     : "The checkbox is not checked.";
 
   //function handling the data sending to api
-  // (function sendDataToApi() {
-  //   const apiUrl = 'http://localhost:3000/api/delegate';
+  (function sendDataToApi() {
+    const apiUrl = 'https://next-js-omandits-admin.vercel.app/api/delegate';
 
-  //   fetch(apiUrl, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       // Add any other headers if needed
-  //     },
-  //     body: JSON.stringify({
-  //       name: firstname + " " + lastname,
-  //       email: email,
-  //       jobTitle: jobtitle,
-  //       companyName: companyname,
-  //       phone: phone,
-  //       industry: industry,
-  //       numOfEmployees: employees,
-  //       lookingFor: solutions,
-  //       role: role,
-  //       country: country,
-  //       type: typeOfUser,
-  //       budget,
-  //       timing
-  //     })
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => data.complete = "ok")
-  //     .catch(error => console.error('Error:', error));
-  // })();
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Add any other headers if needed
+      },
+      body: JSON.stringify({
+        name: firstname + " " + lastname,
+        email: email,
+        jobTitle: jobtitle,
+        companyName: companyname,
+        phone: phone,
+        industry: industry,
+        numOfEmployees: employees,
+        lookingFor: solutions,
+        role: role,
+        country: country,
+        type: typeOfUser,
+        budget,
+        timing
+      })
+    })
+      .then(response => response.json())
+      .then(data => data.complete = "ok")
+      .catch(error => console.error('Error:', error));
+  })();
 
   const params = {
     registrationCode,
