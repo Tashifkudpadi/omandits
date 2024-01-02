@@ -200,7 +200,8 @@ function sendMail(countryCode) {
         // Add any other headers if needed
       },
       body: JSON.stringify({
-        name: firstname + " " + lastname,
+        name: firstname,
+        lastName : lastname,
         email: email,
         jobTitle: jobtitle,
         companyName: companyname,
