@@ -342,6 +342,13 @@ form label {
   height: 100vh;
 }
 
+.endorsed-holder{
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
 /* Set video element to fill video container */
 .video-container video {
   position: absolute;
@@ -1018,7 +1025,35 @@ footer #back-to-top button:hover svg {
   }
 }
 
+.heading-endo{
+  color: black; 
+  font-size: 2vw; 
+  font-weight: 900;
+  padding-top: 2rem;
+}
+
+.endo-logo{
+  width: 50%;
+  margin: 1rem;
+  padding: 2rem;
+}
+
 @media screen and (max-width: 768px) {
+  .endorsed-holder{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .heading-endo{
+    font-size: 20px;
+    width: 100%;
+  }
+  .endo-logo{
+    width: 80%;
+    margin: 1rem;
+    padding: 0;
+  }
   .event_logo {
     display: none;
   }
