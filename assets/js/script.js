@@ -25,12 +25,12 @@ function updateTimer() {
 
     document.getElementById("timer").innerHTML = `
     <div class="d-flex justify-content-center timer_container">
-                    <p>${days} <br/> <span>DAYS</span></p>
-                    <p>${hours}<br/> <span> HOURS</span></p>
-                    <p>${minutes}<br/> <span>MINUTES</span></p>
-                    <p>${seconds}<br/> <span> SECONDS</span></p>
-                    </div>
-                `;
+      <p>${days} <br/> <span>DAYS</span></p>
+      <p>${hours}<br/> <span> HOURS</span></p>
+      <p>${minutes}<br/> <span>MINUTES</span></p>
+      <p>${seconds}<br/> <span> SECONDS</span></p>
+      </div>
+  `;
   }
 }
 
