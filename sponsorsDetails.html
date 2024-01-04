@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const heading = urlParams.get("heading");
+            const logo = urlParams.get('logo');
+            const paragraph = urlParams.get("text");
+
+            console.log(heading, logo, paragraph);
+        });
+
+    </script>
+
 </body>
 </html>
