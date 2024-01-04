@@ -1,4 +1,3 @@
-
 body{
     width: 100%;
     overflow-x: hidden;
@@ -103,4 +102,8 @@ body{
 }
 .footer .copyright{
     margin-top: 50px;
+}
+
+.hidden{
+    display: none;
 }
