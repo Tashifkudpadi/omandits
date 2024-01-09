@@ -201,7 +201,7 @@ function sendMail(countryCode) {
       },
       body: JSON.stringify({
         name: firstname,
-        lastName : lastname,
+        lastName: lastname,
         email: email,
         jobTitle: jobtitle,
         companyName: companyname,
@@ -213,7 +213,12 @@ function sendMail(countryCode) {
         country: country,
         type: typeOfUser,
         budget,
-        timing
+        timing,
+        refName: referee_fullname, 
+        refComapanyName: referee_companyname,
+        refJobTitle: referee_jobtitle, 
+        refEmail:referee_emailid, 
+        refPhone: referee_phoneno,
       })
     })
       .then(response => response.json())
@@ -238,7 +243,7 @@ function sendMail(countryCode) {
     countryCode,
     typeOfUser,
     budget,
-    timing, 
+    timing,
 
     referee_fullname,
     referee_companyname,
