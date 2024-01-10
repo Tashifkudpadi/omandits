@@ -1040,6 +1040,12 @@ footer #back-to-top button:hover svg {
   object-fit: cover;
 }
 
+.endo-sec{
+  width: 100%; 
+  height: 50vh;
+  padding-top: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   .endorsed-holder{
     height: 30vh;
@@ -1047,15 +1053,17 @@ footer #back-to-top button:hover svg {
     justify-content: center;
     align-items: center
   }
+  .endo-sec{
+    height: 60vh;
+    padding-top: 5rem;
+  }
   .heading-endo{
     font-size: 20px;
     width: 100%;
   }
-  .endo-logo{
-    width: 80%;
-    height: 50%;
-    margin: 1rem;
-    padding: 0;
+  .endo-logo-1{
+    width: 10px;
+    height: 10px;
   }
   .event_logo {
     display: none;
