@@ -342,6 +342,13 @@ form label {
   height: 100vh;
 }
 
+.endorsed-holder{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
 /* Set video element to fill video container */
 .video-container video {
   position: absolute;
@@ -515,7 +522,7 @@ form label {
 }
 #speakers .speakers_container .speaker_content {
   padding: 12px;
-  height: 750px;
+  height: 450px;
   width: 325px;
   text-align: center;
   border-radius: 8px;
@@ -986,7 +993,7 @@ footer #back-to-top button svg {
 }
 
 footer #back-to-top button:hover svg {
-  transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(80-50%) rotate(-90deg);
 }
 
 .copy-right {
@@ -1018,7 +1025,46 @@ footer #back-to-top button:hover svg {
   }
 }
 
+.heading-endo{
+  color: black; 
+  font-size: 2vw; 
+  font-weight: 900;
+  /* padding-top: 2rem; */
+}
+
+.endo-logo{
+  width: 80%;
+  height: 80%;
+  /* margin: 1rem;
+  padding: 2rem; */
+  object-fit: cover;
+}
+
+.endo-sec{
+  width: 100%; 
+  height: 50vh;
+  padding-top: 2rem;
+}
+
 @media screen and (max-width: 768px) {
+  .endorsed-holder{
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .endo-sec{
+    height: 60vh;
+    padding-top: 5rem;
+  }
+  .heading-endo{
+    font-size: 20px;
+    width: 100%;
+  }
+  .endo-logo-1{
+    width: 10px;
+    height: 10px;
+  }
   .event_logo {
     display: none;
   }
@@ -1252,4 +1298,73 @@ footer #back-to-top button:hover svg {
   right: 0;
   font-size: 2.4rem;
   font-weight: 500;
+}
+
+
+
+
+/* extras  */
+
+.test{
+  overflow: hidden;
+}
+
+.test-div{
+  /* background-color: #939393; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5rem;
+  height: 100%;
+  width: 100%;
+}
+
+.test-div-two{
+  background-color: #d7d7d7;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: .5rem;
+}
+
+.test .test-div {
+  opacity: 0;
+  transform: translateY(400px);
+  transition: opacity 0.5s, transform 1s;
+}
+
+.test:hover .test-div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.setting__label{
+  margin-left: 1rem;
+}
+
+.setting{
+  padding: 1rem;
+}
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-float{
+	margin-top:16px;
 }
