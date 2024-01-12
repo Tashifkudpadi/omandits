@@ -1046,6 +1046,12 @@ footer #back-to-top button:hover svg {
   padding-top: 2rem;
 }
 
+.enod-img{
+  width :350px;
+  height : 180px;
+  object-fit: contain;
+}
+
 @media screen and (max-width: 768px) {
   .endorsed-holder{
     height: 30vh;
@@ -1053,8 +1059,11 @@ footer #back-to-top button:hover svg {
     justify-content: center;
     align-items: center
   }
+  .enod-img{
+    width: 280px;
+  }
   .endo-sec{
-    height: 60vh;
+    height: 80vh;
     padding-top: 5rem;
   }
   .heading-endo{
