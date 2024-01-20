@@ -240,8 +240,55 @@ function sendMail(countryCode) {
       .then((data) => {
         data.complete = "ok";
         console.log(data);
+        if(!data){
+          throw new Error('something')
+        }
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        const params = {
+          registrationCode,
+          title,
+          firstname,
+          lastname,
+          jobtitle,
+          companyname,
+          email,
+          phone,
+          industry,
+          country,
+          employees,
+          solutions,
+          role,
+          countryCode,
+          typeOfUser,
+          budget,
+          timing,
+          error : error,
+          errMsg :"something went wrong on the api", 
+
+          referee_fullname,
+          referee_companyname,
+          referee_jobtitle,
+          referee_emailid,
+          referee_phoneno,
+      
+          checkboxState1,
+          checkboxState2,
+          checkboxState3,
+          checkboxState4,
+        };
+
+        const service = "service_zh5dx4k";
+        const template = "template_pjgy813";
+    
+        emailjs
+          .send(service, template, params, "g7A8AmcmomsOelWRo")
+          .then((res) => {})
+          .catch((error) => {
+            console.log(error)
+            alert(error)
+          });
+      });
   })();
 
   const params = {
