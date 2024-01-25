@@ -143,7 +143,7 @@ function sendMail(countryCode) {
       alert("Please fill the required field job title");
     } else if (companyname === "") {
       alert("Please fill the required field company name");
-    } else if (email === "") {
+    } else if (email === "") {      
       alert("Please fill the required field email");
     } else if (phone === "") {
       alert("Please fill the required field mobile number");
@@ -164,6 +164,10 @@ function sendMail(countryCode) {
     }
 
     return; // Exit the function early if any field is empty
+  }
+
+  if(email){
+    checkMail(email)
   }
 
   if (
@@ -204,7 +208,7 @@ function sendMail(countryCode) {
     ? "The checkbox is checked."
     : "The checkbox is not checked.";
 
-  //function handling the data sending to api
+  // function handling the data sending to api
   (function sendDataToApi() {
     const apiUrl = "https://omanditsadmin.vercel.app/api/delegate";
 
@@ -337,6 +341,18 @@ function sendMail(countryCode) {
       console.log(error)
       alert(error)
     });
+}
+
+function checkMail(inp){
+  const element = document.getElementById('indicator');
+  const newVal = inp.split('@');
+  const curr = newVal[1].split('.');
+  if(curr[0] === 'gmail'){
+    element.innerHTML = "Please enter a business mail id"
+    alert("Plase check mail id")
+  }else{
+    element.innerHTML = " "
+  }
 }
 
 function sendSpMail(countryCode) {
