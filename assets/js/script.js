@@ -182,7 +182,6 @@ function sendMail(countryCode) {
     } else if (speakersCheckbox.checked) {
       typeOfUser = speakersCheckbox.value;
     }
-    console.log(typeOfUser);
   } else {
     alert(
       "Please let us know what you looking for Delegate, Sponsor or Speaker"
@@ -210,7 +209,9 @@ function sendMail(countryCode) {
 
   // function handling the data sending to api
   (function sendDataToApi() {
-    const apiUrl = "https://omanditsadmin.vercel.app/api/delegate";
+    const apiUrl = "http://localhost:3000/api/delegate";
+    // https://omanditsadmin.vercel.app/api/delegate
+    // http://localhost:3000/api/delegate
 
     fetch(apiUrl, {
       method: "POST",
@@ -242,13 +243,55 @@ function sendMail(countryCode) {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.complete = "ok";
-        console.log(data);
-        if(!data){
-          throw new Error('something')
+        if(data.error){
+          const params = {
+            registrationCode,
+            title,
+            firstname,
+            lastname,
+            jobtitle,
+            companyname,
+            email,
+            phone,
+            industry,
+            country,
+            employees,
+            solutions,
+            role,
+            countryCode,
+            typeOfUser,
+            budget,
+            timing,
+            error : data,
+            errMsg : data.error, 
+  
+            referee_fullname,
+            referee_companyname,
+            referee_jobtitle,
+            referee_emailid,
+            referee_phoneno,
+        
+            checkboxState1,
+            checkboxState2,
+            checkboxState3,
+            checkboxState4,
+          };
+  
+          const service = "service_zh5dx4k";
+          const template = "template_pjgy813";
+      
+          emailjs
+            .send(service, template, params, "g7A8AmcmomsOelWRo")
+            .then((res) => {})
+            .catch((error) => {
+              alert(error)
+            });
         }
       })
       .catch((error) => {
+ 
+        // console.log(error,"ajshkajsdkahghgjasgkjk");
+        
         const params = {
           registrationCode,
           title,
@@ -268,7 +311,7 @@ function sendMail(countryCode) {
           budget,
           timing,
           error : error,
-          errMsg :"something went wrong on the api", 
+          errMsg : error.error, 
 
           referee_fullname,
           referee_companyname,
@@ -289,7 +332,6 @@ function sendMail(countryCode) {
           .send(service, template, params, "g7A8AmcmomsOelWRo")
           .then((res) => {})
           .catch((error) => {
-            console.log(error)
             alert(error)
           });
       });
@@ -328,19 +370,19 @@ function sendMail(countryCode) {
   const serviceID = "service_xgm708t";
   const templateID = "template_ju5hv1k";
 
-  emailjs
-    .send(serviceID, templateID, params, "hO0rGL2q2-CdEsIN5")
-    .then((res) => {
-      alert(`Thank you for your recent inquiry.We greatly appreciate your interest and the time you've taken to reach out to us.
-      Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted.Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
-      Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at mohammad.afsal@genfinityglobal.com. We're here to assist and address any concerns you may have.
-      Thank you once again for considering our event.We look forward to the possibility of collaborating with you.`);
-      window.location.href = 'https://omandits.com/'
-    })
-    .catch((error) => {
-      console.log(error)
-      alert(error)
-    });
+  // emailjs
+  //   .send(serviceID, templateID, params, "hO0rGL2q2-CdEsIN5")
+  //   .then((res) => {
+  //     alert(`Thank you for your recent inquiry.We greatly appreciate your interest and the time you've taken to reach out to us.
+  //     Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted.Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
+  //     Should you have any questions, require further information, or wish to discuss any specifics, please don't hesitate to contact us via email at mohammad.afsal@genfinityglobal.com. We're here to assist and address any concerns you may have.
+  //     Thank you once again for considering our event.We look forward to the possibility of collaborating with you.`);
+  //     window.location.href = 'https://omandits.com/'
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //     alert(error)
+  //   });
 }
 
 function checkMail(inp){
