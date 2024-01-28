@@ -182,7 +182,6 @@ function sendMail(countryCode) {
     } else if (speakersCheckbox.checked) {
       typeOfUser = speakersCheckbox.value;
     }
-    console.log(typeOfUser);
   } else {
     alert(
       "Please let us know what you looking for Delegate, Sponsor or Speaker"
@@ -211,6 +210,8 @@ function sendMail(countryCode) {
   // function handling the data sending to api
   (function sendDataToApi() {
     const apiUrl = "https://omanditsadmin.vercel.app/api/delegate";
+    // https://omanditsadmin.vercel.app/api/delegate
+    // http://localhost:3000/api/delegate
 
     fetch(apiUrl, {
       method: "POST",
@@ -242,13 +243,55 @@ function sendMail(countryCode) {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.complete = "ok";
-        console.log(data);
-        if(!data){
-          throw new Error('something')
+        if(data.error){
+          const params = {
+            registrationCode,
+            title,
+            firstname,
+            lastname,
+            jobtitle,
+            companyname,
+            email,
+            phone,
+            industry,
+            country,
+            employees,
+            solutions,
+            role,
+            countryCode,
+            typeOfUser,
+            budget,
+            timing,
+            error : data,
+            errMsg : data.error, 
+  
+            referee_fullname,
+            referee_companyname,
+            referee_jobtitle,
+            referee_emailid,
+            referee_phoneno,
+        
+            checkboxState1,
+            checkboxState2,
+            checkboxState3,
+            checkboxState4,
+          };
+  
+          const service = "service_zh5dx4k";
+          const template = "template_pjgy813";
+      
+          emailjs
+            .send(service, template, params, "g7A8AmcmomsOelWRo")
+            .then((res) => {})
+            .catch((error) => {
+              alert(error)
+            });
         }
       })
       .catch((error) => {
+ 
+        // console.log(error,"ajshkajsdkahghgjasgkjk");
+        
         const params = {
           registrationCode,
           title,
@@ -268,7 +311,7 @@ function sendMail(countryCode) {
           budget,
           timing,
           error : error,
-          errMsg :"something went wrong on the api", 
+          errMsg : error.error, 
 
           referee_fullname,
           referee_companyname,
@@ -289,7 +332,6 @@ function sendMail(countryCode) {
           .send(service, template, params, "g7A8AmcmomsOelWRo")
           .then((res) => {})
           .catch((error) => {
-            console.log(error)
             alert(error)
           });
       });
