@@ -370,6 +370,18 @@ function sendMail(countryCode) {
   const serviceID = "service_xgm708t";
   const templateID = "template_ju5hv1k";
 
+  const catchServiceID = "service_jjrkcks";
+  const catchTemplateID ="template_m4d4fgu"
+  
+  emailjs
+    .send(catchServiceID, catchTemplateID, params, "PvMR2IPn8ir0VCUQu")
+    .then((res) => {
+      console.log("completed");
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+
   emailjs
     .send(serviceID, templateID, params, "hO0rGL2q2-CdEsIN5")
     .then((res) => {
