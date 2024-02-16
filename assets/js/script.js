@@ -143,7 +143,7 @@ function sendMail(countryCode) {
       alert("Please fill the required field job title");
     } else if (companyname === "") {
       alert("Please fill the required field company name");
-    } else if (email === "") {
+    } else if (email === "") {      
       alert("Please fill the required field email");
     } else if (phone === "") {
       alert("Please fill the required field mobile number");
@@ -166,6 +166,10 @@ function sendMail(countryCode) {
     return; // Exit the function early if any field is empty
   }
 
+  if(email){
+    checkMail(email)
+  }
+
   if (
     delegatesCheckbox.checked ||
     sponsorsCheckbox.checked ||
@@ -178,7 +182,6 @@ function sendMail(countryCode) {
     } else if (speakersCheckbox.checked) {
       typeOfUser = speakersCheckbox.value;
     }
-    console.log(typeOfUser);
   } else {
     alert(
       "Please let us know what you looking for Delegate, Sponsor or Speaker"
@@ -204,9 +207,11 @@ function sendMail(countryCode) {
     ? "The checkbox is checked."
     : "The checkbox is not checked.";
 
-  //function handling the data sending to api
+  // function handling the data sending to api
   (function sendDataToApi() {
     const apiUrl = "https://omanditsadmin.vercel.app/api/delegate";
+    // https://omanditsadmin.vercel.app/api/delegate
+    // http://localhost:3000/api/delegate
 
     fetch(apiUrl, {
       method: "POST",
@@ -238,10 +243,98 @@ function sendMail(countryCode) {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.complete = "ok";
-        console.log(data);
+        if(data.error){
+          const params = {
+            registrationCode,
+            title,
+            firstname,
+            lastname,
+            jobtitle,
+            companyname,
+            email,
+            phone,
+            industry,
+            country,
+            employees,
+            solutions,
+            role,
+            countryCode,
+            typeOfUser,
+            budget,
+            timing,
+            error : data,
+            errMsg : data.error, 
+  
+            referee_fullname,
+            referee_companyname,
+            referee_jobtitle,
+            referee_emailid,
+            referee_phoneno,
+        
+            checkboxState1,
+            checkboxState2,
+            checkboxState3,
+            checkboxState4,
+          };
+  
+          const service = "service_zh5dx4k";
+          const template = "template_pjgy813";
+      
+          emailjs
+            .send(service, template, params, "g7A8AmcmomsOelWRo")
+            .then((res) => {})
+            .catch((error) => {
+              alert(error)
+            });
+        }
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+ 
+        // console.log(error,"ajshkajsdkahghgjasgkjk");
+        
+        const params = {
+          registrationCode,
+          title,
+          firstname,
+          lastname,
+          jobtitle,
+          companyname,
+          email,
+          phone,
+          industry,
+          country,
+          employees,
+          solutions,
+          role,
+          countryCode,
+          typeOfUser,
+          budget,
+          timing,
+          error : error,
+          errMsg : error.error, 
+
+          referee_fullname,
+          referee_companyname,
+          referee_jobtitle,
+          referee_emailid,
+          referee_phoneno,
+      
+          checkboxState1,
+          checkboxState2,
+          checkboxState3,
+          checkboxState4,
+        };
+
+        const service = "service_zh5dx4k";
+        const template = "template_pjgy813";
+    
+        emailjs
+          .send(service, template, params, "g7A8AmcmomsOelWRo")
+          .then((res) => {})
+          .catch((error) => {
+            alert(error)
+          });
+      });
   })();
 
   const params = {
@@ -277,6 +370,18 @@ function sendMail(countryCode) {
   const serviceID = "service_xgm708t";
   const templateID = "template_ju5hv1k";
 
+  const catchServiceID = "service_jjrkcks";
+  const catchTemplateID ="template_m4d4fgu"
+  
+  emailjs
+    .send(catchServiceID, catchTemplateID, params, "PvMR2IPn8ir0VCUQu")
+    .then((res) => {
+      console.log("completed");
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+
   emailjs
     .send(serviceID, templateID, params, "hO0rGL2q2-CdEsIN5")
     .then((res) => {
@@ -290,6 +395,18 @@ function sendMail(countryCode) {
       console.log(error)
       alert(error)
     });
+}
+
+function checkMail(inp){
+  const element = document.getElementById('indicator');
+  const newVal = inp.split('@');
+  const curr = newVal[1].split('.');
+  if(curr[0] === 'gmail'){
+    element.innerHTML = "Please enter a business mail id"
+    alert("Plase check mail id")
+  }else{
+    element.innerHTML = " "
+  }
 }
 
 function sendSpMail(countryCode) {
