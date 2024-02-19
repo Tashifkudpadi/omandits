@@ -367,23 +367,23 @@ function sendMail(countryCode) {
     checkboxState3,
     checkboxState4,
   };
-  const serviceID = "service_xgm708t";
-  const templateID = "template_ju5hv1k";
+  const serviceID = "service_vzxb1iq";
+  const templateID = "template_neln6bf";
 
-  const catchServiceID = "service_jjrkcks";
-  const catchTemplateID ="template_m4d4fgu"
+  // const catchServiceID = "service_jjrkcks";
+  // const catchTemplateID ="template_m4d4fgu"
   
-  emailjs
-    .send(catchServiceID, catchTemplateID, params, "PvMR2IPn8ir0VCUQu")
-    .then((res) => {
-      console.log("completed");
-    })
-    .catch((error) => {
-      console.log(error)
-    });
+  // emailjs
+  //   .send(catchServiceID, catchTemplateID, params, "PvMR2IPn8ir0VCUQu")
+  //   .then((res) => {
+  //     console.log("completed");
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   });
 
   emailjs
-    .send(serviceID, templateID, params, "hO0rGL2q2-CdEsIN5")
+    .send(serviceID, templateID, params, "VPj_hs0ZLWpFpOWuX")
     .then((res) => {
       alert(`Thank you for your recent inquiry.We greatly appreciate your interest and the time you've taken to reach out to us.
       Your message has been received, and please consider this communication as confirmation that your application has been successfully submitted.Our event steering committee will diligently evaluate your request and endeavor to provide you with a response within the next 48 hours.
@@ -537,8 +537,8 @@ function sendSpMail(countryCode) {
     checkbox_sp_concent,
   };
 
-  const serviceID = "service_xgm708t";
-  const templateID = "template_mpg968b";
+  const serviceID = "service_vzxb1iq";
+  const templateID = "template_1u22ioy";
 
   emailjs
     .send(serviceID, templateID, params)
