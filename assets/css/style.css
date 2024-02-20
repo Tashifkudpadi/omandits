@@ -625,6 +625,10 @@ form label {
   padding: 10px;
 }
 
+.text-of-main{
+  text-transform: uppercase;
+}
+
 #sponsors .sponsor_subheading {
   background-image: linear-gradient(
     to right,
