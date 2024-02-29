@@ -12,7 +12,7 @@ function updateTimer() {
   const timeRemaining = targetDate - currentDate;
 
   if (timeRemaining <= 0) {
-    document.getElementById("timer").innerHTML = "Happy Valentine's Day!";
+    document.getElementById("timer").innerHTML = "";
   } else {
     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
